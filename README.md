@@ -5,20 +5,35 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Storybook
+### Viewing storybook
 ```
-npm run serve
+npm run storybook
 ```
-
-### Compiles and minifies for production
+### Generate storybook build for publishing
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run build-storybook
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## npm
+### Build library for release
+```
+npm run build-library
+```
+This generates CommonJS and unpkg modules in /dist. (Using common js here).
+Update `main` field in `package.json` to change between CommonJS and unpkg. 
+
+**Don't miss to change the version for new release** (`version` field in `package.json`).
+Refer [semantic versioning spec](https://docs.npmjs.com/about-semantic-versioning).
+
+## Usage
+
+### Setup
+```
+npm install matic-design-system
+```
+
+### Implementation
+```
+import { MButton, MHeader } from "matic-design-system";
+```
