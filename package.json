@@ -1,15 +1,21 @@
 {
   "name": "matic-design-system",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "main": "./dist/matic-design-system.common.js",
+  "keywords": [
+    "design-system",
+    "vue",
+    "storybook",
+    "matic"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-library": "vue-cli-service build --target lib --name matic-design-system src/main.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "release": "np",
+    "prepublish": "npm run build-library"
   },
   "dependencies": {
     "core-js": "^3.6.5",
