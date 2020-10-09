@@ -1,5 +1,7 @@
 # matic-design-system
 
+Design system for matic products.
+
 ## Project setup
 ```
 npm install
@@ -16,24 +18,29 @@ npm run build-storybook
 ```
 
 ## npm
-### Build library for release
+### Build library for publishing
 ```
 npm run build-library
 ```
 This generates CommonJS and unpkg modules in /dist. (Using common js here).
-Update `main` field in `package.json` to change between CommonJS and unpkg. 
+Update `main` field in `package.json` to change the entry point of published package.
 
-**Don't miss to change the version for new release** (`version` field in `package.json`).
-Refer [semantic versioning spec](https://docs.npmjs.com/about-semantic-versioning).
+For versoning, refer [semantic versioning spec](https://docs.npmjs.com/about-semantic-versioning).
+
+### Publishing to npm
+```
+npm run release
+```
+This will take care of build, versioning and publishing.
 
 ## Usage
 
 ### Setup
 ```
-npm install matic-design-system
+npm install @maticnetwork/matic-design-system
 ```
 
 ### Implementation
 ```
-import { MButton, MHeader } from "matic-design-system";
+import { Button, Header } from "@maticnetwork/matic-design-system";
 ```
