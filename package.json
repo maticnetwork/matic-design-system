@@ -1,5 +1,5 @@
 {
-  "name": "matic-design-system",
+  "name": "@maticnetwork/matic-design-system",
   "version": "0.0.1",
   "private": false,
   "main": "./dist/matic-design-system.common.js",
