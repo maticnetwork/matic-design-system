@@ -1,15 +1,15 @@
-import MHeader from '../components/Header/Header';
+import Header from '../components/Header/Header';
 
 export default {
   title: 'Example/Header',
-  component: MHeader,
+  component: Header,
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { MHeader },
+  components: { Header },
   template:
-    '<m-header :user="user" @onLogin="onLogin" @onLogout="onLogout" @onCreateAccount="onCreateAccount" />',
+    '<Header :user="user" @onLogin="onLogin" @onLogout="onLogout" @onCreateAccount="onCreateAccount" />',
 });
 
 export const LoggedIn = Template.bind({});

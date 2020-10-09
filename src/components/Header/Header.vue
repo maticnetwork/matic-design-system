@@ -21,22 +21,22 @@
         <h1>Matic</h1>
       </div>
       <div>
-        <m-button size="small" @onClick="onLogout" label="Log out" v-if="user" />
-        <m-button size="small" @onClick="onLogin" label="Log in" v-if="!user" />
-        <m-button primary size="small" @onClick="onCreateAccount" label="Sign up" v-if="!user" />
+        <Button size="small" @onClick="onLogout" label="Log out" v-if="user" />
+        <Button size="small" @onClick="onLogin" label="Log in" v-if="!user" />
+        <Button primary size="small" @onClick="onCreateAccount" label="Sign up" v-if="!user" />
       </div>
     </div>
   </header>
 </template>
 
 <script>
-import './header.css';
-import MButton from '../Button/Button';
+import './header.scss';
+import Button from '../Button/Button';
 
 export default {
-  name: 'm-header',
+  name: 'Header',
 
-  components: { MButton },
+  components: { Button },
 
   props: {
     user: {

@@ -1,12 +1,14 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button type="button" :class="classes" @click="onClick" :style="style">
+    {{ label }}
+  </button>
 </template>
 
 <script>
-import './button.css';
+import "./button.scss";
 
 export default {
-  name: 'm-button',
+  name: "Button",
 
   props: {
     label: {
@@ -19,9 +21,9 @@ export default {
     },
     size: {
       type: String,
-      default: 'medium',
+      default: "medium",
       validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
+        return ["small", "medium", "large"].indexOf(value) !== -1;
       },
     },
     backgroundColor: {
@@ -32,9 +34,9 @@ export default {
   computed: {
     classes() {
       return {
-        'storybook-button': true,
-        'storybook-button--primary': this.primary,
-        'storybook-button--secondary': !this.primary,
+        "storybook-button": true,
+        "storybook-button--primary": this.primary,
+        "storybook-button--secondary": !this.primary,
         [`storybook-button--${this.size}`]: true,
       };
     },
@@ -47,7 +49,7 @@ export default {
 
   methods: {
     onClick() {
-      this.$emit('onClick');
+      this.$emit("onClick");
     },
   },
 };
