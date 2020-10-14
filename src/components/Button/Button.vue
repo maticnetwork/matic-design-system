@@ -15,9 +15,11 @@ export default {
       type: String,
       required: true,
     },
-    primary: {
-      type: Boolean,
-      default: false,
+    nature: {
+      type: String,
+      validator: function (value) {
+        return ["primary", "secondary", "link"].indexOf(value) !== -1;
+      },
     },
     size: {
       type: String,
@@ -34,10 +36,11 @@ export default {
   computed: {
     classes() {
       return {
-        "storybook-button": true,
-        "storybook-button--primary": this.primary,
-        "storybook-button--secondary": !this.primary,
-        [`storybook-button--${this.size}`]: true,
+        button: true,
+        "nature--primary": this.nature == "primary",
+        "nature--secondary": this.nature == "secondary",
+        "nature--link": this.type == "link",
+        [`button--${this.size}`]: true,
       };
     },
     style() {
