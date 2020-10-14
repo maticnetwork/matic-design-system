@@ -1,0 +1,211 @@
+//
+// Typography
+//
+
+$font-family-base: "Averta", sans-serif;
+
+$weights: (
+  "regular": 400,
+  "medium": 600,
+  "semibold": 700,
+  "bold": 800,
+);
+
+@function weight($base) {
+  @return map-get($weights, $base);
+}
+
+$font-sizes: (
+  "display-large": 96px,
+  "display-medium": 64px,
+  "heading-h1": 48px,
+  "heading-h2": 36px,
+  "heading-h3": 24px,
+  "heading-h4": 18px,
+  "heading-h5": 16px,
+  "heading-h6": 14px,
+  "body-large": 18px,
+  "body-medium": 16px,
+  "body-small": 14px,
+  "caption-small": 12px,
+  "capital": 12px,
+);
+
+@function font-size($base) {
+  @return map-get($font-sizes, $base);
+}
+
+// $font-weights: (
+//   "display-large": weight("bold"),
+//   "display-medium": weight("bold"),
+//   "heading-h1": weight("bold"),
+//   "heading-h2": weight("bold"),
+//   "heading-h3": weight("bold"),
+//   "heading-h4": weight("semibold"),
+//   "heading-h5": weight("semibold"),
+//   "heading-h6": weight("semibold"),
+//   "body-large": weight("regular"),
+//   "body-medium": weight("regular"),
+//   "body-small": weight("regular"),
+//   "caption-small": weight("regular"),
+//   "capital": weight("semibold"),
+// );
+
+// @function font-weight($base) {
+//   @return map-get($font-weights, $base);
+// }
+
+$line-heights: (
+  "display-large": 110%,
+  "display-medium": 110%,
+  "heading-h1": 120%,
+  "heading-h2": 120%,
+  "heading-h3": 120%,
+  "heading-h4": 145%,
+  "heading-h5": 150%,
+  "heading-h6": 140%,
+  "body-large": 145%,
+  "body-medium": 150%,
+  "body-small": 140%,
+  "caption-small": 135%,
+  "capital": 20px,
+);
+
+@function line-height($base) {
+  @return map-get($line-heights, $base);
+}
+
+$letter-spacings: (
+  "display-large": -1,
+  "display-medium": -1%,
+  "heading-h1": -1,
+  "heading-h2": -1,
+  "heading-h3": -1,
+  "heading-h4": -1,
+  "heading-h5": -1,
+  "heading-h6": -1,
+  "body-large": 0,
+  "body-medium": 0,
+  "body-small": 0,
+  "caption-small": 0,
+  "capital": 5%,
+);
+
+@function letter-spacing($base) {
+  @return map-get($letter-spacings, $base);
+}
+
+// font setting for font sizes
+@mixin font-settings($base, $weight: null) {
+  font-size: font-size($base);
+  line-height: line-height($base);
+  letter-spacing: -1;
+  @if ($weight) {
+    font-weight: weight($weight);
+  }
+  // @else {
+  //   font-weight: font-weight($base);
+  // }
+}
+
+//
+// Colors
+//
+
+$primary-colors: (
+  "700": #002b80,
+  "600": #003cb2,
+  "500": #2b6def,
+  "400": #558af2,
+  "300": #aac5f9,
+  "200": #d5e2fc,
+  "100": #eaf0fd,
+);
+
+@function primary-color($base) {
+  @return map-get($primary-colors, $base);
+}
+
+$light-gray-colors: (
+  "700": #ffffff,
+  "600": #f8f9fa,
+  "500": #f3f4f7,
+  "400": #e7e9ee,
+  "300": #dcdfe6,
+  "200": #cfd4dd,
+  "100": #b7bfcc,
+);
+
+@function light-gray-color($base) {
+  @return map-get($light-gray-colors, $base);
+}
+
+$dark-gray-colors: (
+  "700": #061024,
+  "600": #202a3d,
+  "500": #3b465c,
+  "400": #545f76,
+  "300": #6e798f,
+  "200": #8690a5,
+  "100": #9fa8ba,
+);
+
+@function dark-gray-color($base) {
+  @return map-get($dark-gray-colors, $base);
+}
+
+$red-colors: (
+  "700": #c22a0c,
+  "600": #e03c1b,
+  "500": #f04c2b,
+  "400": #f37056,
+  "300": #f9b7aa,
+  "200": #fcdbd5,
+  "100": #fdedea,
+);
+
+@function red-color($base) {
+  @return map-get($red-colors, $base);
+}
+
+$yellow-colors: (
+  "700": #f0ae2b,
+  "600": #f0bf2b,
+  "500": #f0cf2b,
+  "400": #fae36e,
+  "300": #fdf1b7,
+  "200": #fef8db,
+  "100": #fefbed,
+);
+
+@function yellow-color($base) {
+  @return map-get($yellow-colors, $base);
+}
+
+$green-colors: (
+  "700": #008040,
+  "600": #00a050,
+  "500": #25cd79,
+  "400": #51d794,
+  "300": #a8ebc9,
+  "200": #d3f5e4,
+  "100": #e9faf2,
+);
+
+@function green-color($base) {
+  @return map-get($green-colors, $base);
+}
+
+$supportive-colors: (
+  "700": #2517c2,
+  "600": #3828e0,
+  "500": #493af0,
+  "400": #7165f3,
+  "300": #b8b2f9,
+  "200": #dbd9fc,
+  "100": #edecfe,
+);
+
+@function supportive-color($base) {
+  @return map-get($supportive-colors, $base);
+}
