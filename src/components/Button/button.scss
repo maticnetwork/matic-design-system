@@ -8,30 +8,55 @@
   color: dark-gray-color("700");
   cursor: pointer;
   outline: none;
+  &:active {
+    background: light-gray-color("600");
+  }
+  &:disabled {
+    background: light-gray-color("600");
+    color: light-gray-color("100");
+  }
 }
 
 .nature--primary {
   color: light-gray-color("700");
-  background-color: primary-color("600");
+  background: primary-color("600");
+  &:active {
+    background: primary-color("700");
+  }
 }
 .nature--secondary {
   color: light-gray-color("700");
   background: dark-gray-color("700");
+  &:active {
+    background: dark-gray-color("600");
+  }
 }
 .nature--link {
   background: transparent;
-  box-shadow: 0px;
+  box-shadow: none;
   color: dark-gray-color("700");
+  &:active {
+    background: light-gray-color("500");
+  }
 }
-.button--small {
+.size--small {
   @include font-settings("heading-h6");
   padding: 7px 12px;
+
+  &.icon--only {
+    padding: 5px;
+    color: red;
+  }
 }
-.button--medium {
+.size--medium {
   @include font-settings("heading-h5");
   padding: 10px 12px;
 }
-.button--large {
+.size--large {
   @include font-settings("heading-h4");
   padding: 14px 20px;
+}
+
+.variant--pill {
+  border-radius: 37px;
 }

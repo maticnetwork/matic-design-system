@@ -4,9 +4,9 @@ export default {
   title: 'Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
-    nature: { control: { type: 'select', options: ['default', 'primary', 'secondary', 'link'] } },
+    nature: { control: { type: 'select', options: [null, 'primary', 'secondary', 'link'] } },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    variant: { control: { type: 'select', options: [null, 'pill'] } },
   },
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">
+  <button :class="classes" @click="onClick" :style="style" :disabled="disabled">
     {{ label }}
   </button>
 </template>
@@ -28,8 +28,15 @@ export default {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       },
     },
-    backgroundColor: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    variant: {
       type: String,
+      validator: function (value) {
+        return ["pill"].indexOf(value) !== -1;
+      },
     },
   },
 
@@ -39,8 +46,9 @@ export default {
         button: true,
         "nature--primary": this.nature == "primary",
         "nature--secondary": this.nature == "secondary",
-        "nature--link": this.type == "link",
-        [`button--${this.size}`]: true,
+        "nature--link": this.nature == "link",
+        [`size--${this.size}`]: true,
+        "variant--pill": this.variant == "pill",
       };
     },
     style() {
