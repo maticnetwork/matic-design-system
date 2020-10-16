@@ -1,30 +1,69 @@
-.storybook-button {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    border: 0;
-    border-radius: 3em;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 1;
+@import "../../scss/_variables.scss";
+
+.button {
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: light-gray-color("700");
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.16), 0px 1px 4px rgba(0, 0, 0, 0.08);
+  color: dark-gray-color("700");
+  cursor: pointer;
+  outline: none;
+  &:active {
+    background: light-gray-color("600");
   }
-  .storybook-button--primary {
-    color: white;
-    background-color: #1ea7fd;
+  &:disabled {
+    background: light-gray-color("600");
+    color: light-gray-color("100");
   }
-  .storybook-button--secondary {
-    color: #333;
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.nature--primary {
+  color: light-gray-color("700");
+  background: primary-color("600");
+  &:active {
+    background: primary-color("700");
   }
-  .storybook-button--small {
-    font-size: 12px;
-    padding: 10px 16px;
+}
+.nature--secondary {
+  color: light-gray-color("700");
+  background: dark-gray-color("700");
+  &:active {
+    background: dark-gray-color("600");
   }
-  .storybook-button--medium {
-    font-size: 14px;
-    padding: 11px 20px;
+}
+.nature--link {
+  background: transparent;
+  box-shadow: none;
+  color: dark-gray-color("700");
+  &:active {
+    background: light-gray-color("500");
   }
-  .storybook-button--large {
-    font-size: 16px;
-    padding: 12px 24px;
+}
+.size--small {
+  @include font-settings("heading-h6");
+  padding: 7px 12px;
+
+  &.icon--only {
+    padding: 5px;
+    color: red;
   }
+}
+.size--medium {
+  @include font-settings("heading-h5");
+  padding: 10px 12px;
+}
+.size--large {
+  @include font-settings("heading-h4");
+  padding: 14px 20px;
+}
+
+.variant--pill {
+  border-radius: 37px;
+}
+
+// .only-icon {} // kept for future use/reference
+.icon-with-text {
+  padding-right: 8px;
+}

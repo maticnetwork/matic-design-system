@@ -1,5 +1,7 @@
-// import HelloWorld from "./components/HelloWorld";
 import Button from "./components/Button/Button"
-import Header from "./components/Header/Header"
+import Icon from "./components/Icon/Icon"
 
-export { Button, Header }
+export {
+    Button,
+    Icon,
+}
