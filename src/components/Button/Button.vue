@@ -1,14 +1,18 @@
 <template>
-  <button :class="classes" @click="onClick" :style="style" :disabled="disabled">
+  <button :class="classes" @click="onClick" :disabled="disabled">
+    <Icon :class="iconClasses" :name="iconName" v-if="iconName" />
     {{ label }}
   </button>
 </template>
 
 <script>
 import "./button.scss";
+import Icon from "../Icon/Icon";
 
 export default {
   name: "Button",
+
+  components: { Icon },
 
   props: {
     label: {
@@ -38,6 +42,9 @@ export default {
         return ["pill"].indexOf(value) !== -1;
       },
     },
+    iconName: {
+      type: String,
+    },
   },
 
   computed: {
@@ -51,9 +58,10 @@ export default {
         "variant--pill": this.variant == "pill",
       };
     },
-    style() {
+    iconClasses() {
       return {
-        backgroundColor: this.backgroundColor,
+        "only-icon": !this.label && this.iconName,
+        "icon-with-text": this.label && this.iconName,
       };
     },
   },

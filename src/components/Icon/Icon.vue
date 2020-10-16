@@ -1,7 +1,5 @@
 <template>
-  <!-- <div class="icon-square"> -->
   <i :class="classes"></i>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -29,12 +27,6 @@ export default {
       return {
         backgroundColor: this.backgroundColor,
       };
-    },
-  },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
     },
   },
 };

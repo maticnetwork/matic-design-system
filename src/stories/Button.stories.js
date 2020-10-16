@@ -1,7 +1,7 @@
 import Button from '../components/Button/Button.vue';
 
 export default {
-  title: 'Button',
+  title: 'Button (includes Icons)',
   component: Button,
   argTypes: {
     nature: { control: { type: 'select', options: [null, 'primary', 'secondary', 'link'] } },
@@ -18,7 +18,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Button'
+  label: 'Button',
 };
 
 export const Primary = Template.bind({});
@@ -37,6 +37,24 @@ export const Link = Template.bind({});
 Link.args = {
   nature: "link",
   label: 'Button Link',
+};
+
+export const PrimaryWithIcon = Template.bind({});
+PrimaryWithIcon.args = {
+  nature: "primary",
+  label: 'Button',
+  iconName: 'metamask',
+};
+
+export const OnlyIcon = Template.bind({});
+OnlyIcon.args = {
+  iconName: 'metamask'
+};
+
+export const OnlyIconPill = Template.bind({});
+OnlyIconPill.args = {
+  iconName: 'metamask',
+  variant: "pill",
 };
 
 export const Large = Template.bind({});

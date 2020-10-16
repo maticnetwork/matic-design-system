@@ -1,6 +1,8 @@
 @import "../../scss/_variables.scss";
 
 .button {
+  display: flex;
+  align-items: center;
   border: 0;
   background: light-gray-color("700");
   border-radius: 8px;
@@ -59,4 +61,9 @@
 
 .variant--pill {
   border-radius: 37px;
+}
+
+// .only-icon {} // kept for future use/reference
+.icon-with-text {
+  padding-right: 8px;
 }
