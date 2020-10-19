@@ -1,5 +1,7 @@
 # matic-design-system
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cbed49d4-ef6a-48ed-a2b8-d0810b1a71e5/deploy-status)](https://matic-design-system.netlify.app)
+
 Design system for matic products.
 
 ## Project setup
