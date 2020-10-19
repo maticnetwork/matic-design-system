@@ -1,5 +1,8 @@
 <template>
-  <i :class="classes"></i>
+  <!-- Adding html-loader with v-html to load svg inline -->
+  <!-- Add error handling in future -->
+  <i :class="classes" v-html="require(`!html-loader!./assets/${name}.svg`)">
+  </i>
 </template>
 
 <script>
@@ -19,13 +22,7 @@ export default {
     classes() {
       return {
         icon: true,
-        "nature--primary": this.nature == "primary",
-        [`icon-${this.name}`]: true,
-      };
-    },
-    style() {
-      return {
-        backgroundColor: this.backgroundColor,
+        "profile-icon": this.name.split("/")[0] == "profile",
       };
     },
   },

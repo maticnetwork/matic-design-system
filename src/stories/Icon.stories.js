@@ -14,35 +14,35 @@ const Template = (args, { argTypes }) => ({
 
 export const Login = Template.bind({});
 Login.args = {
-  name: 'metamask'
+  name: 'login/metamask'
 };
 
 export const Custom = Template.bind({});
 Custom.args = {
-  name: 'yes'
+  name: 'custom/yes'
 };
 
 export const Navbar = Template.bind({});
 Navbar.args = {
-  name: 'back-arrow'
+  name: 'navbar/back-arrow'
 };
 
 export const Monochrome = Template.bind({});
 Monochrome.args = {
-  name: 'privacy-normal'
+  name: 'monochrome/privacy/normal'
 };
 
 export const MonochromeSelected = Template.bind({});
 MonochromeSelected.args = {
-  name: 'privacy-selected'
+  name: 'monochrome/privacy/selected'
 };
 
 export const Discloser = Template.bind({});
 Discloser.args = {
-  name: 'top'
+  name: 'discloser/top'
 };
 
 export const ProfileIcons = Template.bind({});
 ProfileIcons.args = {
-  name: 'profile-1'
+  name: 'profile/profile-1'
 };
