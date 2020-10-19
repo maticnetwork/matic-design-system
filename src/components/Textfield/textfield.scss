@@ -1,0 +1,48 @@
+@import "../../scss/_variables.scss";
+
+.textfield {
+    display: flex;
+    flex-direction: column;
+    // width: 382px;
+
+    .input-field {
+        @include font-settings("body-medium");
+        border: 1px solid light-gray-color("200");
+        border-radius: 8px;
+        color: dark-gray-color("700");
+        outline: none;
+
+        :active {
+            // color: red;
+        }
+        :focus {
+            border: 1px solid dark-gray-color("100");
+            color: green;
+        }
+        ::placeholder {
+            color: dark-gray-color("100");
+        }
+
+        &.has-error {
+            border: 1px solid red-color("600");
+        }
+        &.size--large {
+            padding: 15px 16px;
+        }
+        &.size--medium {
+            padding: 10px 12px;
+        }
+    }
+
+    .help-text {
+        @include font-settings("caption-small");
+        align-self: flex-start;
+        color: dark-gray-color("300");
+        flex-grow: 0;
+        margin-top: 8px;
+
+        &.has-error {
+            color: red-color("600");
+        }
+    }
+}
