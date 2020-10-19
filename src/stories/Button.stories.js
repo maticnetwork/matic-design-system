@@ -43,17 +43,17 @@ export const PrimaryWithIcon = Template.bind({});
 PrimaryWithIcon.args = {
   nature: "primary",
   label: 'Button',
-  iconName: 'metamask',
+  iconName: 'login/metamask',
 };
 
 export const OnlyIcon = Template.bind({});
 OnlyIcon.args = {
-  iconName: 'metamask'
+  iconName: 'login/metamask'
 };
 
 export const OnlyIconPill = Template.bind({});
 OnlyIconPill.args = {
-  iconName: 'metamask',
+  iconName: 'login/metamask',
   variant: "pill",
 };
 
