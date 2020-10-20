@@ -1,0 +1,17 @@
+@import "../../scss/_variables.scss";
+
+.token-text {
+    position: relative;
+
+    .select-box {
+        position: absolute;
+    }
+    .select-box--large {
+        top: 6px;
+        right: 6px;
+    }
+    .select-box--medium {
+        top: 1px;
+        right: 1px;
+    }
+}
