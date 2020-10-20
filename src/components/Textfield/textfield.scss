@@ -3,7 +3,6 @@
 .textfield {
     display: flex;
     flex-direction: column;
-    // width: 382px;
 
     .input-field {
         @include font-settings("body-medium");
@@ -16,8 +15,8 @@
             // color: red;
         }
         :focus {
-            border: 1px solid dark-gray-color("100");
-            color: green;
+            // border: 1px solid dark-gray-color("100");
+            // color: green;
         }
         ::placeholder {
             color: dark-gray-color("100");
@@ -34,15 +33,47 @@
         }
     }
 
-    .help-text {
-        @include font-settings("caption-small");
-        align-self: flex-start;
-        color: dark-gray-color("300");
-        flex-grow: 0;
-        margin-top: 8px;
+    .hint-text-container {
+        display: flex;
+        justify-content: space-between;
 
-        &.has-error {
-            color: red-color("600");
+        .hint-text {
+            @include font-settings("caption-small");
+            color: dark-gray-color("300");
+            flex-grow: 0;
+            margin-top: 8px;
+
+            &.has-error {
+                color: red-color("600");
+            }
         }
+        // .hint-text--left {}
+        // .hint-text--right {}
+    }
+
+    .text-field--icon {
+        text-indent: 32px;
+    }
+
+    .icon-left--large {
+        position: absolute;
+        top: 30px;
+        left: 32px;
+    }
+    .icon-left--medium {
+        position: absolute;
+        top: 26px;
+        left: 24px;
+    }
+
+    .icon-right--large {
+        position: absolute;
+        top: 30px;
+        right: 32px;
+    }
+    .icon-right--medium {
+        position: absolute;
+        top: 26px;
+        right: 24px;
     }
 }

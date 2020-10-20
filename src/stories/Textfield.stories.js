@@ -5,6 +5,7 @@ export default {
     component: Textfield,
     argTypes: {
         size: { control: { type: 'select', options: ['medium', 'large'] } },
+        size: { control: { type: 'select', options: ['text', 'number'] } },
     },
 };
 
@@ -18,6 +19,8 @@ export const Default = Template.bind({});
 Default.args = {
     size: "medium",
     placeholder: "Edit me!",
+    type: "number",
+
 };
 
 export const Large = Template.bind({});
@@ -30,4 +33,19 @@ export const Error = Template.bind({});
 Error.args = {
     hasError: true,
     placeholder: "Something`s not right!",
+};
+
+export const HintTexts = Template.bind({});
+HintTexts.args = {
+    hasError: true,
+    placeholder: "Left and right hint texts!",
+    hintText: "Hint text here!",
+    hintTextRight: "Hint this side!",
+};
+
+export const WithIcons = Template.bind({});
+WithIcons.args = {
+    placeholder: "Can keep any one icon!",
+    iconLeft: "navbar/search",
+    iconRight: "navbar/close",
 };
