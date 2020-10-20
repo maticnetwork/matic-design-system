@@ -1,7 +1,8 @@
 <template>
-  <button :class="classes" @click="onClick" :disabled="disabled">
-    <Icon :class="iconClasses" :name="iconName" v-if="iconName" />
+  <button :class="classes" @click="onClick" :disabled="disabled" :style="style">
+    <Icon :class="iconLeftClasses" :name="iconName" v-if="iconName" />
     {{ label }}
+    <Icon class="icon-right" :name="iconNameRight" v-if="iconNameRight" />
   </button>
 </template>
 
@@ -15,6 +16,19 @@ export default {
   components: { Icon },
 
   props: {
+    backgroundColor: {
+      type: String,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    iconName: {
+      type: String,
+    },
+    iconNameRight: {
+      type: String,
+    },
     label: {
       type: String,
       required: true,
@@ -32,18 +46,11 @@ export default {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       },
     },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
     variant: {
       type: String,
       validator: function (value) {
         return ["pill"].indexOf(value) !== -1;
       },
-    },
-    iconName: {
-      type: String,
     },
   },
 
@@ -58,10 +65,20 @@ export default {
         "variant--pill": this.variant == "pill",
       };
     },
-    iconClasses() {
+    iconLeftClasses() {
       return {
         "only-icon": !this.label && this.iconName,
         "icon-with-text": this.label && this.iconName,
+      };
+    },
+    iconRightClasses() {
+      return {
+        "icon-right": this.iconNameRight,
+      };
+    },
+    style() {
+      return {
+        backgroundColor: this.backgroundColor,
       };
     },
   },
