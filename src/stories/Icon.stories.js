@@ -9,7 +9,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Icon },
-  template: '<Icon @onClick="onClick" v-bind="$props" />',
+  template: '<Icon v-bind="$props" />',
 });
 
 export const Login = Template.bind({});
