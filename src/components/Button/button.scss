@@ -10,6 +10,10 @@
   color: dark-gray-color("700");
   cursor: pointer;
   outline: none;
+
+  &.button--inline {
+    display: inline-flex;
+  }
   &:active {
     background: light-gray-color("600");
   }

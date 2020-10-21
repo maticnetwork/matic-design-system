@@ -29,6 +29,10 @@ export default {
     iconNameRight: {
       type: String,
     },
+    inline: {
+      type: Boolean,
+      default: false,
+    },
     label: {
       type: String,
       required: true,
@@ -63,6 +67,7 @@ export default {
         "nature--link": this.nature == "link",
         [`size--${this.size}`]: true,
         "variant--pill": this.variant == "pill",
+        "button--inline": this.inline == true,
       };
     },
     iconLeftClasses() {
