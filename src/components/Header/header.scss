@@ -1,0 +1,60 @@
+@import "../../scss/_variables.scss";
+
+.header {
+    align-items: center;
+    background-color: light-gray-color("700");
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 32px;
+
+    .header-left {
+        .app-name {
+            color: dark-gray-color("500") !important;
+            display: inline-block;
+            font-size: 23px;
+            line-height: 145%;
+            margin-top: 3px;
+            padding: 6px 6px 6px 0;
+        }
+    }
+
+    .header-right {
+        > * {
+            vertical-align: middle;
+            margin-left: 12px;
+        }
+
+        .icon-count {
+            @include font-settings("heading-h4");
+            border-radius: 50%;
+            color: #ffffff;
+            margin-right: 8px;
+            padding: 2px 11px;
+
+            &.status--action {
+                background-color: primary-color("600");
+            }
+            &.status--progress {
+                background-color: yellow-color("700");
+            }
+        }
+
+        .login-button {
+            svg {
+                path {
+                    fill: #ffffff;
+                }
+            }
+        }
+        .transaction-status {
+            @include font-settings("body-small");
+            color: dark-gray-color("600");
+        }
+        .metamask-address {
+            @include font-settings("body-medium");
+        }
+    }
+    .display-none {
+        display: none;
+    }
+}

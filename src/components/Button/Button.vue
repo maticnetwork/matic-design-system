@@ -1,6 +1,7 @@
 <template>
   <button :class="classes" @click="onClick" :disabled="disabled" :style="style">
     <Icon :class="iconLeftClasses" :name="iconName" v-if="iconName" />
+    <slot></slot>
     {{ label }}
     <Icon class="icon-right" :name="iconNameRight" v-if="iconNameRight" />
   </button>
@@ -28,6 +29,10 @@ export default {
     },
     iconNameRight: {
       type: String,
+    },
+    inline: {
+      type: Boolean,
+      default: false,
     },
     label: {
       type: String,
@@ -63,6 +68,7 @@ export default {
         "nature--link": this.nature == "link",
         [`size--${this.size}`]: true,
         "variant--pill": this.variant == "pill",
+        "button--inline": this.inline == true,
       };
     },
     iconLeftClasses() {
