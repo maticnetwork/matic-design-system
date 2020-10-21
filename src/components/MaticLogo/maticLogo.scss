@@ -1,50 +1,51 @@
 @import "../../scss/_variables.scss";
 
 .logo {
+    box-sizing: border-box;
     display: inline;
+    height: auto;
+    width: auto;
     svg {
         // svg spacing issue
         float: left;
         margin-left: -2px;
     }
-}
-
-.logo--symbol {
-    svg {
-        height: 315px;
-        width: 315px;
-    }
-}
-
-.logo--horizontal {
-    height: 315px;
-    width: 773px;
-}
-
-//
-// Size Configuration
-//
-
-// add classes for different sizes as and when required
-// and pass the name in size prop
-// eg. size="header"
-// and add it to prop validator
-
-.logo--symbol {
-    // example
-    // &.logo-size--header {
-    //     svg {
-    //         height: 50px;
-    //         width: 50px;
-    //     }
-    // }
-}
-
-.logo--horizontal {
-    &.logo-size--header {
+    &.logo--symbol {
         svg {
-            height: 48px;
-            width: 120px;
+            height: 315px;
+            width: 315px;
+        }
+    }
+    &.logo--horizontal {
+        height: 315px;
+        width: 773px;
+    }
+
+    //
+    // Size Configuration
+    //
+
+    // add classes for different sizes as and when required
+    // and pass the name in size prop
+    // eg. size="header"
+    // and add it to prop validator
+
+    &.logo--symbol {
+        // example
+        // &.logo-size--header {
+        //     svg {
+        //         height: 50px;
+        //         width: 50px;
+        //     }
+        // }
+    }
+
+    &.logo--horizontal {
+        &.logo-size--header {
+            svg {
+                height: 48px;
+                width: 120px;
+            }
         }
     }
 }
