@@ -1,6 +1,7 @@
 <template>
   <button :class="classes" @click="onClick" :disabled="disabled" :style="style">
     <Icon :class="iconLeftClasses" :name="iconName" v-if="iconName" />
+    <slot></slot>
     {{ label }}
     <Icon class="icon-right" :name="iconNameRight" v-if="iconNameRight" />
   </button>
