@@ -3,6 +3,7 @@
 .textfield {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     .input-field {
         @include font-settings("body-medium");
@@ -57,23 +58,23 @@
 
     .icon-left--large {
         position: absolute;
-        top: 30px;
-        left: 32px;
+        top: 16px;
+        left: 16px;
     }
     .icon-left--medium {
         position: absolute;
-        top: 26px;
-        left: 24px;
+        top: 12px;
+        left: 12px;
     }
 
     .icon-right--large {
         position: absolute;
-        top: 30px;
-        right: 32px;
+        top: 16px;
+        right: 16px;
     }
     .icon-right--medium {
         position: absolute;
-        top: 26px;
-        right: 24px;
+        top: 12px;
+        right: 12px;
     }
 }

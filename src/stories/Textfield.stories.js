@@ -5,7 +5,7 @@ export default {
     component: Textfield,
     argTypes: {
         size: { control: { type: 'select', options: ['medium', 'large'] } },
-        size: { control: { type: 'select', options: ['text', 'number'] } },
+        type: { control: { type: 'select', options: ['text', 'number'] } },
     },
 };
 

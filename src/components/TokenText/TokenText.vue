@@ -59,7 +59,7 @@ export default {
       };
     },
     buttonSize() {
-      return this.size === large ? "medium" : "small";
+      return this.size == "large" ? "medium" : "small";
     },
   },
 };
