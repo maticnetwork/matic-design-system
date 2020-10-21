@@ -1,7 +1,12 @@
 @import "../../scss/_variables.scss";
 
 .logo {
-    display: inline-block;
+    display: inline;
+    svg {
+        // svg spacing issue
+        float: left;
+        margin-left: -2px;
+    }
 }
 
 .logo--symbol {
