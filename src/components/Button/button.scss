@@ -14,6 +14,51 @@
   &.button--inline {
     display: inline-flex;
   }
+  &.nature--link {
+    background: transparent;
+    box-shadow: none;
+    color: dark-gray-color("700");
+    &:active {
+      background: light-gray-color("500");
+    }
+  }
+  &.nature--primary {
+    color: light-gray-color("700");
+    background: primary-color("600");
+    &:active {
+      background: primary-color("700");
+    }
+  }
+  &.nature--secondary {
+    color: light-gray-color("700");
+    background: dark-gray-color("700");
+    &:active {
+      background: dark-gray-color("600");
+    }
+  }
+  &.size--small {
+    @include font-settings("heading-h6");
+    height: 34px;
+    padding: 7px 12px;
+
+    &.icon--only {
+      padding: 5px;
+      color: red;
+    }
+  }
+  &.size--medium {
+    @include font-settings("heading-h5");
+    height: 44px;
+    padding: 10px 12px;
+  }
+  &.size--large {
+    @include font-settings("heading-h4");
+    height: 54px;
+    padding: 14px 20px;
+  }
+  &.variant--pill {
+    border-radius: 37px;
+  }
   &:active {
     background: light-gray-color("600");
   }
@@ -21,57 +66,11 @@
     background: light-gray-color("600");
     color: light-gray-color("100");
   }
-}
-
-.nature--primary {
-  color: light-gray-color("700");
-  background: primary-color("600");
-  &:active {
-    background: primary-color("700");
+  // .only-icon {} // kept for future use/reference
+  .icon-with-text {
+    padding-right: 8px;
   }
-}
-.nature--secondary {
-  color: light-gray-color("700");
-  background: dark-gray-color("700");
-  &:active {
-    background: dark-gray-color("600");
+  .icon-right {
+    padding-left: 8px;
   }
-}
-.nature--link {
-  background: transparent;
-  box-shadow: none;
-  color: dark-gray-color("700");
-  &:active {
-    background: light-gray-color("500");
-  }
-}
-.size--small {
-  @include font-settings("heading-h6");
-  padding: 7px 12px;
-
-  &.icon--only {
-    padding: 5px;
-    color: red;
-  }
-}
-.size--medium {
-  @include font-settings("heading-h5");
-  padding: 10px 12px;
-}
-.size--large {
-  @include font-settings("heading-h4");
-  padding: 14px 20px;
-}
-
-.variant--pill {
-  border-radius: 37px;
-}
-
-// .only-icon {} // kept for future use/reference
-.icon-with-text {
-  padding-right: 8px;
-}
-
-.icon-right {
-  padding-left: 8px;
 }
