@@ -28,7 +28,7 @@
             @include font-settings("heading-h4");
             border-radius: 50%;
             color: #ffffff;
-            margin-right: 8px;
+            // margin-right: 8px;
             padding: 2px 11px;
 
             &.status--action {
@@ -49,9 +49,84 @@
         .transaction-status {
             @include font-settings("body-small");
             color: dark-gray-color("600");
+            box-shadow: unset;
         }
         .metamask-address {
             @include font-settings("body-medium");
+            box-shadow: unset;
+        }
+
+        .dropdown {
+            float: left;
+            // overflow: hidden;
+            .dropdown-menu {
+                background: light-gray-color("700");
+                border-radius: 12px;
+                box-shadow: 0px 24px 50px rgba(0, 0, 0, 0.15);
+                display: none;
+                min-height: 540px;
+                min-width: 446px;
+                position: absolute;
+                transform: translate(-50%, 0);
+                z-index: 1;
+
+                .dropdown-header {
+                    @include font-settings("heading-h5");
+                    border-bottom: 1px solid #e7e9ee;
+                    padding: 20px 0;
+                    text-align: center;
+                }
+
+                > :not(:last-child) {
+                    border-bottom: 1px solid #f3f4f7;
+                }
+                .dropdown-body {
+                    .transaction-item {
+                        color: black; //change it
+                        padding: 15px;
+                        display: flex;
+                        align-items: center;
+                        .transaction-item-left {
+                            position: relative;
+                            .transaction-token-icon {
+                                display: inline-flex;
+                                height: 50px;
+                                width: 50px;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            .transaction-status-icon {
+                                position: absolute;
+                                right: 0;
+                            }
+                        }
+                        .transaction-item-right {
+                            display: inline-flex;
+                            flex-direction: column;
+                            .transaction-title {
+                                font-size: 14px;
+                                line-height: 20px;
+                                .transaction-type {
+                                    text-transform: capitalize;
+                                }
+                                .transaction-amount {
+                                    color: primary-color("600");
+                                }
+                            }
+                            .transaction-subtitle {
+                                display: flex;
+                                align-items: center;
+                                color: dark-gray-color("300");
+                                font-size: 12px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover .dropdown-menu {
+                display: block;
+            }
         }
     }
     .display-none {
