@@ -1,6 +1,6 @@
 @import "../../scss/_variables.scss";
 
-.header {
+.m-header {
     align-items: center;
     background-color: light-gray-color("700");
     display: flex;
@@ -50,14 +50,20 @@
             @include font-settings("body-small");
             color: dark-gray-color("600");
             box-shadow: unset;
+            outline: none;
         }
         .metamask-address {
             @include font-settings("body-medium");
             box-shadow: unset;
+            outline: none;
+        }
+        .app-button {
+            outline: none;
         }
 
-        .dropdown {
+        .m-dropdown {
             float: left;
+            position: relative;
             // overflow: hidden;
             .dropdown-menu {
                 background: light-gray-color("700");
