@@ -1,12 +1,13 @@
 <template>
-  <div class="header">
+  <div class="m-header">
     <div class="header-left">
       <MaticLogo variant="horizontal" size="header" />
       <div class="app-name">{{ appName }}</div>
     </div>
     <div class="header-right">
-      <div class="dropdown">
+      <div class="m-dropdown">
         <Button
+          class="app-button"
           iconName="navbar/menu"
           inline
           label="Apps"
@@ -15,7 +16,7 @@
           variant="pill"
         />
       </div>
-      <div class="dropdown">
+      <div class="m-dropdown">
         <Button
           backgroundColor="#F3F4F7"
           class="transaction-status"
@@ -165,7 +166,7 @@ export default {
     },
     transactionStatusClasses() {
       return {
-        "display-none": !this.transactionCount || this.transactionCount <= 0,
+        "display-none": !this.transactionCount || this.transactionCount < 0,
       };
     },
     transactionStatusIconClasses() {
@@ -183,19 +184,19 @@ export default {
       return (transactionType, transactionStatusCode) => {
         if (transactionType == "withdraw") {
           switch (transactionStatusCode) {
-            case 1:
-              return "Burn tx pending";
-            case 2:
+            case -1:
+              return "Burn transaction pending";
+            case -2:
               return "Checkpointed";
-            case 3:
+            case -3:
               return "Exit transaction pending";
-            case 4:
+            case -4:
               return "Exit transaction failed";
-            case 5:
+            case -5:
               return "Exit transaction completed";
-            case 6:
+            case -6:
               return "Burn transaction failed";
-            case 7:
+            case -7:
               return "In checkpoint";
           }
         } else if (transactionType == "deposit") {
