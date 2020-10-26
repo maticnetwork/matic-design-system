@@ -18,7 +18,9 @@
         <div class="dropdown-menu dropdown-app-menu">
           <div class="app-item" :key="app.name" v-for="app in appList">
             <nuxt-link class="nuxt-link-component" :to="app.link">
-              <div class="app-item-left"><Icon :name="app.icon" /></div>
+              <div class="app-item-left">
+                <img :src="appMenuIconPath(app.icon)" />
+              </div>
               <div class="app-item-right">
                 <div class="app-item-title">{{ app.name }}</div>
                 <div class="app-item-description">{{ app.description }}</div>
@@ -245,6 +247,9 @@ export default {
   },
 
   computed: {
+    appMenuIconPath() {
+      return (name) => require(`./assets/${name}.png`);
+    },
     countIconClasses() {
       return {
         [`status--${this.transactionStatus}`]: true,
@@ -344,31 +349,31 @@ export default {
       appList: [
         {
           name: "Matic Bridge",
-          icon: "appmenu/matic-bridge",
+          icon: "bridge",
           description: "Deposit and withdraw between networks",
           link: { name: "bridge" },
         },
         {
           name: "Matic Wallet",
-          icon: "appmenu/matic-wallet",
+          icon: "wallet",
           description: "Send and receive crypto assets on Matic network",
           link: { name: "index-index" },
         },
         {
           name: "Staking",
-          icon: "appmenu/staking",
+          icon: "staking",
           description: "Stake matic and earn rewards",
           link: { name: "index-staking" },
         },
         {
           name: "Developer Portal",
-          icon: "appmenu/developer-portal",
+          icon: "developer",
           description: "Create widget and API Webhoo for your dapps.",
           link: { name: "index-developers" },
         },
         {
           name: "NFT Marketplace",
-          icon: "appmenu/nft-marketplace",
+          icon: "nftmarketplace",
           description: "Sell and buy unique collectibles on Matic network.",
           link: { name: "index-index" },
         },
