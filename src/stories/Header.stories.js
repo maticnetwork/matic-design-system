@@ -18,6 +18,8 @@ export const Default = Template.bind({});
 Default.args = {
     appName: 'Wallet',
     metamaskAddress: '0x2bjh34jb42bjh34jb42bjh34jb42bjh34jb4',
+    userFormattedAddress: 'Account Name',
+    userProfilePic: 'profile/profile-1',
     transactionCount: 2,
     transactionStatus: 'progress',
     transactionText: 'Action In Progress',

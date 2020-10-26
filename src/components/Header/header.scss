@@ -7,6 +7,12 @@
     justify-content: space-between;
     padding: 18px 32px;
 
+    // sticky header
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
     .header-left {
         .app-name {
             color: dark-gray-color("500") !important;
@@ -76,61 +82,185 @@
                 transform: translate(-50%, 0);
                 z-index: 1;
 
-                .dropdown-header {
-                    @include font-settings("heading-h5");
-                    border-bottom: 1px solid #e7e9ee;
-                    padding: 20px 0;
-                    text-align: center;
-                }
+                &.dropdown-transaction-history {
+                    .dropdown-header {
+                        @include font-settings("heading-h5");
+                        border-bottom: 1px solid #e7e9ee;
+                        padding: 20px 0;
+                        text-align: center;
+                    }
 
-                > :not(:last-child) {
-                    border-bottom: 1px solid #f3f4f7;
-                }
-                .dropdown-body {
-                    .transaction-item {
-                        color: black; //change it
-                        padding: 15px;
-                        display: flex;
-                        align-items: center;
-                        .transaction-item-left {
-                            position: relative;
-                            .transaction-token-icon {
+                    > :not(:last-child) {
+                        border-bottom: 1px solid #f3f4f7;
+                    }
+                    .dropdown-body {
+                        .transaction-item {
+                            color: black; //change it
+                            padding: 15px;
+                            display: flex;
+                            align-items: center;
+                            .transaction-item-left {
+                                position: relative;
+                                .transaction-token-icon {
+                                    display: inline-flex;
+                                    height: 50px;
+                                    width: 50px;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                .transaction-status-icon {
+                                    position: absolute;
+                                    right: 0;
+                                }
+                            }
+                            .transaction-item-right {
                                 display: inline-flex;
-                                height: 50px;
-                                width: 50px;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                            .transaction-status-icon {
-                                position: absolute;
-                                right: 0;
-                            }
-                        }
-                        .transaction-item-right {
-                            display: inline-flex;
-                            flex-direction: column;
-                            .transaction-title {
-                                font-size: 14px;
-                                line-height: 20px;
-                                .transaction-type {
-                                    text-transform: capitalize;
+                                flex-direction: column;
+                                .transaction-title {
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    .transaction-type {
+                                        text-transform: capitalize;
+                                    }
+                                    .transaction-amount {
+                                        color: primary-color("600");
+                                    }
                                 }
-                                .transaction-amount {
-                                    color: primary-color("600");
+                                .transaction-subtitle {
+                                    display: flex;
+                                    align-items: center;
+                                    color: dark-gray-color("300");
+                                    font-size: 12px;
+                                    line-height: 16px;
                                 }
-                            }
-                            .transaction-subtitle {
-                                display: flex;
-                                align-items: center;
-                                color: dark-gray-color("300");
-                                font-size: 12px;
-                                line-height: 16px;
                             }
                         }
                     }
                 }
+
+                &.dropdown-app-menu {
+                    // display: flex;
+                    // position: relative;
+                    min-height: auto;
+                    > :not(:last-child) {
+                        border-bottom: 1px solid #f3f4f7;
+                    }
+                    :hover {
+                        background: light-gray-color("500");
+                    }
+                    .app-item {
+                        color: black; //change itÏ
+                        display: flex;
+                        flex-direction: row;
+                        padding: 24px;
+                        .nuxt-link-component {
+                            color: inherit;
+                            display: inherit;
+
+                            .app-item-left {
+                                margin-right: 24px;
+                            }
+                            .app-item-right {
+                                .app-item-title {
+                                    @include font-settings("heading-h5");
+                                }
+                                .app-item-description {
+                                    @include font-settings("body-small", "regular");
+                                    color: dark-gray-color("500");
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.dropdown-login-component {
+                    min-width: 445px;
+                    min-height: auto;
+                    .profile-info {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 32px;
+                        .profile-info-left {
+                            display: flex;
+                            height: 64px;
+                            width: 64px;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .profile-info-right {
+                            margin-left: 20px;
+                            .account-name {
+                                @include font-settings("body-small");
+                                color: black;
+                                font-weight: 500;
+                            }
+                            .account-key {
+                                color: dark-gray-color("300");
+                                background: light-gray-color("500");
+                                border-radius: 4px;
+                                padding: 9px;
+                                margin-top: 10px;
+                                font-family: Graphik;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 10px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                    .profile-dropdown-list,
+                    .profile-matic-explorer {
+                        @include font-settings("body-medium");
+                        border-top: 1px solid #f3f4f7;
+                        color: dark-gray-color("500");
+                        padding: 12px 0px;
+                        .profile-dropdown-list-item {
+                            margin: 0 12px;
+                            display: flex;
+                            // justify-content: center;
+                            align-items: center;
+                            .profile-dropdown-item-icon {
+                                margin: 14px 18px 14px 22px;
+                            }
+                            .profile-dropdown-item-text {
+                                // margin-left: 18px;
+                                padding: 12px 12px 12px 0;
+                            }
+                            .selected {
+                                display: none;
+                            }
+                            &:hover {
+                                background: light-gray-color("600");
+                                border-radius: 4px;
+                                color: primary-color("600");
+                                .normal {
+                                    display: none;
+                                }
+                                .selected {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .nuxt-link,
+                a {
+                    :link :visited,
+                    :active {
+                        color: dark-gray-color("500") !important;
+                        text-decoration: inherit;
+                        cursor: auto;
+                    }
+                }
             }
-            &:hover .dropdown-menu {
+            &:hover .dropdown-transaction-history {
+                display: block;
+            }
+            &:hover .dropdown-app-menu {
+                display: block;
+            }
+            &:hover .dropdown-login-component {
                 display: block;
             }
         }

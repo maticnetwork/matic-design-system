@@ -15,6 +15,17 @@
           size="medium"
           variant="pill"
         />
+        <div class="dropdown-menu dropdown-app-menu">
+          <div class="app-item" :key="app.name" v-for="app in appList">
+            <nuxt-link class="nuxt-link-component" :to="app.link">
+              <div class="app-item-left"><Icon :name="app.icon" /></div>
+              <div class="app-item-right">
+                <div class="app-item-title">{{ app.name }}</div>
+                <div class="app-item-description">{{ app.description }}</div>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
       </div>
       <div class="m-dropdown">
         <Button
@@ -30,7 +41,7 @@
             {{ transactionCount }}
           </div>
         </Button>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu dropdown-transaction-history">
           <div class="dropdown-header">Transaction History</div>
           <div class="dropdown-body">
             <div
@@ -75,17 +86,99 @@
           </div>
         </div>
       </div>
-      <Button
-        class="metamask-address"
-        :class="metamaskAddressClasses"
-        :label="shortMetamaskAddress"
-        iconName="login/metamask"
-        iconNameRight="discloser/bottom"
-        size="medium"
-        variant="pill"
-        backgroundColor="#F3F4F7"
-        inline
-      />
+      <div class="m-dropdown">
+        <Button
+          class="metamask-address"
+          :class="metamaskAddressClasses"
+          :label="shortMetamaskAddress"
+          iconName="login/metamask"
+          iconNameRight="discloser/bottom"
+          size="medium"
+          variant="pill"
+          backgroundColor="#F3F4F7"
+          inline
+        />
+        <div class="dropdown-menu dropdown-login-component">
+          <div class="profile-info">
+            <div class="profile-info-left">
+              <Icon name="profile/profile-1" v-if="!userProfilePic" />
+              <img
+                v-if="userProfilePic"
+                :src="userProfilePic"
+                :alt="userFormattedAddress"
+              />
+            </div>
+            <div class="profile-info-right">
+              <div class="account-name">{{ userFormattedAddress }}</div>
+              <div class="account-key" @click="copyUserAddress">
+                {{ metamaskAddress }}
+              </div>
+            </div>
+          </div>
+          <div class="profile-dropdown-list">
+            <div class="profile-dropdown-list-item" @click="openQrCode">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                name="monochrome/qr-code-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                name="monochrome/qr-code-selected"
+              />
+              <span class="profile-dropdown-item-text">Show QR Code</span>
+            </div>
+            <nuxt-link class="nuxt-link" :to="{ name: 'index-index-contacts' }">
+              <div class="profile-dropdown-list-item">
+                <Icon
+                  class="profile-dropdown-item-icon normal"
+                  :class="profileDropdownIconNormalClasses"
+                  name="monochrome/user-normal"
+                />
+                <Icon
+                  class="profile-dropdown-item-icon selected"
+                  :class="profileDropdownIconSelectedClasses"
+                  name="monochrome/user-selected"
+                />
+                <span class="profile-dropdown-item-text">Contacts</span>
+              </div>
+            </nuxt-link>
+            <div class="profile-dropdown-list-item" @click="logout">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                :class="profileDropdownIconNormalClasses"
+                name="monochrome/logout-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                :class="profileDropdownIconSelectedClasses"
+                name="monochrome/logout-selected"
+              />
+              <span class="profile-dropdown-item-text">Logout</span>
+            </div>
+          </div>
+          <div class="profile-matic-explorer">
+            <a
+              :href="maticExplorerLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="profile-dropdown-list-item">
+                <Icon
+                  class="profile-dropdown-item-icon normal"
+                  :class="profileDropdownIconNormalClasses"
+                  name="monochrome/matic-explorer-normal"
+                />
+                <Icon
+                  class="profile-dropdown-item-icon selected"
+                  :class="profileDropdownIconSelectedClasses"
+                  name="monochrome/matic-explorer-selected"
+                />
+                <span class="profile-dropdown-item-text">Matic Explorer</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
       <Button
         class="login-button"
         :class="loginButtonClasses"
@@ -140,6 +233,12 @@ export default {
     transactions: {
       type: Array,
     },
+    userFormattedAddress: {
+      type: String,
+    },
+    userProfilePic: {
+      type: String,
+    },
     // onTransactionClick: {
     //   type: Function,
     // },
@@ -155,6 +254,9 @@ export default {
       return {
         "display-none": this.metamaskAddress,
       };
+    },
+    maticExplorerLink() {
+      return `https://explorer.matic.network/address/${this.metamaskAddress}/transactions`;
     },
     metamaskAddressClasses() {
       return {
@@ -225,6 +327,52 @@ export default {
     handleTransactionClick(tx) {
       this.$emit("onTransactionClick", tx);
     },
+    copyUserAddress() {
+      this.$emit("onCopyUserAddress");
+    },
+    openQrCode() {
+      this.$emit("onOpenQrCode");
+    },
+    logout() {
+      this.$emit("onLogout");
+    },
+  },
+
+  data() {
+    return {
+      appList: [
+        {
+          name: "Matic Bridge",
+          icon: "appmenu/matic-bridge",
+          description: "Deposit and withdraw between networks",
+          link: { name: "bridge" },
+        },
+        {
+          name: "Matic Wallet",
+          icon: "appmenu/matic-wallet",
+          description: "Send and receive crypto assets on Matic network",
+          link: { name: "index-index" },
+        },
+        {
+          name: "Staking",
+          icon: "appmenu/staking",
+          description: "Stake matic and earn rewards",
+          link: { name: "index-staking" },
+        },
+        {
+          name: "Developer Portal",
+          icon: "appmenu/developer-portal",
+          description: "Create widget and API Webhoo for your dapps.",
+          link: { name: "index-developers" },
+        },
+        {
+          name: "NFT Marketplace",
+          icon: "appmenu/nft-marketplace",
+          description: "Sell and buy unique collectibles on Matic network.",
+          link: { name: "index-index" },
+        },
+      ],
+    };
   },
 };
 </script>

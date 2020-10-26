@@ -27,6 +27,7 @@ export default {
       return {
         icon: true,
         "profile-icon": this.name.split("/")[0] == "profile",
+        "appmenu-icon": this.name.split("/")[0] == "appmenu",
       };
     },
   },
