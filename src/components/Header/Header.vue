@@ -15,6 +15,15 @@
           size="medium"
           variant="pill"
         />
+        <div class="dropdown-menu dropdown-app-menu">
+          <div class="app-item" :key="app.name" v-for="app in appList">
+            <div class="app-item-left"><Icon :name="app.icon" /></div>
+            <div class="app-item-right">
+              <div class="app-item-title">{{ app.name }}</div>
+              <div class="app-item-description">{{ app.description }}</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="m-dropdown">
         <Button
@@ -30,7 +39,7 @@
             {{ transactionCount }}
           </div>
         </Button>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu dropdown-transaction-history">
           <div class="dropdown-header">Transaction History</div>
           <div class="dropdown-body">
             <div
@@ -225,6 +234,38 @@ export default {
     handleTransactionClick(tx) {
       this.$emit("onTransactionClick", tx);
     },
+  },
+
+  data() {
+    return {
+      appList: [
+        {
+          name: "Matic Bridge",
+          icon: "appmenu/matic-bridge",
+          description: "Deposit and withdraw between networks",
+        },
+        {
+          name: "Matic Wallet",
+          icon: "appmenu/matic-wallet",
+          description: "Send and receive crypto assets on Matic network",
+        },
+        {
+          name: "Staking",
+          icon: "appmenu/staking",
+          description: "Stake matic and earn rewards",
+        },
+        {
+          name: "Developer Portal",
+          icon: "appmenu/developer-portal",
+          description: "Create widget and API Webhoo for your dapps.",
+        },
+        {
+          name: "NFT Marketplace",
+          icon: "appmenu/nft-marketplace",
+          description: "Sell and buy unique collectibles on Matic network.",
+        },
+      ],
+    };
   },
 };
 </script>

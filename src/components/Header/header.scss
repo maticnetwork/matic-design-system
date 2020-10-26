@@ -76,61 +76,95 @@
                 transform: translate(-50%, 0);
                 z-index: 1;
 
-                .dropdown-header {
-                    @include font-settings("heading-h5");
-                    border-bottom: 1px solid #e7e9ee;
-                    padding: 20px 0;
-                    text-align: center;
-                }
+                &.dropdown-transaction-history {
+                    .dropdown-header {
+                        @include font-settings("heading-h5");
+                        border-bottom: 1px solid #e7e9ee;
+                        padding: 20px 0;
+                        text-align: center;
+                    }
 
-                > :not(:last-child) {
-                    border-bottom: 1px solid #f3f4f7;
-                }
-                .dropdown-body {
-                    .transaction-item {
-                        color: black; //change it
-                        padding: 15px;
-                        display: flex;
-                        align-items: center;
-                        .transaction-item-left {
-                            position: relative;
-                            .transaction-token-icon {
-                                display: inline-flex;
-                                height: 50px;
-                                width: 50px;
-                                justify-content: center;
-                                align-items: center;
+                    > :not(:last-child) {
+                        border-bottom: 1px solid #f3f4f7;
+                    }
+                    .dropdown-body {
+                        .transaction-item {
+                            color: black; //change it
+                            padding: 15px;
+                            display: flex;
+                            align-items: center;
+                            .transaction-item-left {
+                                position: relative;
+                                .transaction-token-icon {
+                                    display: inline-flex;
+                                    height: 50px;
+                                    width: 50px;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                                .transaction-status-icon {
+                                    position: absolute;
+                                    right: 0;
+                                }
                             }
-                            .transaction-status-icon {
-                                position: absolute;
-                                right: 0;
+                            .transaction-item-right {
+                                display: inline-flex;
+                                flex-direction: column;
+                                .transaction-title {
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    .transaction-type {
+                                        text-transform: capitalize;
+                                    }
+                                    .transaction-amount {
+                                        color: primary-color("600");
+                                    }
+                                }
+                                .transaction-subtitle {
+                                    display: flex;
+                                    align-items: center;
+                                    color: dark-gray-color("300");
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                }
                             }
                         }
-                        .transaction-item-right {
-                            display: inline-flex;
-                            flex-direction: column;
-                            .transaction-title {
-                                font-size: 14px;
-                                line-height: 20px;
-                                .transaction-type {
-                                    text-transform: capitalize;
-                                }
-                                .transaction-amount {
-                                    color: primary-color("600");
-                                }
+                    }
+                }
+
+                &.dropdown-app-menu {
+                    // display: flex;
+                    // position: relative;
+                    min-height: auto;
+                    > :not(:last-child) {
+                        border-bottom: 1px solid #f3f4f7;
+                    }
+                    :hover {
+                        background: light-gray-color("500");
+                    }
+                    .app-item {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 24px;
+                        .app-item-left {
+                            margin-right: 24px;
+                        }
+                        .app-item-right {
+                            .app-item-title {
+                                @include font-settings("heading-h5");
                             }
-                            .transaction-subtitle {
-                                display: flex;
-                                align-items: center;
-                                color: dark-gray-color("300");
-                                font-size: 12px;
-                                line-height: 16px;
+                            .app-item-description {
+                                @include font-settings("body-small", "regular");
+                                color: dark-gray-color("500");
                             }
                         }
                     }
                 }
             }
-            &:hover .dropdown-menu {
+            &:hover .dropdown-transaction-history {
+                display: block;
+            }
+            &:hover .dropdown-app-menu {
                 display: block;
             }
         }
