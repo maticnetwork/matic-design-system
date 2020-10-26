@@ -268,7 +268,8 @@ export default {
     },
     transactionStatusClasses() {
       return {
-        "display-none": !this.transactionCount || this.transactionCount < 0,
+        "": true,
+        // "display-none": !this.transactionCount || this.transactionCount < 0,
       };
     },
     transactionStatusIconClasses() {
