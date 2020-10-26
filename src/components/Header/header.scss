@@ -7,6 +7,12 @@
     justify-content: space-between;
     padding: 18px 32px;
 
+    // sticky header
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
     .header-left {
         .app-name {
             color: dark-gray-color("500") !important;
@@ -185,6 +191,7 @@
                             margin-left: 20px;
                             .account-name {
                                 @include font-settings("body-small");
+                                color: black;
                                 font-weight: 500;
                             }
                             .account-key {
@@ -234,6 +241,16 @@
                                 }
                             }
                         }
+                    }
+                }
+
+                .nuxt-link,
+                a {
+                    :link :visited,
+                    :active {
+                        color: dark-gray-color("500") !important;
+                        text-decoration: inherit;
+                        cursor: auto;
                     }
                 }
             }

@@ -100,14 +100,23 @@
         />
         <div class="dropdown-menu dropdown-login-component">
           <div class="profile-info">
-            <div class="profile-info-left"><Icon :name="userProfilePic" /></div>
+            <div class="profile-info-left">
+              <Icon name="profile/profile-1" v-if="!userProfilePic" />
+              <img
+                v-if="userProfilePic"
+                :src="userProfilePic"
+                :alt="userFormattedAddress"
+              />
+            </div>
             <div class="profile-info-right">
               <div class="account-name">{{ userFormattedAddress }}</div>
-              <div class="account-key">{{ metamaskAddress }}</div>
+              <div class="account-key" @click="copyUserAddress">
+                {{ metamaskAddress }}
+              </div>
             </div>
           </div>
           <div class="profile-dropdown-list">
-            <div class="profile-dropdown-list-item">
+            <div class="profile-dropdown-list-item" @click="openQrCode">
               <Icon
                 class="profile-dropdown-item-icon normal"
                 name="monochrome/qr-code-normal"
@@ -118,20 +127,22 @@
               />
               <span class="profile-dropdown-item-text">Show QR Code</span>
             </div>
-            <div class="profile-dropdown-list-item">
-              <Icon
-                class="profile-dropdown-item-icon normal"
-                :class="profileDropdownIconNormalClasses"
-                name="monochrome/user-normal"
-              />
-              <Icon
-                class="profile-dropdown-item-icon selected"
-                :class="profileDropdownIconSelectedClasses"
-                name="monochrome/user-selected"
-              />
-              <span class="profile-dropdown-item-text">Contacts</span>
-            </div>
-            <div class="profile-dropdown-list-item">
+            <nuxt-link class="nuxt-link" :to="{ name: 'index-index-contacts' }">
+              <div class="profile-dropdown-list-item">
+                <Icon
+                  class="profile-dropdown-item-icon normal"
+                  :class="profileDropdownIconNormalClasses"
+                  name="monochrome/user-normal"
+                />
+                <Icon
+                  class="profile-dropdown-item-icon selected"
+                  :class="profileDropdownIconSelectedClasses"
+                  name="monochrome/user-selected"
+                />
+                <span class="profile-dropdown-item-text">Contacts</span>
+              </div>
+            </nuxt-link>
+            <div class="profile-dropdown-list-item" @click="logout">
               <Icon
                 class="profile-dropdown-item-icon normal"
                 :class="profileDropdownIconNormalClasses"
@@ -146,19 +157,25 @@
             </div>
           </div>
           <div class="profile-matic-explorer">
-            <div class="profile-dropdown-list-item">
-              <Icon
-                class="profile-dropdown-item-icon normal"
-                :class="profileDropdownIconNormalClasses"
-                name="monochrome/matic-explorer-normal"
-              />
-              <Icon
-                class="profile-dropdown-item-icon selected"
-                :class="profileDropdownIconSelectedClasses"
-                name="monochrome/matic-explorer-selected"
-              />
-              <span class="profile-dropdown-item-text">Matic Explorer</span>
-            </div>
+            <a
+              :href="maticExplorerLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="profile-dropdown-list-item">
+                <Icon
+                  class="profile-dropdown-item-icon normal"
+                  :class="profileDropdownIconNormalClasses"
+                  name="monochrome/matic-explorer-normal"
+                />
+                <Icon
+                  class="profile-dropdown-item-icon selected"
+                  :class="profileDropdownIconSelectedClasses"
+                  name="monochrome/matic-explorer-selected"
+                />
+                <span class="profile-dropdown-item-text">Matic Explorer</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -238,6 +255,9 @@ export default {
         "display-none": this.metamaskAddress,
       };
     },
+    maticExplorerLink() {
+      return `https://explorer.matic.network/address/${this.metamaskAddress}/transactions`;
+    },
     metamaskAddressClasses() {
       return {
         "display-none": !this.metamaskAddress,
@@ -306,6 +326,15 @@ export default {
     },
     handleTransactionClick(tx) {
       this.$emit("onTransactionClick", tx);
+    },
+    copyUserAddress() {
+      this.$emit("onCopyUserAddress");
+    },
+    openQrCode() {
+      this.$emit("onOpenQrCode");
+    },
+    logout() {
+      this.$emit("onLogout");
     },
   },
 
