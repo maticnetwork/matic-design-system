@@ -86,17 +86,82 @@
           </div>
         </div>
       </div>
-      <Button
-        class="metamask-address"
-        :class="metamaskAddressClasses"
-        :label="shortMetamaskAddress"
-        iconName="login/metamask"
-        iconNameRight="discloser/bottom"
-        size="medium"
-        variant="pill"
-        backgroundColor="#F3F4F7"
-        inline
-      />
+      <div class="m-dropdown">
+        <Button
+          class="metamask-address"
+          :class="metamaskAddressClasses"
+          :label="shortMetamaskAddress"
+          iconName="login/metamask"
+          iconNameRight="discloser/bottom"
+          size="medium"
+          variant="pill"
+          backgroundColor="#F3F4F7"
+          inline
+        />
+        <div class="dropdown-menu dropdown-login-component">
+          <div class="profile-info">
+            <div class="profile-info-left"><Icon :name="userProfilePic" /></div>
+            <div class="profile-info-right">
+              <div class="account-name">{{ userFormattedAddress }}</div>
+              <div class="account-key">{{ metamaskAddress }}</div>
+            </div>
+          </div>
+          <div class="profile-dropdown-list">
+            <div class="profile-dropdown-list-item">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                name="monochrome/qr-code-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                name="monochrome/qr-code-selected"
+              />
+              <span class="profile-dropdown-item-text">Show QR Code</span>
+            </div>
+            <div class="profile-dropdown-list-item">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                :class="profileDropdownIconNormalClasses"
+                name="monochrome/user-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                :class="profileDropdownIconSelectedClasses"
+                name="monochrome/user-selected"
+              />
+              <span class="profile-dropdown-item-text">Contacts</span>
+            </div>
+            <div class="profile-dropdown-list-item">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                :class="profileDropdownIconNormalClasses"
+                name="monochrome/logout-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                :class="profileDropdownIconSelectedClasses"
+                name="monochrome/logout-selected"
+              />
+              <span class="profile-dropdown-item-text">Logout</span>
+            </div>
+          </div>
+          <div class="profile-matic-explorer">
+            <div class="profile-dropdown-list-item">
+              <Icon
+                class="profile-dropdown-item-icon normal"
+                :class="profileDropdownIconNormalClasses"
+                name="monochrome/matic-explorer-normal"
+              />
+              <Icon
+                class="profile-dropdown-item-icon selected"
+                :class="profileDropdownIconSelectedClasses"
+                name="monochrome/matic-explorer-selected"
+              />
+              <span class="profile-dropdown-item-text">Matic Explorer</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <Button
         class="login-button"
         :class="loginButtonClasses"
@@ -150,6 +215,12 @@ export default {
     },
     transactions: {
       type: Array,
+    },
+    userFormattedAddress: {
+      type: String,
+    },
+    userProfilePic: {
+      type: String,
     },
     // onTransactionClick: {
     //   type: Function,

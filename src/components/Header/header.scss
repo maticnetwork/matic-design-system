@@ -166,11 +166,84 @@
                         }
                     }
                 }
+
+                &.dropdown-login-component {
+                    min-width: 445px;
+                    min-height: auto;
+                    .profile-info {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 32px;
+                        .profile-info-left {
+                            display: flex;
+                            height: 64px;
+                            width: 64px;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .profile-info-right {
+                            margin-left: 20px;
+                            .account-name {
+                                @include font-settings("body-small");
+                                font-weight: 500;
+                            }
+                            .account-key {
+                                color: dark-gray-color("300");
+                                background: light-gray-color("500");
+                                border-radius: 4px;
+                                padding: 9px;
+                                margin-top: 10px;
+                                font-family: Graphik;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 10px;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                    .profile-dropdown-list,
+                    .profile-matic-explorer {
+                        @include font-settings("body-medium");
+                        border-top: 1px solid #f3f4f7;
+                        color: dark-gray-color("500");
+                        padding: 12px 0px;
+                        .profile-dropdown-list-item {
+                            margin: 0 12px;
+                            display: flex;
+                            // justify-content: center;
+                            align-items: center;
+                            .profile-dropdown-item-icon {
+                                margin: 14px 18px 14px 22px;
+                            }
+                            .profile-dropdown-item-text {
+                                // margin-left: 18px;
+                                padding: 12px 12px 12px 0;
+                            }
+                            .selected {
+                                display: none;
+                            }
+                            &:hover {
+                                background: light-gray-color("600");
+                                border-radius: 4px;
+                                color: primary-color("600");
+                                .normal {
+                                    display: none;
+                                }
+                                .selected {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &:hover .dropdown-transaction-history {
                 display: block;
             }
             &:hover .dropdown-app-menu {
+                display: block;
+            }
+            &:hover .dropdown-login-component {
                 display: block;
             }
         }
