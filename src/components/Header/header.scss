@@ -147,16 +147,21 @@
                         display: flex;
                         flex-direction: row;
                         padding: 24px;
-                        .app-item-left {
-                            margin-right: 24px;
-                        }
-                        .app-item-right {
-                            .app-item-title {
-                                @include font-settings("heading-h5");
+                        .nuxt-link-component {
+                            color: inherit;
+                            display: inherit;
+
+                            .app-item-left {
+                                margin-right: 24px;
                             }
-                            .app-item-description {
-                                @include font-settings("body-small", "regular");
-                                color: dark-gray-color("500");
+                            .app-item-right {
+                                .app-item-title {
+                                    @include font-settings("heading-h5");
+                                }
+                                .app-item-description {
+                                    @include font-settings("body-small", "regular");
+                                    color: dark-gray-color("500");
+                                }
                             }
                         }
                     }

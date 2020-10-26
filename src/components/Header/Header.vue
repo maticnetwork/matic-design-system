@@ -17,11 +17,13 @@
         />
         <div class="dropdown-menu dropdown-app-menu">
           <div class="app-item" :key="app.name" v-for="app in appList">
-            <div class="app-item-left"><Icon :name="app.icon" /></div>
-            <div class="app-item-right">
-              <div class="app-item-title">{{ app.name }}</div>
-              <div class="app-item-description">{{ app.description }}</div>
-            </div>
+            <nuxt-link class="nuxt-link-component" :to="app.link">
+              <div class="app-item-left"><Icon :name="app.icon" /></div>
+              <div class="app-item-right">
+                <div class="app-item-title">{{ app.name }}</div>
+                <div class="app-item-description">{{ app.description }}</div>
+              </div>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -243,26 +245,31 @@ export default {
           name: "Matic Bridge",
           icon: "appmenu/matic-bridge",
           description: "Deposit and withdraw between networks",
+          link: { name: "bridge" },
         },
         {
           name: "Matic Wallet",
           icon: "appmenu/matic-wallet",
           description: "Send and receive crypto assets on Matic network",
+          link: { name: "index-index" },
         },
         {
           name: "Staking",
           icon: "appmenu/staking",
           description: "Stake matic and earn rewards",
+          link: { name: "index-staking" },
         },
         {
           name: "Developer Portal",
           icon: "appmenu/developer-portal",
           description: "Create widget and API Webhoo for your dapps.",
+          link: { name: "index-developers" },
         },
         {
           name: "NFT Marketplace",
           icon: "appmenu/nft-marketplace",
           description: "Sell and buy unique collectibles on Matic network.",
+          link: { name: "index-index" },
         },
       ],
     };
