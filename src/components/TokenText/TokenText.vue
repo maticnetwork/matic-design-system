@@ -13,6 +13,7 @@
       iconNameRight="discloser/bottom"
       :label="currencyName"
       size="medium"
+      @onClick="handleChooseTokenOpen"
     />
   </div>
 </template>
@@ -24,7 +25,6 @@ import Button from "../Button/Button";
 
 export default {
   name: "TokenText",
-
   components: {
     Textfield,
     Button,
@@ -60,6 +60,12 @@ export default {
     },
     buttonSize() {
       return this.size == "large" ? "medium" : "small";
+    },
+  },
+
+  methods: {
+    handleChooseTokenOpen() {
+      this.$emit("handleChooseTokenOpen");
     },
   },
 };

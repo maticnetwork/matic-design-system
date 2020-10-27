@@ -1,7 +1,7 @@
 <template>
   <div class="m-header">
     <div class="header-left">
-      <MaticLogo variant="horizontal" size="header" />
+      <div><MaticLogo variant="horizontal" size="header" /></div>
       <div class="app-name">{{ appName }}</div>
     </div>
     <div class="header-right">
