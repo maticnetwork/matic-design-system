@@ -6,15 +6,23 @@
       :placeholder="placeholder"
       :size="size"
     />
-    <Button
-      backgroundColor="#F3F4F7"
-      :class="buttonClasses"
-      :iconName="currencySymbol"
-      iconNameRight="discloser/bottom"
-      :label="currencyName"
-      size="medium"
-      @onClick="handleChooseTokenOpen"
-    />
+    <div :class="rightButtonsClasses">
+      <Button
+        class="max-button"
+        label="MAX"
+        nature="link"
+        @onClick="handleMaxClick"
+      />
+      <Button
+        backgroundColor="#F3F4F7"
+        class="select-box"
+        :iconName="currencySymbol"
+        iconNameRight="discloser/bottom"
+        :label="currencyName"
+        size="medium"
+        @onClick="handleChooseTokenOpen"
+      />
+    </div>
   </div>
 </template>
 
@@ -51,21 +59,21 @@ export default {
   },
 
   computed: {
-    buttonClasses() {
+    rightButtonsClasses() {
       return {
-        "select-box": true,
-        "select-box--large": this.size == "large",
-        "select-box--medium": this.size == "medium",
+        "right-buttons": true,
+        "right-buttons--large": this.size == "large",
+        "right-buttons--medium": this.size == "medium",
       };
-    },
-    buttonSize() {
-      return this.size == "large" ? "medium" : "small";
     },
   },
 
   methods: {
     handleChooseTokenOpen() {
       this.$emit("handleChooseTokenOpen");
+    },
+    handleMaxClick() {
+      this.$emit("handleMaxClick");
     },
   },
 };
