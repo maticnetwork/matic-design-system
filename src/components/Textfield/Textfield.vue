@@ -6,7 +6,7 @@
       :placeholder="placeholder"
       :type="type"
       v-bind:value="value"
-      v-on:input="$emit('input', $event.target.value)"
+      v-on:input="handleInput($event.target.value)"
     />
     <Icon :class="iconRightClasses" :name="iconRight" />
     <div class="hint-text-container">
@@ -95,6 +95,12 @@ export default {
       return {
         [`icon-right--${this.size}`]: true,
       };
+    },
+  },
+
+  methods: {
+    handleInput(val) {
+      this.$parent.$emit("input", val);
     },
   },
 };
