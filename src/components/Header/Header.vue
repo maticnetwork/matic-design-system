@@ -295,17 +295,17 @@ export default {
             case -1:
               return "Burn transaction pending";
             case -2:
-              return "Checkpointed";
+              return "Burn transaction failed";
             case -3:
-              return "Exit transaction pending";
+              return "In checkpoint";
             case -4:
-              return "Exit transaction failed";
+              return "Checkpointed";
             case -5:
               return "Exit transaction completed";
             case -6:
-              return "Burn transaction failed";
+              return "Exit transaction failed";
             case -7:
-              return "In checkpoint";
+              return "Exit transaction pending";
           }
         } else if (transactionType == "deposit") {
           switch (transactionStatusCode) {
