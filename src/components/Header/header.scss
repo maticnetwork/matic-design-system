@@ -99,6 +99,7 @@
                     .dropdown-body {
                         .transaction-item {
                             color: black; //change it
+                            cursor: pointer;
                             padding: 15px;
                             display: flex;
                             align-items: center;
@@ -153,6 +154,7 @@
                     }
                     .app-item {
                         color: black; //change itÏ
+                        cursor: pointer;
                         display: flex;
                         flex-direction: row;
                         padding: 24px;
@@ -199,6 +201,7 @@
                             }
                             .account-key {
                                 color: dark-gray-color("300");
+                                cursor: pointer;
                                 background: light-gray-color("500");
                                 border-radius: 4px;
                                 padding: 9px;
@@ -218,10 +221,10 @@
                         color: dark-gray-color("500");
                         padding: 12px 0px;
                         .profile-dropdown-list-item {
-                            margin: 0 12px;
-                            display: flex;
-                            // justify-content: center;
                             align-items: center;
+                            cursor: pointer;
+                            display: flex;
+                            margin: 0 12px;
                             .profile-dropdown-item-icon {
                                 margin: 14px 18px 14px 22px;
                             }
