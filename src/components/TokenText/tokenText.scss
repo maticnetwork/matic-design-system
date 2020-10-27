@@ -3,15 +3,27 @@
 .token-text {
     position: relative;
 
-    .select-box {
+    .right-buttons {
         position: absolute;
+        display: flex;
+
+        &.right-buttons--large {
+            top: 6px;
+            right: 6px;
+        }
+        &.right-buttons--medium {
+            top: 1px;
+            right: 1px;
+        }
     }
-    .select-box--large {
-        top: 6px;
-        right: 6px;
+    .max-button {
+        color: primary-color("500");
+        display: inline-flex;
+        outline: none;
+        margin-top: 2px;
     }
-    .select-box--medium {
-        top: 1px;
-        right: 1px;
+    .select-box {
+        display: inline-flex;
+        outline: none;
     }
 }

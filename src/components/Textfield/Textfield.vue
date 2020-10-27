@@ -60,6 +60,9 @@ export default {
         return ["text", "number"].indexOf(value) !== -1;
       },
     },
+    value: {
+      type: String,
+    },
   },
 
   computed: {
