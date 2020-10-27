@@ -3,6 +3,7 @@
 .m-header {
     align-items: center;
     background-color: light-gray-color("700");
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     padding: 18px 32px;
@@ -14,6 +15,8 @@
     z-index: 1000;
 
     .header-left {
+        display: flex;
+        justify-content: center;
         .app-name {
             color: dark-gray-color("500") !important;
             display: inline-block;
