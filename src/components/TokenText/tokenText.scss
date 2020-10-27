@@ -18,12 +18,12 @@
     }
     .max-button {
         color: primary-color("500");
-        display: inline-block;
+        display: inline-flex;
+        outline: none;
         margin-top: 2px;
     }
-
     .select-box {
-        //     position: absolute;
         display: inline-flex;
+        outline: none;
     }
 }

@@ -5,6 +5,7 @@
       nature="link"
       :placeholder="placeholder"
       :size="size"
+      :value="amount"
     />
     <div :class="rightButtonsClasses">
       <Button
@@ -55,6 +56,9 @@ export default {
     placeholder: {
       type: String,
       default: "0.00",
+    },
+    amount: {
+      type: String,
     },
   },
 
