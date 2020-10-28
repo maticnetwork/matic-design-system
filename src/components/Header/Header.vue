@@ -297,7 +297,7 @@ export default {
             case -2:
               return "Burn transaction failed";
             case -3:
-              return "In checkpoint";
+              return "Waiting for checkpoint";
             case -4:
               return "Checkpointed";
             case -5:
@@ -316,7 +316,7 @@ export default {
             case 1:
               return "Deposit confirmed (enroute)";
             case 0:
-              return "Depoisit completed";
+              return "Deposit completed";
           }
         }
       };
