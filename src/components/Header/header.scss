@@ -37,14 +37,17 @@
             @include font-settings("heading-h4");
             border-radius: 50%;
             color: #ffffff;
-            // margin-right: 8px;
             padding: 2px 11px;
+            background-color: yellow-color("700");
 
             &.status--action {
                 background-color: primary-color("600");
             }
             &.status--progress {
                 background-color: yellow-color("700");
+            }
+            &.text {
+                margin-right: 8px;
             }
         }
 
@@ -86,6 +89,9 @@
                 z-index: 1;
 
                 &.dropdown-transaction-history {
+                    max-height: 540px;
+                    overflow: scroll;
+                    
                     .dropdown-header {
                         @include font-settings("heading-h5");
                         border-bottom: 1px solid #e7e9ee;
