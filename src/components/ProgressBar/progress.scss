@@ -1,0 +1,69 @@
+@import "../../scss/_variables.scss";
+
+.m-progress {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    &.half-width {
+        width: 50%;
+    }
+
+    .upper-section {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .progress-icon {
+            margin: 0;
+            padding: 0;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        .progress-line {
+            border: 2px solid #dcdfe6;
+            border-radius: 0px;
+            box-sizing: border-box;
+            display: block;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            &.hide {
+                display: none;
+            }
+        }
+        .progress-line-left {
+            &.completed,
+            &.progress {
+                border-color: #003cb2;
+            }
+        }
+        .progress-line-right {
+            &.completed {
+                border-color: #003cb2;
+            }
+        }
+    }
+
+    .m-description {
+        display: block;
+        text-align: center;
+
+        &.m-align-left {
+            text-align: left;
+        }
+        &.m-align-right {
+            text-align: right;
+        }
+
+        &.incomplete {
+            color: dark-gray-color("300");
+        }
+    }
+}
