@@ -253,6 +253,7 @@ export default {
     countIconClasses() {
       return {
         [`status--${this.transactionStatus}`]: true,
+        text: this.transactionCount > 0,
       };
     },
     loginButtonClasses() {
