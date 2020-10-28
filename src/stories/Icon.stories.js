@@ -29,12 +29,12 @@ Navbar.args = {
 
 export const Monochrome = Template.bind({});
 Monochrome.args = {
-  name: 'monochrome/privacy/normal'
+  name: 'monochrome/privacy-normal'
 };
 
 export const MonochromeSelected = Template.bind({});
 MonochromeSelected.args = {
-  name: 'monochrome/privacy/selected'
+  name: 'monochrome/privacy-selected'
 };
 
 export const Discloser = Template.bind({});
