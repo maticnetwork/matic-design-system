@@ -89,6 +89,9 @@
                 z-index: 1;
 
                 &.dropdown-transaction-history {
+                    max-height: 540px;
+                    overflow: scroll;
+                    
                     .dropdown-header {
                         @include font-settings("heading-h5");
                         border-bottom: 1px solid #e7e9ee;
