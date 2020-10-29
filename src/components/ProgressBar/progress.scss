@@ -25,7 +25,8 @@
         }
 
         .progress-line {
-            border: 1px solid #dcdfe6;
+            border: 1px solid light-gray-color("300");
+            background: light-gray-color("300");
             border-radius: 0px;
             box-sizing: border-box;
             display: block;
@@ -41,12 +42,14 @@
         .progress-line-left {
             &.completed,
             &.progress {
-                border-color: #003cb2;
+                border-color: primary-color("600");
+                background: primary-color("600");
             }
         }
         .progress-line-right {
             &.completed {
-                border-color: #003cb2;
+                border-color: primary-color("600");
+                background: primary-color("600");
             }
         }
     }
