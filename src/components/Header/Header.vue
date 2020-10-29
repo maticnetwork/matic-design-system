@@ -297,7 +297,8 @@ export default {
       };
     },
     transactionStatusIconClasses() {
-      return (status) => (status == 3 ? "" : "display-none");
+      return (status) =>
+        [-4, -3, -7, , 1, 4].includes(status) ? "" : "display-none";
     },
     transactionTypeIcon() {
       return (name) =>
@@ -329,6 +330,7 @@ export default {
         } else if (transactionType == "deposit") {
           switch (transactionStatusCode) {
             case 4:
+            case 3:
               return "Deposit pending";
             case 2:
               return "Deposit failed";
