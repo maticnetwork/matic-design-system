@@ -53,7 +53,16 @@
               @click="handleTransactionClick(transaction)"
             >
               <div class="transaction-item-left">
-                <Icon class="transaction-token-icon" :name="transaction.icon" />
+                <img
+                  class="transaction-token-icon"
+                  :src="transaction.token.icon ? require(`./assets/tokens/${transaction.token.icon}`) : ''"
+                  v-if="transaction.token.icon"
+                />
+                <span 
+                class="transaction-status-text-icon"
+                  v-if="!transaction.token.icon">
+                  {{transaction.token.symbol.charAt(0)}}
+                  </span>
                 <Icon
                   class="transaction-status-icon"
                   :name="transactionTypeIcon(transaction.type)"
@@ -249,6 +258,10 @@ export default {
   computed: {
     appMenuIconPath() {
       return (name) => require(`./assets/${name}.png`);
+    },
+    tokenImageIconPath(name) {
+      if (name) return require(`./assets/tokens/${name}`);
+      else return null;
     },
     countIconClasses() {
       return {
