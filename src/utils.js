@@ -4,7 +4,7 @@ export const truncateString = (string = '', maxCharCount = string.length, initia
         : string;
 }
 
-export const timeAgo = (seconds) => {
+export const timeAgo = (seconds = 0) => {
     var msPerMinute = 60 * 1000;
     var msPerHour = msPerMinute * 60;
     var msPerDay = msPerHour * 24;
