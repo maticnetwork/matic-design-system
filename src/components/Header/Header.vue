@@ -55,14 +55,19 @@
               <div class="transaction-item-left">
                 <img
                   class="transaction-token-icon"
-                  :src="transaction.token.icon ? require(`./assets/tokens/${transaction.token.icon}`) : ''"
+                  :src="
+                    transaction.token.icon
+                      ? require(`./assets/tokens/${transaction.token.icon}`)
+                      : ''
+                  "
                   v-if="transaction.token.icon"
                 />
-                <span 
-                class="transaction-status-text-icon"
-                  v-if="!transaction.token.icon">
-                  {{transaction.token.symbol.charAt(0)}}
-                  </span>
+                <span
+                  class="transaction-status-text-icon"
+                  v-if="!transaction.token.icon"
+                >
+                  {{ transaction.token.symbol.charAt(0) }}
+                </span>
                 <Icon
                   class="transaction-status-icon"
                   :name="transactionTypeIcon(transaction.type)"
