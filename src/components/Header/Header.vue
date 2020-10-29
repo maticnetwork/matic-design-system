@@ -310,7 +310,7 @@ export default {
           }
         } else if (transactionType == "deposit") {
           switch (transactionStatusCode) {
-            case 3:
+            case 4:
               return "Deposit pending";
             case 2:
               return "Deposit failed";
