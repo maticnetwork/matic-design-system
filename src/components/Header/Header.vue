@@ -298,7 +298,7 @@ export default {
     },
     transactionStatusIconClasses() {
       return (status) =>
-        [-4, -3, -7, , 1, 4].includes(status) ? "" : "display-none";
+        [-4, -3, -7, 1, 4].includes(status) ? "" : "display-none";
     },
     transactionTypeIcon() {
       return (name) =>
