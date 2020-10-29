@@ -58,6 +58,7 @@
         <a
           v-if="href && status == 'completed'"
           :href="href"
+          target="_blank"
           rel="noreferrer noopener"
         >
           <svg

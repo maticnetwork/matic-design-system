@@ -53,7 +53,21 @@
               @click="handleTransactionClick(transaction)"
             >
               <div class="transaction-item-left">
-                <Icon class="transaction-token-icon" :name="transaction.icon" />
+                <img
+                  class="transaction-token-icon"
+                  :src="
+                    transaction.token.icon
+                      ? require(`./assets/tokens/${transaction.token.icon}`)
+                      : ''
+                  "
+                  v-if="transaction.token.icon"
+                />
+                <span
+                  class="transaction-status-text-icon"
+                  v-if="!transaction.token.icon"
+                >
+                  {{ transaction.token.symbol.charAt(0) }}
+                </span>
                 <Icon
                   class="transaction-status-icon"
                   :name="transactionTypeIcon(transaction.type)"
@@ -250,6 +264,10 @@ export default {
     appMenuIconPath() {
       return (name) => require(`./assets/${name}.png`);
     },
+    tokenImageIconPath(name) {
+      if (name) return require(`./assets/tokens/${name}`);
+      else return null;
+    },
     countIconClasses() {
       return {
         [`status--${this.transactionStatus}`]: true,
@@ -279,7 +297,8 @@ export default {
       };
     },
     transactionStatusIconClasses() {
-      return (status) => (status == 3 ? "" : "display-none");
+      return (status) =>
+        [-4, -3, -7, , 1, 4].includes(status) ? "" : "display-none";
     },
     transactionTypeIcon() {
       return (name) =>
@@ -310,6 +329,7 @@ export default {
           }
         } else if (transactionType == "deposit") {
           switch (transactionStatusCode) {
+            case 4:
             case 3:
               return "Deposit pending";
             case 2:
