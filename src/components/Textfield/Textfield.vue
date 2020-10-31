@@ -7,8 +7,13 @@
       :type="type"
       v-bind:value="value"
       v-on:input="handleInput($event.target.value)"
+      step="0.000000000000000001"
     />
-    <Icon :class="iconRightClasses" :name="iconRight" />
+    <Icon
+      :class="iconRightClasses"
+      :name="iconRight"
+      @onClick="handleRightIconClick"
+    />
     <div class="hint-text-container">
       <span :class="hintTextClasses">{{ hintText }}</span>
       <span :class="hintTextRightClasses">{{ hintTextRight }}</span>
@@ -104,6 +109,9 @@ export default {
   methods: {
     handleInput(val) {
       this.$parent.$emit("input", val);
+    },
+    handleRightIconClick() {
+      this.$emit("handleRightIconClick");
     },
   },
 };
