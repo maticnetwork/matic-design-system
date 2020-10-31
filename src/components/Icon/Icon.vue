@@ -5,6 +5,7 @@
     :class="classes"
     v-html="require(`!html-loader!./assets/${name}.svg`)"
     v-if="name"
+    @click="onClick"
   >
   </i>
 </template>
@@ -31,5 +32,11 @@ export default {
       };
     },
   },
+
+  methods: {
+    onClick() {
+      this.$emit("onClick");
+    },
+  }
 };
 </script>
