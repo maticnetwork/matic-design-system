@@ -8,6 +8,7 @@
       v-bind:value="value"
       v-on:input="handleInput($event.target.value)"
       step="0.000000000000000001"
+      :disabled="disabled"
     />
     <Icon
       :class="iconRightClasses"
@@ -32,6 +33,10 @@ export default {
     Icon,
   },
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     hasError: {
       type: Boolean,
       default: false,
@@ -108,6 +113,7 @@ export default {
 
   methods: {
     handleInput(val) {
+      this.$emit("input", val);
       this.$parent.$emit("input", val);
     },
     handleRightIconClick() {

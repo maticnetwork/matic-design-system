@@ -3,7 +3,7 @@
   <!-- Add error handling in future -->
   <i
     :class="classes"
-    v-html="require(`!html-loader!./assets/${name}.svg`)"
+    v-html="require(`!html-loader!./assets/${name.trim()}.svg`)"
     v-if="name"
     @click="onClick"
   >
