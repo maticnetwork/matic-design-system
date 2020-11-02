@@ -61,7 +61,7 @@ export default {
   computed: {
     classes() {
       return {
-        button: true,
+        "m-button": true,
         "nature--primary": this.nature == "primary",
         "nature--secondary": this.nature == "secondary",
         "nature--link": this.nature == "link",
