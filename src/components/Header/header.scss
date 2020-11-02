@@ -221,18 +221,42 @@
                                 color: black;
                                 font-weight: 500;
                             }
-                            .account-key {
-                                color: dark-gray-color("300");
+                            .m-account-key-section {
+                                display: flex;
+                                justify-content: center;
                                 cursor: pointer;
-                                background: light-gray-color("500");
-                                border-radius: 4px;
-                                padding: 9px;
-                                margin-top: 10px;
-                                font-family: Graphik;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 10px;
-                                line-height: 16px;
+                                .m-account-key {
+                                    color: dark-gray-color("300");
+                                    background: light-gray-color("500");
+                                    border-radius: 4px;
+                                    display: inline-block;
+                                    padding: 9px;
+                                    margin-top: 10px;
+                                    font-family: Graphik;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 10px;
+                                    line-height: 16px;
+                                }
+                                .m-copy-address-animation {
+                                    margin-top: 10px;
+                                    display: none;
+                                    background: light-gray-color("500");
+                                    border-radius: 0px 4px 4px 0px;
+                                    padding: 2px 0 0 0px;
+                                    height: 33px;
+                                    width: 26px;
+                                    &.m-copy-icon {
+                                        fill: rgba(light-gray-color("700"), 0.9);
+                                        svg {
+                                            width: 16px;
+                                            height: 16px;
+                                        }
+                                    }
+                                }
+                                &:hover .m-copy-address-animation {
+                                    display: inline-block;
+                                }
                             }
                         }
                     }

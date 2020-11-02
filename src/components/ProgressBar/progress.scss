@@ -55,6 +55,7 @@
     }
 
     .m-description {
+        @include font-settings("caption-small");
         display: block;
         text-align: center;
 

@@ -94,7 +94,7 @@
                   }}
                   &#183;
                   {{
-                    transactionSecondsAgoString(transaction.updatedAt.seconds)
+                    transactionSecondsAgoString(transaction.createdAt.seconds)
                   }}
                 </div>
               </div>
@@ -126,8 +126,12 @@
             </div>
             <div class="profile-info-right">
               <div class="account-name">{{ userFormattedAddress }}</div>
-              <div class="account-key" @click="copyUserAddress">
-                {{ metamaskAddress }}
+              <div class="m-account-key-section">
+                <div class="m-account-key" @click="copyUserAddress">
+                  {{ metamaskAddress }}
+                </div>
+                <Icon v-if="!copyAnim" class="m-copy-address-animation m-copy-icon" name="navbar/copy" />
+                <Icon v-if="copyAnim" class="m-copy-address-animation" name="custom/yes" />
               </div>
             </div>
           </div>
@@ -154,6 +158,7 @@
                   class="profile-dropdown-item-icon selected"
                   :class="profileDropdownIconSelectedClasses"
                   name="monochrome/user-selected"
+
                 />
                 <span class="profile-dropdown-item-text">Contacts</span>
               </div>
@@ -228,6 +233,10 @@ export default {
   props: {
     appName: {
       type: String,
+    },
+    copyAnim: {
+      type: Boolean,
+      default: false,
     },
     metamaskAddress: {
       type: String,
