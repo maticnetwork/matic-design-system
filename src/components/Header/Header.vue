@@ -94,7 +94,7 @@
                   }}
                   &#183;
                   {{
-                    transactionSecondsAgoString(transaction.updatedAt.seconds)
+                    transactionSecondsAgoString(transaction.createdAt.seconds)
                   }}
                 </div>
               </div>
