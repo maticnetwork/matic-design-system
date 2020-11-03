@@ -390,6 +390,12 @@ export default {
           link: { name: "index-index" },
         },
         {
+          name: "Matic Wallet v2",
+          icon: "wallet",
+          description: "Send and receive crypto assets on Matic network",
+          link: { name: "index-v2" },
+        },
+        {
           name: "Staking",
           icon: "staking",
           description: "Stake matic and earn rewards",
