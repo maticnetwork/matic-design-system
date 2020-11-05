@@ -130,8 +130,16 @@
                 <div class="m-account-key" @click="copyUserAddress">
                   {{ metamaskAddress }}
                 </div>
-                <Icon v-if="!copyAnim" class="m-copy-address-animation m-copy-icon" name="navbar/copy" />
-                <Icon v-if="copyAnim" class="m-copy-address-animation" name="custom/yes" />
+                <Icon
+                  v-if="!copyAnim"
+                  class="m-copy-address-animation m-copy-icon"
+                  name="navbar/copy"
+                />
+                <Icon
+                  v-if="copyAnim"
+                  class="m-copy-address-animation"
+                  name="custom/yes"
+                />
               </div>
             </div>
           </div>
@@ -147,20 +155,21 @@
               />
               <span class="profile-dropdown-item-text">Show QR Code</span>
             </div>
-            <nuxt-link class="nuxt-link" :to="{ name: 'index-index-contacts' }">
+            <nuxt-link class="nuxt-link" :to="{ name: 'index-index' }">
               <div class="profile-dropdown-list-item">
                 <Icon
                   class="profile-dropdown-item-icon normal"
                   :class="profileDropdownIconNormalClasses"
-                  name="monochrome/user-normal"
+                  name="monochrome/matic-normal"
                 />
                 <Icon
                   class="profile-dropdown-item-icon selected"
                   :class="profileDropdownIconSelectedClasses"
-                  name="monochrome/user-selected"
-
+                  name="monochrome/matic-selected"
                 />
-                <span class="profile-dropdown-item-text">Contacts</span>
+                <span class="profile-dropdown-item-text"
+                  >Matic Wallet - v1</span
+                >
               </div>
             </nuxt-link>
             <div class="profile-dropdown-list-item" @click="logout">
@@ -390,6 +399,12 @@ export default {
           link: { name: "index-index" },
         },
         {
+          name: "Matic Wallet v2",
+          icon: "wallet",
+          description: "Send and receive crypto assets on Matic network",
+          link: { name: "index-v2" },
+        },
+        {
           name: "Staking",
           icon: "staking",
           description: "Stake matic and earn rewards",
@@ -399,14 +414,14 @@ export default {
           name: "Developer Portal",
           icon: "developer",
           description: "Create widget and API Webhoo for your dapps.",
-          link: { name: "index-developers" },
+          link: { name: "widgets" },
         },
-        {
-          name: "NFT Marketplace",
-          icon: "nftmarketplace",
-          description: "Sell and buy unique collectibles on Matic network.",
-          link: { name: "index-index" },
-        },
+        // {
+        //   name: "NFT Marketplace",
+        //   icon: "nftmarketplace",
+        //   description: "Sell and buy unique collectibles on Matic network.",
+        //   link: { name: "index-index" },
+        // },
       ],
     };
   },

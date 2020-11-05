@@ -266,6 +266,9 @@
                         border-top: 1px solid #f3f4f7;
                         color: dark-gray-color("500");
                         padding: 12px 0px;
+                        a {
+                            color: dark-gray-color("500");
+                        }
                         .profile-dropdown-list-item {
                             align-items: center;
                             cursor: pointer;
@@ -284,7 +287,7 @@
                             &:hover {
                                 background: light-gray-color("600");
                                 border-radius: 4px;
-                                color: primary-color("600");
+                                color: primary-color("600") !important;
                                 .normal {
                                     display: none;
                                 }
