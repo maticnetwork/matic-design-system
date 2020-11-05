@@ -1,6 +1,6 @@
 {
   "name": "@maticnetwork/matic-design-system",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "private": false,
   "main": "./dist/matic-design-system.common.js",
   "keywords": [
