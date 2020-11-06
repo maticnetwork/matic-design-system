@@ -9,6 +9,7 @@
     />
     <div :class="rightButtonsClasses">
       <Button
+        backgroundColor="#fff"
         class="max-button"
         label="MAX"
         nature="link"

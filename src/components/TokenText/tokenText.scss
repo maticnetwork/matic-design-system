@@ -17,10 +17,11 @@
         }
     }
     .max-button {
-        color: primary-color("500");
+        @include font-settings("capital", "700");
+        color: primary-color("600");
         display: inline-flex;
         outline: none;
-        margin-top: 2px;
+        // margin-top: 2px;
     }
     .select-box {
         display: inline-flex;
