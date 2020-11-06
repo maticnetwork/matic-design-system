@@ -1,17 +1,21 @@
 @import "../../scss/_variables.scss";
 
-.icon {
+.m-icon {
+    box-sizing: border-box;
     display: inline-block;
     height: 24px;
     width: 24px;
+    svg {
+        vertical-align: unset;
+    }
 }
 
-.profile-icon {
+.m-profile-icon {
     height: 40px;
     width: 40px;
 }
 
-.appmenu-icon {
+.m-appmenu-icon {
     height: 44px;
     width: 44px;
 }
