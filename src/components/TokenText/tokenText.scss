@@ -6,19 +6,21 @@
     align-items: center;
     border: 1px solid light-gray-color("200");
     border-radius: 8px;
+    background: light-gray-color("700");
 
     &.token-text--large {
         padding-right: 5px;
     }
 
     .token-text-amount {
+        flex-grow: 1;
+        width: 10%;
         input {
             @include font-settings("body-medium");
             border: none;
             color: dark-gray-color("700");
             padding-right: 0px !important;
         }
-        width: 100%;
     }
 
     .max-button {
@@ -28,7 +30,7 @@
         outline: none;
     }
     .select-box {
-        display: inline-flex;
+        flex-shrink: 0;
         outline: none;
     }
 }
