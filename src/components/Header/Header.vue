@@ -298,7 +298,7 @@ export default {
       };
     },
     maticExplorerLink() {
-      return `https://explorer.matic.network/address/${this.metamaskAddress}/transactions`;
+      return `https://explorer-mumbai.maticvigil.com/address/${this.metamaskAddress}/transactions`;
     },
     metamaskAddressClasses() {
       return {

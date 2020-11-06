@@ -1,5 +1,5 @@
 <template>
-  <div class="textfield">
+  <div class="m-textfield">
     <Icon :class="iconLeftClasses" :name="iconLeft" />
     <input
       :class="inputFieldClasses"
@@ -9,6 +9,7 @@
       v-on:input="handleInput($event.target.value)"
       step="0.000000000000000001"
       :disabled="disabled"
+      :min="min"
     />
     <Icon
       :class="iconRightClasses"
@@ -51,6 +52,9 @@ export default {
       type: String,
     },
     iconRight: {
+      type: String,
+    },
+    min: {
       type: String,
     },
     placeholder: {

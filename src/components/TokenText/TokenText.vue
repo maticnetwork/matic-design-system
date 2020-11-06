@@ -1,29 +1,29 @@
 <template>
-  <div class="token-text">
+  <div :class="classes">
     <Textfield
+      class="token-text-amount"
       type="number"
       nature="link"
       :placeholder="placeholder"
       :size="size"
       :value="amount"
     />
-    <div :class="rightButtonsClasses">
-      <Button
-        class="max-button"
-        label="MAX"
-        nature="link"
-        @onClick="handleMaxClick"
-      />
-      <Button
-        backgroundColor="#F3F4F7"
-        class="select-box"
-        :iconName="currencySymbol"
-        iconNameRight="discloser/bottom"
-        :label="currencyName"
-        size="medium"
-        @onClick="handleChooseTokenOpen"
-      />
-    </div>
+    <Button
+      class="max-button"
+      label="MAX"
+      nature="link"
+      size="small"
+      @onClick="handleMaxClick"
+    />
+    <Button
+      backgroundColor="#F3F4F7"
+      class="select-box"
+      :iconName="currencySymbol"
+      iconNameRight="discloser/bottom"
+      :label="currencyName"
+      size="medium"
+      @onClick="handleChooseTokenOpen"
+    />
   </div>
 </template>
 
@@ -63,11 +63,10 @@ export default {
   },
 
   computed: {
-    rightButtonsClasses() {
+    classes() {
       return {
-        "right-buttons": true,
-        "right-buttons--large": this.size == "large",
-        "right-buttons--medium": this.size == "medium",
+        "token-text": true,
+        "token-text--large": this.size == "large",
       };
     },
   },

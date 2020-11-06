@@ -2,28 +2,35 @@
 
 .token-text {
     position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid light-gray-color("200");
+    border-radius: 8px;
+    background: light-gray-color("700");
 
-    .right-buttons {
-        position: absolute;
-        display: flex;
+    &.token-text--large {
+        padding-right: 5px;
+    }
 
-        &.right-buttons--large {
-            top: 6px;
-            right: 6px;
-        }
-        &.right-buttons--medium {
-            top: 1px;
-            right: 1px;
+    .token-text-amount {
+        flex-grow: 1;
+        width: 10%;
+        input {
+            @include font-settings("body-medium");
+            border: none;
+            color: dark-gray-color("700");
+            padding-right: 0px !important;
         }
     }
+
     .max-button {
-        color: primary-color("500");
+        @include font-settings("capital", "700");
+        color: primary-color("600");
         display: inline-flex;
         outline: none;
-        margin-top: 2px;
     }
     .select-box {
-        display: inline-flex;
+        flex-shrink: 0;
         outline: none;
     }
 }

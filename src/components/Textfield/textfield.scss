@@ -1,6 +1,6 @@
 @import "../../scss/_variables.scss";
 
-.textfield {
+.m-textfield {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -76,5 +76,18 @@
         position: absolute;
         top: 12px;
         right: 12px;
+    }
+
+    // Hiding increase/decrease arrows for numeric field
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+        -moz-appearance: textfield;
     }
 }

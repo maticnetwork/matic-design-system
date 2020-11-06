@@ -26,9 +26,9 @@ export default {
   computed: {
     classes() {
       return {
-        icon: true,
-        "profile-icon": this.name.split("/")[0] == "profile",
-        "appmenu-icon": this.name.split("/")[0] == "appmenu",
+        "m-icon": true,
+        "m-profile-icon": this.name.split("/")[0] == "profile",
+        "m-appmenu-icon": this.name.split("/")[0] == "appmenu",
       };
     },
   },
@@ -37,6 +37,6 @@ export default {
     onClick() {
       this.$emit("onClick");
     },
-  }
+  },
 };
 </script>
