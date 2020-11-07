@@ -155,7 +155,10 @@
               />
               <span class="profile-dropdown-item-text">Show QR Code</span>
             </div>
-            <nuxt-link class="nuxt-link" :to="{ name: 'index-index' }">
+            <nuxt-link
+              class="nuxt-link"
+              :to="{ name: 'index-index', params: { defaultToV1: true } }"
+            >
               <div class="profile-dropdown-list-item">
                 <Icon
                   class="profile-dropdown-item-icon normal"
@@ -244,6 +247,10 @@ export default {
       type: String,
     },
     copyAnim: {
+      type: Boolean,
+      default: false,
+    },
+    isV2Visited: {
       type: Boolean,
       default: false,
     },
@@ -392,14 +399,14 @@ export default {
           description: "Deposit and withdraw between networks",
           link: { name: "bridge" },
         },
+        // {
+        //   name: "Matic Wallet",
+        //   icon: "wallet",
+        //   description: "Send and receive crypto assets on Matic network",
+        //   link: { name: "index-index" },
+        // },
         {
           name: "Matic Wallet",
-          icon: "wallet",
-          description: "Send and receive crypto assets on Matic network",
-          link: { name: "index-index" },
-        },
-        {
-          name: "Matic Wallet v2",
           icon: "wallet",
           description: "Send and receive crypto assets on Matic network",
           link: { name: "index-v2" },
