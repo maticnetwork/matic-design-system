@@ -119,6 +119,14 @@ export default {
     handleInput(val) {
       this.$emit("input", val);
       this.$parent.$emit("input", val);
+      
+      // temp fix for token text field validation
+      // validation will not have any effect as it 
+      // will pass the same value when entering 
+      // incorrect valuedue to which vue will not 
+      // re-render and the user entered value will
+      // keep displaying
+      this.$forceUpdate();
     },
     handleRightIconClick() {
       this.$emit("handleRightIconClick");
