@@ -16,8 +16,12 @@
           variant="pill"
         />
         <div class="dropdown-menu dropdown-app-menu">
-          <div class="app-item" :key="app.name" v-for="app in appList">
-            <nuxt-link class="nuxt-link-component" :to="app.link">
+          <nuxt-link
+            class="app-item"
+            :to="app.link"
+            :key="app.name"
+            v-for="app in appList"
+          >
               <div class="app-item-left">
                 <img :src="appMenuIconPath(app.icon)" />
               </div>
@@ -25,8 +29,6 @@
                 <div class="app-item-title">{{ app.name }}</div>
                 <div class="app-item-description">{{ app.description }}</div>
               </div>
-            </nuxt-link>
-          </div>
         </div>
       </div>
       <div class="m-dropdown">
