@@ -29,6 +29,7 @@
                 <div class="app-item-title">{{ app.name }}</div>
                 <div class="app-item-description">{{ app.description }}</div>
               </div>
+          </nuxt-link>
         </div>
       </div>
       <div class="m-dropdown">
