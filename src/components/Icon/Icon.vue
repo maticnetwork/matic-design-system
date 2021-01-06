@@ -1,13 +1,6 @@
 <template>
   <!-- Adding html-loader with v-html to load svg inline -->
-  <!-- Add error handling in future -->
-  <i
-    :class="classes"
-    v-html="require(`!html-loader!./assets/${name.trim()}.svg`)"
-    v-if="name"
-    @click="onClick"
-  >
-  </i>
+  <i :class="classes" v-html="svg" v-if="name && svg" @click="onClick"> </i>
 </template>
 
 <script>
@@ -30,6 +23,13 @@ export default {
         "m-profile-icon": this.name.split("/")[0] == "profile",
         "m-appmenu-icon": this.name.split("/")[0] == "appmenu",
       };
+    },
+    svg() {
+      try {
+        return require(`!html-loader!./assets/${this.name.trim()}.svg`);
+      } catch {
+        return null;
+      }
     },
   },
 
