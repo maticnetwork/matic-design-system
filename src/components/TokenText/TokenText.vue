@@ -13,6 +13,7 @@
       label="MAX"
       nature="link"
       size="small"
+      v-if="showMax"
       @onClick="handleMaxClick"
     />
     <Button
@@ -59,6 +60,10 @@ export default {
     },
     amount: {
       type: String,
+    },
+    showMax: {
+      type: Boolean,
+      default: false,
     },
   },
 
