@@ -44,5 +44,8 @@ npm install @maticnetwork/matic-design-system
 
 ### Implementation
 ```
-import { Button, Header } from "@maticnetwork/matic-design-system";
+import { Button, Icon } from "@maticnetwork/matic-design-system";
+
+<Button label="Click Me!">
+<Icon name="login/metamask">
 ```
