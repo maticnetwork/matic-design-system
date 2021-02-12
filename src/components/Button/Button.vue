@@ -68,11 +68,12 @@ export default {
         [`size--${this.size}`]: true,
         "variant--pill": this.variant == "pill",
         "button--inline": this.inline == true,
+        "icon--only": !this.label && this.iconName,
       };
     },
     iconLeftClasses() {
       return {
-        "only-icon": !this.label && this.iconName,
+        "icon--only": !this.label && this.iconName,
         "icon-with-text": this.label && this.iconName,
       };
     },
