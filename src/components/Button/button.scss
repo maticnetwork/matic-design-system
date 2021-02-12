@@ -44,18 +44,25 @@
 
     &.icon--only {
       padding: 5px;
-      color: red;
     }
   }
   &.size--medium {
     @include font-settings("heading-h5");
     height: 44px;
     padding: 10px 12px;
+
+    &.icon--only {
+      padding: 10px;
+    }
   }
   &.size--large {
     @include font-settings("heading-h4");
     height: 54px;
     padding: 14px 20px;
+
+    &.icon--only {
+      padding: 15px;
+    }
   }
   &.variant--pill {
     border-radius: 37px;
