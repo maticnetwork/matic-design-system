@@ -17,6 +17,7 @@
       @onClick="handleMaxClick"
     />
     <Button
+      v-if="currencyName"
       backgroundColor="#F3F4F7"
       class="select-box"
       :iconName="currencySymbol"
