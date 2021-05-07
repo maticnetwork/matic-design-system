@@ -112,6 +112,7 @@ $letter-spacings: (
 // Colors
 //
 
+// previous colors
 $primary-colors: (
   "700": #002b80,
   "600": #003cb2,
@@ -120,6 +121,17 @@ $primary-colors: (
   "300": #aac5f9,
   "200": #d5e2fc,
   "100": #eaf0fd,
+);
+
+// polygon colors
+$primary-colors: (
+  "700": #601fcd,
+  "600": #854ce6,
+  "500": #9d6cee,
+  "400": #b38fef,
+  "300": #d0b8f9,
+  "200": #e0cffc,
+  "100": #efe7fd,
 );
 
 @function primary-color($base) {
