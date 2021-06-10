@@ -2,13 +2,17 @@
 // Typography
 //
 
-$font-family-base: "Averta", sans-serif;
+$font-family-base: "Manrope", sans-serif;
+$font-family-code: "Courier Prime", monospace;
 
 $weights: (
-  "regular": 400,
-  "medium": 600,
-  "semibold": 700,
-  "bold": 800,
+  "extra-light": 200,
+  "light": 300,
+  "normal": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extra-bold": 800,
 );
 
 @function weight($base) {
@@ -16,59 +20,41 @@ $weights: (
 }
 
 $font-sizes: (
-  "display-large": 96px,
-  "display-medium": 64px,
-  "heading-h1": 48px,
-  "heading-h2": 36px,
-  "heading-h3": 24px,
-  "heading-h4": 18px,
-  "heading-h5": 16px,
-  "heading-h6": 14px,
-  "body-large": 18px,
-  "body-medium": 16px,
-  "body-small": 14px,
-  "caption-small": 12px,
-  "capital": 12px,
+  "xs": 12px,
+  "sm": 14px,
+  "bs": 16px,
+  "lg": 18px,
+  "xl": 20px,
+  "2xl": 22px,
+  "3xl": 25px,
+  "4xl": 28px,
+  "5xl": 32px,
+  "6xl": 36px,
+  "7xl": 40px,
+  "8xl": 45px,
+  "9xl": 60px,
 );
 
 @function font-size($base) {
   @return map-get($font-sizes, $base);
 }
 
-// $font-weights: (
-//   "display-large": weight("bold"),
-//   "display-medium": weight("bold"),
-//   "heading-h1": weight("bold"),
-//   "heading-h2": weight("bold"),
-//   "heading-h3": weight("bold"),
-//   "heading-h4": weight("semibold"),
-//   "heading-h5": weight("semibold"),
-//   "heading-h6": weight("semibold"),
-//   "body-large": weight("regular"),
-//   "body-medium": weight("regular"),
-//   "body-small": weight("regular"),
-//   "caption-small": weight("regular"),
-//   "capital": weight("semibold"),
-// );
-
-// @function font-weight($base) {
-//   @return map-get($font-weights, $base);
-// }
-
 $line-heights: (
-  "display-large": 110%,
-  "display-medium": 110%,
-  "heading-h1": 120%,
-  "heading-h2": 120%,
-  "heading-h3": 120%,
-  "heading-h4": 145%,
-  "heading-h5": 150%,
-  "heading-h6": 140%,
-  "body-large": 145%,
-  "body-medium": 150%,
-  "body-small": 140%,
-  "caption-small": 135%,
-  "capital": 20px,
+  "leading-3": 12px,
+  "leading-4": 16px,
+  "leading-5": 20px,
+  "leading-6": 24px,
+  "leading-7": 28px,
+  "leading-8": 32px,
+  "leading-9": 36px,
+  "leading-10": 40px,
+  "leading-11": 48px,
+  "leading-none": 100%,
+  "leading-tight": 125%,
+  "leading-snug": 137.5%,
+  "leading-normal": 150%,
+  "leading-relaxed": 162%,
+  "leading-loose": 200%,
 );
 
 @function line-height($base) {
@@ -76,19 +62,10 @@ $line-heights: (
 }
 
 $letter-spacings: (
-  "display-large": -1,
-  "display-medium": -1%,
-  "heading-h1": -1,
-  "heading-h2": -1,
-  "heading-h3": -1,
-  "heading-h4": -1,
-  "heading-h5": -1,
-  "heading-h6": -1,
-  "body-large": 0,
-  "body-medium": 0,
-  "body-small": 0,
-  "caption-small": 0,
-  "capital": 5%,
+  "2": 2px,
+  "3": 3px,
+  "4": 4px,
+  "5": 5px,
 );
 
 @function letter-spacing($base) {
@@ -96,16 +73,26 @@ $letter-spacings: (
 }
 
 // font setting for font sizes
-@mixin font-settings($base, $weight: null) {
-  font-size: font-size($base);
-  line-height: line-height($base);
-  letter-spacing: -1;
-  @if ($weight) {
-    font-weight: weight($weight);
+@mixin font-settings(
+  $size,
+  $weight,
+  $line-height: null,
+  $letter-spacing: null
+) {
+  font-size: font-size($size);
+  font-weight: weight($weight);
+
+  @if ($line-height) {
+    line-height: line-height($line-height);
+  } @else {
+    line-height: normal;
   }
-  // @else {
-  //   font-weight: font-weight($base);
-  // }
+
+  @if ($letter-spacing) {
+    letter-spacing: letter-spacing($letter-spacing);
+  } @else {
+    letter-spacing: normal;
+  }
 }
 
 //
