@@ -1,0 +1,25 @@
+@import "./variables";
+
+// styling for preview page
+body {
+  font-family: $font-family-base;
+}
+
+.container{
+    display:inline-flex;
+    flex-direction: column;
+    margin:10px;
+    max-width: 570px;
+}
+.group {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px dashed #7b61ff;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+[class*='code-']{
+    color: blue;
+}

@@ -1,0 +1,179 @@
+.headline-1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: normal;
+}
+
+.headline-2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: normal;
+}
+
+.headline-3 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: normal;
+}
+
+.headline-4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+
+.headline-5 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+.headline-6 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+[class*=cap-] {
+  text-transform: uppercase;
+}
+
+.cap-xs {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cap-sm {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.cap-bs {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.cap-lg {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+.label-xs {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.label-sm {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.label-bs {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.label-lg {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.display-1 {
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 137.5%;
+}
+
+.display-2 {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 137.5%;
+}
+
+.body-lg {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.body-bs {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.body-sm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.body-xs {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.code-xs {
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-flex;
+  font-family: "Courier Prime", monospace;
+}
+
+.code-sm {
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-flex;
+  font-family: "Courier Prime", monospace;
+}
+
+.code-bs {
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  font-family: "Courier Prime", monospace;
+}
+
+.code-lg {
+  font-size: 18px;
+  font-weight: 400;
+  display: inline-flex;
+  font-family: "Courier Prime", monospace;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  max-width: 570px;
+}
+
+.group {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px dashed #7b61ff;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+[class*=code-] {
+  color: blue;
+}
+
+/*# sourceMappingURL=main.css.map */
