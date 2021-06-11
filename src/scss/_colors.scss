@@ -1,0 +1,147 @@
+$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
+
+// COLOR STYLES - LIGHT
+
+// Gray
+$gray: (
+  "900": #0a0b0d,
+  "800": #1b1d22,
+  "700": #292c34,
+  "600": #52555d,
+  "500": #b0b4bb,
+  "400": #c0c3c9,
+  "300": #dddfe0,
+  "200": #f7f7f8,
+  "100": #ffffff,
+);
+
+@function gray($base) {
+  @return map-get($gray, $base);
+}
+
+// Primary
+$primary: (
+  "900": #2c1752,
+  "800": #3c1f70,
+  "700": #4e2892,
+  "600": #6433b9,
+  "500": #7b3fe4,
+  "400": #aa84ed,
+  "300": #d0baf5,
+  "200": #eae0fb,
+  "100": #faf7fe,
+);
+
+@function primary($base) {
+  @return map-get($primary, $base);
+}
+
+// Secondary
+$secondary: (
+  "900": #193d45,
+  "800": #22535e,
+  "700": #2b6d7b,
+  "600": #378a9c,
+  "500": #44aac0,
+  "400": #87c9d7,
+  "300": #bce0e8,
+  "200": #e1f1f5,
+  "100": #f8fcfc,
+);
+
+@function secondary($base) {
+  @return map-get($secondary, $base);
+}
+
+// Success
+$success: (
+  "900": #16443e,
+  "800": #1d5d55,
+  "700": #267a6f,
+  "600": #319a8d,
+  "500": #3cbeae,
+  "400": #82d5cb,
+  "300": #b9e8e2,
+  "200": #e0f5f2,
+  "100": #f7fcfc,
+);
+
+@function success($base) {
+  @return map-get($success, $base);
+}
+
+// Warning
+$warning: (
+  "900": #593515,
+  "800": #7a491d,
+  "700": #9e5e25,
+  "600": #c9782f,
+  "500": #f8943a,
+  "400": #faba81,
+  "300": #fdd9b8,
+  "200": #feeedf,
+  "100": #fffbf7,
+);
+
+@function warning($base) {
+  @return map-get($warning, $base);
+}
+
+// Error
+$error: (
+  "900": #531919,
+  "800": #712222,
+  "700": #952c2c,
+  "600": #bc3838,
+  "500": #e84545,
+  "400": #f18888,
+  "300": #f7bcbc,
+  "200": #fbe1e1,
+  "100": #fef8f8,
+);
+
+@function error($base) {
+  @return map-get($error, $base);
+}
+
+// function to check for contrast ratio
+@function text-color($base) {
+  @if ($base != "400" and $base!= "300" and $base!= "200" and $base!= "100") {
+    @return #ffffff;
+  } @else {
+    @return #000000;
+  }
+}
+
+// generating bg-color classes
+@each $base in $bases {
+  .bg-gray-#{$base} {
+    background-color: gray($base);
+    color: text-color($base);
+  }
+
+  .bg-primary-#{$base} {
+    background-color: primary($base);
+    color: text-color($base);
+  }
+
+  .bg-secondary-#{$base} {
+    background-color: secondary($base);
+    color: text-color($base);
+  }
+
+  .bg-success-#{$base} {
+    background-color: success($base);
+    color: text-color($base);
+  }
+
+  .bg-warning-#{$base} {
+    background-color: warning($base);
+    color: text-color($base);
+  }
+
+  .bg-error-#{$base} {
+    background-color: error($base);
+    color: text-color($base);
+  }
+}
