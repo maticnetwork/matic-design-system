@@ -1,3 +1,273 @@
+.bg-gray-900 {
+  background-color: #0a0b0d;
+  color: #ffffff;
+}
+
+.bg-primary-900 {
+  background-color: #2c1752;
+  color: #ffffff;
+}
+
+.bg-secondary-900 {
+  background-color: #193d45;
+  color: #ffffff;
+}
+
+.bg-success-900 {
+  background-color: #16443e;
+  color: #ffffff;
+}
+
+.bg-warning-900 {
+  background-color: #593515;
+  color: #ffffff;
+}
+
+.bg-error-900 {
+  background-color: #531919;
+  color: #ffffff;
+}
+
+.bg-gray-800 {
+  background-color: #1b1d22;
+  color: #ffffff;
+}
+
+.bg-primary-800 {
+  background-color: #3c1f70;
+  color: #ffffff;
+}
+
+.bg-secondary-800 {
+  background-color: #22535e;
+  color: #ffffff;
+}
+
+.bg-success-800 {
+  background-color: #1d5d55;
+  color: #ffffff;
+}
+
+.bg-warning-800 {
+  background-color: #7a491d;
+  color: #ffffff;
+}
+
+.bg-error-800 {
+  background-color: #712222;
+  color: #ffffff;
+}
+
+.bg-gray-700 {
+  background-color: #292c34;
+  color: #ffffff;
+}
+
+.bg-primary-700 {
+  background-color: #4e2892;
+  color: #ffffff;
+}
+
+.bg-secondary-700 {
+  background-color: #2b6d7b;
+  color: #ffffff;
+}
+
+.bg-success-700 {
+  background-color: #267a6f;
+  color: #ffffff;
+}
+
+.bg-warning-700 {
+  background-color: #9e5e25;
+  color: #ffffff;
+}
+
+.bg-error-700 {
+  background-color: #952c2c;
+  color: #ffffff;
+}
+
+.bg-gray-600 {
+  background-color: #52555d;
+  color: #ffffff;
+}
+
+.bg-primary-600 {
+  background-color: #6433b9;
+  color: #ffffff;
+}
+
+.bg-secondary-600 {
+  background-color: #378a9c;
+  color: #ffffff;
+}
+
+.bg-success-600 {
+  background-color: #319a8d;
+  color: #ffffff;
+}
+
+.bg-warning-600 {
+  background-color: #c9782f;
+  color: #ffffff;
+}
+
+.bg-error-600 {
+  background-color: #bc3838;
+  color: #ffffff;
+}
+
+.bg-gray-500 {
+  background-color: #b0b4bb;
+  color: #ffffff;
+}
+
+.bg-primary-500 {
+  background-color: #7b3fe4;
+  color: #ffffff;
+}
+
+.bg-secondary-500 {
+  background-color: #44aac0;
+  color: #ffffff;
+}
+
+.bg-success-500 {
+  background-color: #3cbeae;
+  color: #ffffff;
+}
+
+.bg-warning-500 {
+  background-color: #f8943a;
+  color: #ffffff;
+}
+
+.bg-error-500 {
+  background-color: #e84545;
+  color: #ffffff;
+}
+
+.bg-gray-400 {
+  background-color: #c0c3c9;
+  color: #000000;
+}
+
+.bg-primary-400 {
+  background-color: #aa84ed;
+  color: #000000;
+}
+
+.bg-secondary-400 {
+  background-color: #87c9d7;
+  color: #000000;
+}
+
+.bg-success-400 {
+  background-color: #82d5cb;
+  color: #000000;
+}
+
+.bg-warning-400 {
+  background-color: #faba81;
+  color: #000000;
+}
+
+.bg-error-400 {
+  background-color: #f18888;
+  color: #000000;
+}
+
+.bg-gray-300 {
+  background-color: #dddfe0;
+  color: #000000;
+}
+
+.bg-primary-300 {
+  background-color: #d0baf5;
+  color: #000000;
+}
+
+.bg-secondary-300 {
+  background-color: #bce0e8;
+  color: #000000;
+}
+
+.bg-success-300 {
+  background-color: #b9e8e2;
+  color: #000000;
+}
+
+.bg-warning-300 {
+  background-color: #fdd9b8;
+  color: #000000;
+}
+
+.bg-error-300 {
+  background-color: #f7bcbc;
+  color: #000000;
+}
+
+.bg-gray-200 {
+  background-color: #f7f7f8;
+  color: #000000;
+}
+
+.bg-primary-200 {
+  background-color: #eae0fb;
+  color: #000000;
+}
+
+.bg-secondary-200 {
+  background-color: #e1f1f5;
+  color: #000000;
+}
+
+.bg-success-200 {
+  background-color: #e0f5f2;
+  color: #000000;
+}
+
+.bg-warning-200 {
+  background-color: #feeedf;
+  color: #000000;
+}
+
+.bg-error-200 {
+  background-color: #fbe1e1;
+  color: #000000;
+}
+
+.bg-gray-100 {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.bg-primary-100 {
+  background-color: #faf7fe;
+  color: #000000;
+}
+
+.bg-secondary-100 {
+  background-color: #f8fcfc;
+  color: #000000;
+}
+
+.bg-success-100 {
+  background-color: #f7fcfc;
+  color: #000000;
+}
+
+.bg-warning-100 {
+  background-color: #fffbf7;
+  color: #000000;
+}
+
+.bg-error-100 {
+  background-color: #fef8f8;
+  color: #000000;
+}
+
 .headline-1 {
   font-size: 40px;
   font-weight: 700;
@@ -154,6 +424,14 @@
 
 body {
   font-family: "Manrope", sans-serif;
+  background-color: black;
+}
+
+.section {
+  background-color: white;
+  width: 90%;
+  margin: 50px auto;
+  padding: 30px 40px;
 }
 
 .container {
@@ -174,6 +452,23 @@ body {
 
 [class*=code-] {
   color: blue;
+}
+
+.color-container {
+  display: flex;
+}
+
+.color-block {
+  height: 65px;
+  flex-grow: 1;
+  margin: 10px;
+  line-height: 65px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+.color-block:nth-child(5) {
+  width: 100px;
 }
 
 /*# sourceMappingURL=main.css.map */

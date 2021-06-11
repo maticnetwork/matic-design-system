@@ -3,6 +3,14 @@
 // styling for preview page
 body {
   font-family: $font-family-base;
+  background-color: black;
+}
+
+.section{
+  background-color: white;
+  width:90%; 
+  margin:50px auto;
+  padding:30px 40px;
 }
 
 .container{
@@ -22,4 +30,22 @@ body {
 
 [class*='code-']{
     color: blue;
+}
+
+// for color display
+.color-container{
+  display:flex;
+}
+.color-block{
+  height: 65px;
+  flex-grow: 1;
+  margin:10px;
+  line-height: 65px;
+  text-align: center;
+  font-weight: map-get($weights, "medium");
+  font-size: map-get($font-sizes, "sm");
+
+  &:nth-child(5){
+    width: 100px;
+  }
 }
