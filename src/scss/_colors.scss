@@ -1,3 +1,7 @@
+@import "./luminance";
+// This file imports the luminance function which checks for the luminance (brightness) of 
+// the colour and helps in providing an accurate color if the background-color is too bright or too dark.
+
 // COLOR VARIABLES
 
 // Color styles - light
@@ -201,7 +205,6 @@ $dark-error: (
   @return map-get($error, $base);
 }
 
-
 $shades: "gray" "primary" "secondary" "success" "warning" "error";
 $bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
 
@@ -232,12 +235,22 @@ $bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
   }
 }
 
+// function to select text color
+@function text-color($value) {
+  @if ($value>0.5) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
 // generating bg-color classes
 // for light colors
 @each $shade in $shades {
   @each $base in $bases {
     .bg-#{$shade}-#{$base} {
       background-color: set-bg($shade, $base);
+      color: text-color(luminance(set-bg($shade, $base)));
     }
   }
 }
@@ -247,22 +260,7 @@ $bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
   @each $base in $bases {
     .dark-bg-#{$shade}-#{$base} {
       background-color: set-bg($shade, $base, "dark");
+      color: text-color(luminance(set-bg($shade, $base, "dark")));
     }
   }
-}
-
-
-// Still working on this
-// function to check for contrast ratio
-@function text-color($base) {
-  @if ($base != "400" and $base!= "300" and $base!= "200" and $base!= "100") {
-    // @return #ffffff;
-    @return #000000;
-  } @else {
-    @return #000000;
-  }
-}
-
-[class*="bg-"] {
-  color: text-color("800");
 }
