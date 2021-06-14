@@ -1,15 +1,3 @@
-// @function pow($number, $exponent) {
-//   $value: 1;
-
-//   @if $exponent > 0 {
-//     @for $i from 1 through $exponent {
-//       $value: $value * $number;
-//     }
-//   }
-
-//   @return $value;
-// }
-
 @use 'sass:math';
 
 @function luminance($color) {
