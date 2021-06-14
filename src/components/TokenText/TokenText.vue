@@ -20,7 +20,7 @@
       v-if="currencyName"
       backgroundColor="#F3F4F7"
       class="select-box"
-      :iconName="currencySymbol"
+      :iconName="formattedCurrencySymbol"
       iconNameRight="discloser/bottom"
       :label="currencyName"
       size="medium"
@@ -75,6 +75,9 @@ export default {
         "token-text--large": this.size == "large",
       };
     },
+    formattedCurrencySymbol() {
+      return this.currencySymbol ? this.currencySymbol.toLowerCase() : ''
+    }
   },
 
   methods: {
