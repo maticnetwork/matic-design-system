@@ -17,6 +17,10 @@ body {
     flex-direction: column;
     margin:10px;
     max-width: 570px;
+
+    &.hr{
+      max-width: none;
+    }
 }
 .group {
   display: inline-flex;
@@ -25,6 +29,10 @@ body {
   border: 1px dashed #7b61ff;
   box-sizing: border-box;
   border-radius: 5px;
+
+  &.hr{
+    flex-direction: row;
+  }
 }
 
 [class*='code-']{
@@ -47,4 +55,10 @@ body {
   &:nth-child(5){
     width: 100px;
   }
+}
+
+.block{
+  padding: 20px 30px;
+  display:inline-flex;
+  margin:10px;
 }
