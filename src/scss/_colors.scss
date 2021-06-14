@@ -1,7 +1,6 @@
-$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
+// COLOR VARIABLES
 
-// COLOR STYLES - LIGHT
-
+// Color styles - light
 // Gray
 $gray: (
   "900": #0a0b0d,
@@ -14,10 +13,6 @@ $gray: (
   "200": #f7f7f8,
   "100": #ffffff,
 );
-
-@function gray($base) {
-  @return map-get($gray, $base);
-}
 
 // Primary
 $primary: (
@@ -32,10 +27,6 @@ $primary: (
   "100": #faf7fe,
 );
 
-@function primary($base) {
-  @return map-get($primary, $base);
-}
-
 // Secondary
 $secondary: (
   "900": #193d45,
@@ -48,10 +39,6 @@ $secondary: (
   "200": #e1f1f5,
   "100": #f8fcfc,
 );
-
-@function secondary($base) {
-  @return map-get($secondary, $base);
-}
 
 // Success
 $success: (
@@ -66,10 +53,6 @@ $success: (
   "100": #f7fcfc,
 );
 
-@function success($base) {
-  @return map-get($success, $base);
-}
-
 // Warning
 $warning: (
   "900": #593515,
@@ -82,10 +65,6 @@ $warning: (
   "200": #feeedf,
   "100": #fffbf7,
 );
-
-@function warning($base) {
-  @return map-get($warning, $base);
-}
 
 // Error
 $error: (
@@ -100,48 +79,190 @@ $error: (
   "100": #fef8f8,
 );
 
-@function error($base) {
+// COLOR STYLES - DARK
+// Gray
+$dark-gray: (
+  "900": #ffffff,
+  "800": #f7f7f8,
+  "700": #e7e9eb,
+  "600": #c0c3c9,
+  "500": #b0b4bb,
+  "400": #52555d,
+  "300": #292c34,
+  "200": #1b1d22,
+  "100": #0a0b0d,
+);
+
+// Primary
+$dark-primary: (
+  "900": #d2bdf5,
+  "800": #c1a5f2,
+  "700": #af89ee,
+  "600": #996aea,
+  "500": #8247e5,
+  "400": #693ab9,
+  "300": #532e92,
+  "200": #402370,
+  "100": #2f1a52,
+);
+
+// Secondary
+$dark-secondary: (
+  "900": #bfe2ea,
+  "800": #a9d8e2,
+  "700": #8eccd9,
+  "600": #71becf,
+  "500": #4fafc4,
+  "400": #408d9e,
+  "300": #32707e,
+  "200": #265560,
+  "100": #1c3f47,
+);
+
+// Success
+$dark-success: (
+  "900": #beebe5,
+  "800": #a6e3dc,
+  "700": #8bdad1,
+  "600": #6cd1c4,
+  "500": #4ac6b7,
+  "400": #3ca095,
+  "300": #2f7e75,
+  "200": #24615a,
+  "100": #1a4742,
+);
+
+// Warning
+$dark-warning: (
+  "900": #fdddc1,
+  "800": #fcd1aa,
+  "700": #fbc390,
+  "600": #fbb272,
+  "500": #f9a151,
+  "400": #ca8342,
+  "300": #9f6734,
+  "200": #7a4f28,
+  "100": #593a1d,
+);
+
+// Error
+$dark-error: (
+  "900": #fcbebe,
+  "800": #fba6a6,
+  "700": #f98b8b,
+  "600": #f86c6c,
+  "500": #f64a4a,
+  "400": #c73c3c,
+  "300": #9e2f2f,
+  "200": #782424,
+  "100": #591a1a,
+);
+
+// FUNCTIONS
+@function gray($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-gray, $base);
+  }
+  @return map-get($gray, $base);
+}
+
+@function primary($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-primary, $base);
+  }
+  @return map-get($primary, $base);
+}
+
+@function secondary($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-secondary, $base);
+  }
+  @return map-get($secondary, $base);
+}
+
+@function success($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-success, $base);
+  }
+  @return map-get($success, $base);
+}
+
+@function warning($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-warning, $base);
+  }
+  @return map-get($warning, $base);
+}
+
+@function error($base, $theme) {
+  @if ($theme) {
+    @return map-get($dark-error, $base);
+  }
   @return map-get($error, $base);
 }
 
+
+$shades: "gray" "primary" "secondary" "success" "warning" "error";
+$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
+
+// function to set background-color
+@function set-bg($shade, $base, $theme: null) {
+  @if ($shade == "gray") {
+    @return gray($base, $theme);
+  }
+
+  @if ($shade == "primary") {
+    @return primary($base, $theme);
+  }
+
+  @if ($shade == "secondary") {
+    @return secondary($base, $theme);
+  }
+
+  @if ($shade == "success") {
+    @return success($base, $theme);
+  }
+
+  @if ($shade == "warning") {
+    @return warning($base, $theme);
+  }
+
+  @if ($shade == "error") {
+    @return error($base, $theme);
+  }
+}
+
+// generating bg-color classes
+// for light colors
+@each $shade in $shades {
+  @each $base in $bases {
+    .bg-#{$shade}-#{$base} {
+      background-color: set-bg($shade, $base);
+    }
+  }
+}
+
+// for dark colours
+@each $shade in $shades {
+  @each $base in $bases {
+    .dark-bg-#{$shade}-#{$base} {
+      background-color: set-bg($shade, $base, "dark");
+    }
+  }
+}
+
+
+// Still working on this
 // function to check for contrast ratio
 @function text-color($base) {
   @if ($base != "400" and $base!= "300" and $base!= "200" and $base!= "100") {
-    @return #ffffff;
+    // @return #ffffff;
+    @return #000000;
   } @else {
     @return #000000;
   }
 }
 
-// generating bg-color classes
-@each $base in $bases {
-  .bg-gray-#{$base} {
-    background-color: gray($base);
-    color: text-color($base);
-  }
-
-  .bg-primary-#{$base} {
-    background-color: primary($base);
-    color: text-color($base);
-  }
-
-  .bg-secondary-#{$base} {
-    background-color: secondary($base);
-    color: text-color($base);
-  }
-
-  .bg-success-#{$base} {
-    background-color: success($base);
-    color: text-color($base);
-  }
-
-  .bg-warning-#{$base} {
-    background-color: warning($base);
-    color: text-color($base);
-  }
-
-  .bg-error-#{$base} {
-    background-color: error($base);
-    color: text-color($base);
-  }
+[class*="bg-"] {
+  color: text-color("800");
 }
