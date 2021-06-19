@@ -1,0 +1,14 @@
+// The following code will generate the rounded classes
+@import "../variables";
+
+@each $prop, $value in $corners {
+  @if ($prop==null) {
+    .rounded {
+      @include corner($prop);
+    }
+  } @else {
+    .rounded-#{$prop} {
+      @include corner($prop);
+    }
+  }
+}

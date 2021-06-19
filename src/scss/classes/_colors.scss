@@ -1,0 +1,19 @@
+// generating bg-color classes
+// for light colors
+@each $color in $colors {
+  @each $base in $bases {
+    .bg-#{$color}-#{$base} {
+      @include set-bg($color, $base);
+    }
+  }
+}
+
+// for dark colours
+@each $color in $colors {
+  @each $base in $bases {
+    .dark-bg-#{$color}-#{$base} {
+      @include set-bg($color, $base, "dark");
+      // color: text-color(luminance(set-bg($color, $base, "dark")));
+    }
+  }
+}

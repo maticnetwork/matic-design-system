@@ -97,115 +97,12 @@ $letter-spacings: (
   }
 }
 
-// TYPEFACE STYLES
-
-// Headlines
-.headline-1 {
-  @include font-settings("7xl", "bold", "leading-11");
-}
-
-.headline-2 {
-  @include font-settings("5xl", "bold", "leading-10");
-}
-
-.headline-3 {
-  @include font-settings("3xl", "bold", "leading-9");
-}
-
-.headline-4 {
-  @include font-settings("lg", "bold", "leading-7");
-}
-
-.headline-5 {
-  @include font-settings("bs", "bold", "leading-6");
-}
-
-.headline-6 {
-  @include font-settings("sm", "bold", "leading-5");
-}
-
-// Capitals
-[class*="cap-"] {
-  text-transform: uppercase;
-}
-.cap-xs {
-  @include font-settings("xs", "extra-bold", -height, "2");
-}
-
-.cap-sm {
-  @include font-settings("sm", "extra-bold", -height, "3");
-}
-
-.cap-bs {
-  @include font-settings("bs", "extra-bold", -height, "4");
-}
-
-.cap-lg {
-  @include font-settings("lg", "extra-bold", -height, "5");
-}
-
-// Labels
-.label-xs {
-  @include font-settings("xs", "medium", -height, -spacing);
-}
-.label-sm {
-  @include font-settings("sm", "medium", -height, -spacing);
-}
-.label-bs {
-  @include font-settings("bs", "medium", -height, -spacing);
-}
-.label-lg {
-  @include font-settings("lg", "medium", -height, -spacing);
-}
-
-// Display
-.display-1 {
-  @include font-settings("8xl", "extra-bold", "leading-snug", -spacing);
-}
-
-.display-2 {
-  @include font-settings("9xl", "extra-bold", "leading-snug", -spacing);
-}
-
-// Body
-.body-lg {
-  @include font-settings("lg", "normal", "leading-7", -spacing);
-}
-
-.body-bs {
-  @include font-settings("bs", "normal", "leading-6", -spacing);
-}
-
-.body-sm {
-  @include font-settings("sm", "normal", "leading-5", -spacing);
-}
-
-.body-xs {
-  @include font-settings("xs", "normal", "leading-4", -spacing);
-}
-
-// Code
+// for Code
 @mixin code($size, $weight, $display) {
   font-size: font-size($size);
   font-weight: weight($weight);
   display: $display;
   font-family: $font-family-code;
-}
-
-.code-xs {
-  @include code("xs", "normal", inline-flex);
-}
-
-.code-sm {
-  @include code("sm", "normal", inline-flex);
-}
-
-.code-bs {
-  @include code("bs", "normal", block);
-}
-
-.code-lg {
-  @include code("lg", "normal", inline-flex);
 }
 
 // corners
@@ -219,16 +116,8 @@ $corners: (
   "full": 9999px,
 );
 
-@each $prop, $value in $corners {
-  @if ($prop==null) {
-    .rounded {
-      border-radius: $value;
-    }
-  } @else {
-    .rounded-#{$prop} {
-      border-radius: $value;
-    }
-  }
+@mixin corner($base) {
+  border-radius: map-get($corners, $base);
 }
 
 // shadows
@@ -244,82 +133,6 @@ $shadows: (
   "2xl": 0px 12px 30px rgba(0, 0, 0, 0.12),
 );
 
-@each $prop, $value in $shadows {
-  @if ($prop==null) {
-    .shadow {
-      box-shadow: $value;
-    }
-  } @else {
-    .shadow-#{$prop} {
-      box-shadow: $value;
-    }
-  }
-}
-
-// SPACING
-// spacing properties
-$sp-props: (
-  "m": "margin",
-  "p": "padding",
-);
-
-// spacing property variants
-$sp-variants: (
-  "t": "top",
-  "l": "left",
-  "b": "bottom",
-  "r": "right",
-  "x": "left-right",
-  "y": "top-bottom",
-  null: "all sides",
-);
-
-// spacing values
-$sp-values: (
-  "0-5": 2px,
-  "1": 4px,
-  "2": 8px,
-  "3": 12px,
-  "4": 16px,
-  "5": 20px,
-  "6": 24px,
-  "8": 32px,
-  "10": 40px,
-  "12": 48px,
-  "20": 80px,
-  "28": 112px,
-  "36": 144px,
-  "48": 192px,
-);
-
-// looping through each spacing property (padding, margin, etc)
-@each $prop-key, $prop-value in $sp-props {
-  // looping through each varaint (top, left, bottom, right, etc)
-  @each $variant-key, $variant-value in $sp-variants {
-    // looping through each spacing key:value pair
-    @each $sp-key, $sp-value in $sp-values {
-      // x = left and right
-      // y = top and bottom
-      // null = all sides
-      @if $variant-key == "x" {
-        .#{$prop-key}#{$variant-key}-#{$sp-key} {
-          #{$prop-value}-left: $sp-value;
-          #{$prop-value}-right: $sp-value;
-        }
-      } @else if $variant-key == "y" {
-        .#{$prop-key}#{$variant-key}-#{$sp-key} {
-          #{$prop-value}-top: $sp-value;
-          #{$prop-value}-bottom: $sp-value;
-        }
-      } @else if $variant-key == null {
-        .#{$prop-key}#{$variant-key}-#{$sp-key} {
-          #{$prop-value}: $sp-value;
-        }
-      } @else {
-        .#{$prop-key}#{$variant-key}-#{$sp-key} {
-          #{$prop-value}-#{$variant-value}: $sp-value;
-        }
-      }
-    }
-  }
+@mixin shadow($base) {
+  box-shadow: map-get($map: $shadows, $key: $base);
 }

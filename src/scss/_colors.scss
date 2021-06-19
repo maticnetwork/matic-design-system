@@ -1,5 +1,5 @@
 @import "./luminance";
-// This file imports the luminance function which checks for the luminance (brightness) of 
+// This file imports the luminance function which checks for the luminance (brightness) of
 // the colour and helps in providing an accurate color if the background-color is too bright or too dark.
 
 // COLOR VARIABLES
@@ -205,62 +205,47 @@ $dark-error: (
   @return map-get($error, $base);
 }
 
-$shades: "gray" "primary" "secondary" "success" "warning" "error";
+$colors: "gray" "primary" "secondary" "success" "warning" "error";
 $bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
 
-// function to set background-color
-@function set-bg($shade, $base, $theme: null) {
-  @if ($shade == "gray") {
-    @return gray($base, $theme);
-  }
-
-  @if ($shade == "primary") {
-    @return primary($base, $theme);
-  }
-
-  @if ($shade == "secondary") {
-    @return secondary($base, $theme);
-  }
-
-  @if ($shade == "success") {
-    @return success($base, $theme);
-  }
-
-  @if ($shade == "warning") {
-    @return warning($base, $theme);
-  }
-
-  @if ($shade == "error") {
-    @return error($base, $theme);
-  }
-}
-
 // function to select text color
-@function text-color($value) {
-  @if ($value>0.5) {
-    @return #000;
+@mixin text-color($color) {
+  @if (luminance($color) >0.5) {
+    color: #000;
   } @else {
-    @return #fff;
+    color: #fff;
   }
 }
 
-// generating bg-color classes
-// for light colors
-@each $shade in $shades {
-  @each $base in $bases {
-    .bg-#{$shade}-#{$base} {
-      background-color: set-bg($shade, $base);
-      color: text-color(luminance(set-bg($shade, $base)));
-    }
+// function to set background-color
+@mixin set-bg($color, $base, $theme: null) {
+  @if ($color == "gray") {
+    background-color: gray($base, $theme);
+    @include text-color(gray($base, $theme));
   }
-}
 
-// for dark colours
-@each $shade in $shades {
-  @each $base in $bases {
-    .dark-bg-#{$shade}-#{$base} {
-      background-color: set-bg($shade, $base, "dark");
-      color: text-color(luminance(set-bg($shade, $base, "dark")));
-    }
+  @if ($color == "primary") {
+    background-color: primary($base, $theme);
+    @include text-color(primary($base, $theme));
+  }
+
+  @if ($color == "secondary") {
+    background-color: secondary($base, $theme);
+    @include text-color(secondary($base, $theme));
+  }
+
+  @if ($color == "success") {
+    background-color: success($base, $theme);
+    @include text-color(success($base, $theme));
+  }
+
+  @if ($color == "warning") {
+    background-color: warning($base, $theme);
+    @include text-color(warning($base, $theme));
+  }
+
+  @if ($color == "error") {
+    background-color: error($base, $theme);
+    @include text-color(error($base, $theme));
   }
 }
