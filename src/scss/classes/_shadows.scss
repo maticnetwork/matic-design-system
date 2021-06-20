@@ -2,7 +2,7 @@
 @import "../variables";
 
 @each $prop, $value in $shadows {
-  @if ($prop==null) {
+  @if ($prop=="rg") {
     .shadow {
       @include shadow($prop);
     }

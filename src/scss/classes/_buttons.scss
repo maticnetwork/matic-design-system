@@ -1,0 +1,62 @@
+@import "../variables";
+
+@mixin btn {
+  display: flex;
+  margin: auto;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.btn {
+  @include btn;
+  @include corner("rg");
+  @include font-settings("bs", "normal", "leading-6");
+  padding: 10px 20px;
+
+  // sizes
+  &-sm {
+    @include corner("sm");
+    @include font-settings("sm", "normal", "leading-5");
+    padding: 7px 20px;
+  }
+
+  &-lg {
+    @include corner("md");
+    @include font-settings("bs", "normal", "leading-6");
+    padding: 15px 20px;
+  }
+
+  // color variants
+  $btn-color-variants: "primary", "success", "warning", "error";
+
+  @each $variant in $btn-color-variants {
+    &-#{$variant} {
+      @include set-bg($variant, "500");
+      &:hover {
+        @include set-bg($variant, "600");
+      }
+      &:active {
+        @include set-bg($variant, "700");
+      }
+    }
+  }
+
+  &-secondary {
+    @include set-bg("gray", "100");
+    &:hover {
+      @include set-bg("gray", "200");
+    }
+    &:active {
+      @include set-bg("gray", "300");
+    }
+    border-color: map-get($gray, "300");
+  }
+
+  // state
+  &:disabled {
+    @include set-bg("gray", "200");
+    border-color: map-get($gray, "200");
+    color: map-get($gray, "400");
+  }
+}

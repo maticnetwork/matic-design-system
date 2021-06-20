@@ -2,7 +2,7 @@
 @import "../variables";
 
 @each $prop, $value in $corners {
-  @if ($prop==null) {
+  @if ($prop=="rg") {
     .rounded {
       @include corner($prop);
     }
