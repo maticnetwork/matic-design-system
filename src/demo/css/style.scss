@@ -62,3 +62,11 @@ body {
   display:inline-flex;
   margin:10px;
 }
+
+.button-container{
+  display: flex;  
+  padding: 20px 0;
+  .btn:not(:last-child){
+    margin-right: 20px;
+  }
+}

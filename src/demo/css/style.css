@@ -1584,6 +1584,103 @@
   color: #fff;
 }
 
+.btn {
+  display: flex;
+  margin: auto;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: normal;
+  padding: 10px 20px;
+}
+.btn-sm {
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+  padding: 7px 20px;
+}
+.btn-lg {
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: normal;
+  padding: 15px 20px;
+}
+.btn-primary {
+  background-color: #7b3fe4;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #6433b9;
+  color: #fff;
+}
+.btn-primary:active {
+  background-color: #4e2892;
+  color: #fff;
+}
+.btn-success {
+  background-color: #3cbeae;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: #319a8d;
+  color: #fff;
+}
+.btn-success:active {
+  background-color: #267a6f;
+  color: #fff;
+}
+.btn-warning {
+  background-color: #f8943a;
+  color: #fff;
+}
+.btn-warning:hover {
+  background-color: #c9782f;
+  color: #fff;
+}
+.btn-warning:active {
+  background-color: #9e5e25;
+  color: #fff;
+}
+.btn-error {
+  background-color: #e84545;
+  color: #fff;
+}
+.btn-error:hover {
+  background-color: #bc3838;
+  color: #fff;
+}
+.btn-error:active {
+  background-color: #952c2c;
+  color: #fff;
+}
+.btn-secondary {
+  background-color: #ffffff;
+  color: #000;
+  border-color: #dddfe0;
+}
+.btn-secondary:hover {
+  background-color: #f7f7f8;
+  color: #000;
+}
+.btn-secondary:active {
+  background-color: #dddfe0;
+  color: #000;
+}
+.btn:disabled {
+  background-color: #f7f7f8;
+  color: #000;
+  border-color: #f7f7f8;
+  color: #c0c3c9;
+}
+
 body {
   font-family: "Manrope", sans-serif;
   background-color: black;
@@ -1644,4 +1741,12 @@ body {
   margin: 10px;
 }
 
-/*# sourceMappingURL=polygon-mesh.css.map */
+.button-container {
+  display: flex;
+  padding: 20px 0;
+}
+.button-container .btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
