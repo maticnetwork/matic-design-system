@@ -1519,6 +1519,18 @@
   background-color: #4e2892;
   color: #fff;
 }
+.theme--dark .btn-primary {
+  background-color: #8247e5;
+  color: #fff;
+}
+.theme--dark .btn-primary:hover {
+  background-color: #996aea;
+  color: #fff;
+}
+.theme--dark .btn-primary:active {
+  background-color: #af89ee;
+  color: #fff;
+}
 .btn-success {
   background-color: #3cbeae;
   color: #fff;
@@ -1530,6 +1542,18 @@
 .btn-success:active {
   background-color: #267a6f;
   color: #fff;
+}
+.theme--dark .btn-success {
+  background-color: #4ac6b7;
+  color: #fff;
+}
+.theme--dark .btn-success:hover {
+  background-color: #6cd1c4;
+  color: #000;
+}
+.theme--dark .btn-success:active {
+  background-color: #8bdad1;
+  color: #000;
 }
 .btn-warning {
   background-color: #f8943a;
@@ -1543,6 +1567,18 @@
   background-color: #9e5e25;
   color: #fff;
 }
+.theme--dark .btn-warning {
+  background-color: #f9a151;
+  color: #fff;
+}
+.theme--dark .btn-warning:hover {
+  background-color: #fbb272;
+  color: #000;
+}
+.theme--dark .btn-warning:active {
+  background-color: #fbc390;
+  color: #000;
+}
 .btn-error {
   background-color: #e84545;
   color: #fff;
@@ -1553,6 +1589,18 @@
 }
 .btn-error:active {
   background-color: #952c2c;
+  color: #fff;
+}
+.theme--dark .btn-error {
+  background-color: #f64a4a;
+  color: #fff;
+}
+.theme--dark .btn-error:hover {
+  background-color: #f86c6c;
+  color: #fff;
+}
+.theme--dark .btn-error:active {
+  background-color: #f98b8b;
   color: #fff;
 }
 .btn-secondary {
@@ -1568,11 +1616,30 @@
   background-color: #dddfe0;
   color: #000;
 }
+.theme--dark .btn-secondary {
+  background-color: #0a0b0d;
+  color: #fff;
+  border-color: #292c34;
+}
+.theme--dark .btn-secondary:hover {
+  background-color: #1b1d22;
+  color: #fff;
+}
+.theme--dark .btn-secondary:active {
+  background-color: #292c34;
+  color: #fff;
+}
 .btn:disabled {
   background-color: #f7f7f8;
   color: #000;
   border-color: #f7f7f8;
   color: #c0c3c9;
+}
+.theme--dark .btn:disabled {
+  background-color: #1b1d22;
+  color: #fff;
+  border-color: #1b1d22;
+  color: #52555d;
 }
 
 body {
