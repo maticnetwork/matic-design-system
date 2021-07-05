@@ -50,13 +50,13 @@
     &:active {
       @include set-bg("gray", "300");
     }
-    border-color: map-get($gray, "300");
+    border-color: set-color("gray", "300");
   }
 
   // state
   &:disabled {
     @include set-bg("gray", "200");
-    border-color: map-get($gray, "200");
-    color: map-get($gray, "400");
+    border-color: set-color("gray", "200");
+    color: set-color("gray", "400");
   }
 }

@@ -2,213 +2,152 @@
 // This file imports the luminance function which checks for the luminance (brightness) of
 // the colour and helps in providing an accurate color if the background-color is too bright or too dark.
 
-// COLOR VARIABLES
-
-// Color styles - light
-// Gray
-$gray: (
-  "900": #0a0b0d,
-  "800": #1b1d22,
-  "700": #292c34,
-  "600": #52555d,
-  "500": #b0b4bb,
-  "400": #c0c3c9,
-  "300": #dddfe0,
-  "200": #f7f7f8,
-  "100": #ffffff,
+// DARK AND LIGHT COLORS
+$themes: (
+  light: (
+    "gray": (
+      "900": #0a0b0d,
+      "800": #1b1d22,
+      "700": #292c34,
+      "600": #52555d,
+      "500": #b0b4bb,
+      "400": #c0c3c9,
+      "300": #dddfe0,
+      "200": #f7f7f8,
+      "100": #ffffff,
+    ),
+    "primary": (
+      "900": #2c1752,
+      "800": #3c1f70,
+      "700": #4e2892,
+      "600": #6433b9,
+      "500": #7b3fe4,
+      "400": #aa84ed,
+      "300": #d0baf5,
+      "200": #eae0fb,
+      "100": #faf7fe,
+    ),
+    "secondary": (
+      "900": #193d45,
+      "800": #22535e,
+      "700": #2b6d7b,
+      "600": #378a9c,
+      "500": #44aac0,
+      "400": #87c9d7,
+      "300": #bce0e8,
+      "200": #e1f1f5,
+      "100": #f8fcfc,
+    ),
+    "success": (
+      "900": #16443e,
+      "800": #1d5d55,
+      "700": #267a6f,
+      "600": #319a8d,
+      "500": #3cbeae,
+      "400": #82d5cb,
+      "300": #b9e8e2,
+      "200": #e0f5f2,
+      "100": #f7fcfc,
+    ),
+    "warning": (
+      "900": #593515,
+      "800": #7a491d,
+      "700": #9e5e25,
+      "600": #c9782f,
+      "500": #f8943a,
+      "400": #faba81,
+      "300": #fdd9b8,
+      "200": #feeedf,
+      "100": #fffbf7,
+    ),
+    "error": (
+      "900": #531919,
+      "800": #712222,
+      "700": #952c2c,
+      "600": #bc3838,
+      "500": #e84545,
+      "400": #f18888,
+      "300": #f7bcbc,
+      "200": #fbe1e1,
+      "100": #fef8f8,
+    ),
+  ),
+  dark: (
+    "gray": (
+      "900": #ffffff,
+      "800": #f7f7f8,
+      "700": #e7e9eb,
+      "600": #c0c3c9,
+      "500": #b0b4bb,
+      "400": #52555d,
+      "300": #292c34,
+      "200": #1b1d22,
+      "100": #0a0b0d,
+    ),
+    "primary": (
+      "900": #d2bdf5,
+      "800": #c1a5f2,
+      "700": #af89ee,
+      "600": #996aea,
+      "500": #8247e5,
+      "400": #693ab9,
+      "300": #532e92,
+      "200": #402370,
+      "100": #2f1a52,
+    ),
+    "secondary": (
+      "900": #bfe2ea,
+      "800": #a9d8e2,
+      "700": #8eccd9,
+      "600": #71becf,
+      "500": #4fafc4,
+      "400": #408d9e,
+      "300": #32707e,
+      "200": #265560,
+      "100": #1c3f47,
+    ),
+    "success": (
+      "900": #beebe5,
+      "800": #a6e3dc,
+      "700": #8bdad1,
+      "600": #6cd1c4,
+      "500": #4ac6b7,
+      "400": #3ca095,
+      "300": #2f7e75,
+      "200": #24615a,
+      "100": #1a4742,
+    ),
+    "warning": (
+      "900": #fdddc1,
+      "800": #fcd1aa,
+      "700": #fbc390,
+      "600": #fbb272,
+      "500": #f9a151,
+      "400": #ca8342,
+      "300": #9f6734,
+      "200": #7a4f28,
+      "100": #593a1d,
+    ),
+    "error": (
+      "900": #fcbebe,
+      "800": #fba6a6,
+      "700": #f98b8b,
+      "600": #f86c6c,
+      "500": #f64a4a,
+      "400": #c73c3c,
+      "300": #9e2f2f,
+      "200": #782424,
+      "100": #591a1a,
+    ),
+  ),
 );
 
-// Primary
-$primary: (
-  "900": #2c1752,
-  "800": #3c1f70,
-  "700": #4e2892,
-  "600": #6433b9,
-  "500": #7b3fe4,
-  "400": #aa84ed,
-  "300": #d0baf5,
-  "200": #eae0fb,
-  "100": #faf7fe,
-);
-
-// Secondary
-$secondary: (
-  "900": #193d45,
-  "800": #22535e,
-  "700": #2b6d7b,
-  "600": #378a9c,
-  "500": #44aac0,
-  "400": #87c9d7,
-  "300": #bce0e8,
-  "200": #e1f1f5,
-  "100": #f8fcfc,
-);
-
-// Success
-$success: (
-  "900": #16443e,
-  "800": #1d5d55,
-  "700": #267a6f,
-  "600": #319a8d,
-  "500": #3cbeae,
-  "400": #82d5cb,
-  "300": #b9e8e2,
-  "200": #e0f5f2,
-  "100": #f7fcfc,
-);
-
-// Warning
-$warning: (
-  "900": #593515,
-  "800": #7a491d,
-  "700": #9e5e25,
-  "600": #c9782f,
-  "500": #f8943a,
-  "400": #faba81,
-  "300": #fdd9b8,
-  "200": #feeedf,
-  "100": #fffbf7,
-);
-
-// Error
-$error: (
-  "900": #531919,
-  "800": #712222,
-  "700": #952c2c,
-  "600": #bc3838,
-  "500": #e84545,
-  "400": #f18888,
-  "300": #f7bcbc,
-  "200": #fbe1e1,
-  "100": #fef8f8,
-);
-
-// COLOR STYLES - DARK
-// Gray
-$dark-gray: (
-  "900": #ffffff,
-  "800": #f7f7f8,
-  "700": #e7e9eb,
-  "600": #c0c3c9,
-  "500": #b0b4bb,
-  "400": #52555d,
-  "300": #292c34,
-  "200": #1b1d22,
-  "100": #0a0b0d,
-);
-
-// Primary
-$dark-primary: (
-  "900": #d2bdf5,
-  "800": #c1a5f2,
-  "700": #af89ee,
-  "600": #996aea,
-  "500": #8247e5,
-  "400": #693ab9,
-  "300": #532e92,
-  "200": #402370,
-  "100": #2f1a52,
-);
-
-// Secondary
-$dark-secondary: (
-  "900": #bfe2ea,
-  "800": #a9d8e2,
-  "700": #8eccd9,
-  "600": #71becf,
-  "500": #4fafc4,
-  "400": #408d9e,
-  "300": #32707e,
-  "200": #265560,
-  "100": #1c3f47,
-);
-
-// Success
-$dark-success: (
-  "900": #beebe5,
-  "800": #a6e3dc,
-  "700": #8bdad1,
-  "600": #6cd1c4,
-  "500": #4ac6b7,
-  "400": #3ca095,
-  "300": #2f7e75,
-  "200": #24615a,
-  "100": #1a4742,
-);
-
-// Warning
-$dark-warning: (
-  "900": #fdddc1,
-  "800": #fcd1aa,
-  "700": #fbc390,
-  "600": #fbb272,
-  "500": #f9a151,
-  "400": #ca8342,
-  "300": #9f6734,
-  "200": #7a4f28,
-  "100": #593a1d,
-);
-
-// Error
-$dark-error: (
-  "900": #fcbebe,
-  "800": #fba6a6,
-  "700": #f98b8b,
-  "600": #f86c6c,
-  "500": #f64a4a,
-  "400": #c73c3c,
-  "300": #9e2f2f,
-  "200": #782424,
-  "100": #591a1a,
-);
-
-// FUNCTIONS
-@function gray($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-gray, $base);
-  }
-  @return map-get($gray, $base);
+// function to get color
+@function set-color($color, $base, $theme-name:'light') {
+  @return map-get(map-get(map-get($themes, $theme-name), $color), $base);
 }
 
-@function primary($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-primary, $base);
-  }
-  @return map-get($primary, $base);
-}
-
-@function secondary($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-secondary, $base);
-  }
-  @return map-get($secondary, $base);
-}
-
-@function success($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-success, $base);
-  }
-  @return map-get($success, $base);
-}
-
-@function warning($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-warning, $base);
-  }
-  @return map-get($warning, $base);
-}
-
-@function error($base, $theme) {
-  @if ($theme) {
-    @return map-get($dark-error, $base);
-  }
-  @return map-get($error, $base);
-}
-
-$colors: "gray" "primary" "secondary" "success" "warning" "error";
-$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
-
-// function to select text color
+// mixin to select text color
 @mixin text-color($color) {
   @if (luminance($color) >0.5) {
     color: #000;
@@ -217,35 +156,10 @@ $bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
   }
 }
 
-// function to set background-color
-@mixin set-bg($color, $base, $theme: null) {
-  @if ($color == "gray") {
-    background-color: gray($base, $theme);
-    @include text-color(gray($base, $theme));
-  }
-
-  @if ($color == "primary") {
-    background-color: primary($base, $theme);
-    @include text-color(primary($base, $theme));
-  }
-
-  @if ($color == "secondary") {
-    background-color: secondary($base, $theme);
-    @include text-color(secondary($base, $theme));
-  }
-
-  @if ($color == "success") {
-    background-color: success($base, $theme);
-    @include text-color(success($base, $theme));
-  }
-
-  @if ($color == "warning") {
-    background-color: warning($base, $theme);
-    @include text-color(warning($base, $theme));
-  }
-
-  @if ($color == "error") {
-    background-color: error($base, $theme);
-    @include text-color(error($base, $theme));
-  }
+// mixin to set background-color;
+@mixin set-bg($color, $base, $theme-name: "light") {
+  $hex-code: set-color($color, $base, $theme-name);
+  background-color: $hex-code;
+  // gets a text-color based on luminance of the background color.
+  @include text-color($hex-code);
 }

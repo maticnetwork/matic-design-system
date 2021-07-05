@@ -1,19 +1,20 @@
 // generating bg-color classes
-// for light colors
-@each $color in $colors {
-  @each $base in $bases {
-    .bg-#{$color}-#{$base} {
-      @include set-bg($color, $base);
+
+// variables 
+$colors: "gray" "primary" "secondary" "success" "warning" "error";
+$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
+
+@mixin theme($theme-name) {
+  .theme--#{$theme-name} {
+    @each $color in $colors {
+      @each $base in $bases {
+        .bg-#{$color}-#{$base} {
+          @include set-bg($color, $base, $theme-name);
+        }
+      }
     }
   }
 }
 
-// for dark colours
-@each $color in $colors {
-  @each $base in $bases {
-    .dark-bg-#{$color}-#{$base} {
-      @include set-bg($color, $base, "dark");
-      // color: text-color(luminance(set-bg($color, $base, "dark")));
-    }
-  }
-}
+@include theme("light");
+@include theme("dark");
