@@ -14,7 +14,7 @@
   @include set-bg("gray", "100");
   padding: 10px 16px;
 
-  //   sizes
+  //  SIZE VARIANTS
   &-sm {
     @include font-settings("sm", "medium", "leading-5");
     padding: 7px 12px;
@@ -24,7 +24,7 @@
     padding: 15px 20px;
   }
 
-  //   states
+  // STATES
   &:hover,
   &:disabled {
     @include set-bg("gray", "200");
@@ -33,5 +33,10 @@
   &:focus {
     @include set-bg("gray", "100");
     border-color: set-color("primary", "500");
+  }
+
+  &.error {
+    @include set-bg("error", "100");
+    border-color: set-color("error", "500") !important;
   }
 }
