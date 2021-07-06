@@ -15,6 +15,8 @@
 </head>
 
 <body class="theme--light">
+    <button class="btn btn-primary" style="position:fixed; bottom: 30px; right: 30px;" onclick="changeTheme()">Change
+        theme</button>
     <!-- section, container and group classes are not related to the design system -->
     <div class="section bg-gray-100 rounded">
         <div class="container">
@@ -88,76 +90,6 @@
     </div>
 
     <div class="section bg-gray-100 rounded">
-        <div class="color-container">
-            <div class="color-block bg-gray-900">G 900</div>
-            <div class="color-block bg-gray-800">G 800</div>
-            <div class="color-block bg-gray-700">G 700</div>
-            <div class="color-block bg-gray-600">G 600</div>
-            <div class="color-block bg-gray-500">Gray 500</div>
-            <div class="color-block bg-gray-400">G 400</div>
-            <div class="color-block bg-gray-300">G 300</div>
-            <div class="color-block bg-gray-200">G 200</div>
-            <div class="color-block bg-gray-100">G 100</div>
-        </div>
-        <div class="color-container">
-            <div class="color-block bg-primary-900">P 900</div>
-            <div class="color-block bg-primary-800">P 800</div>
-            <div class="color-block bg-primary-700">P 700</div>
-            <div class="color-block bg-primary-600">P 600</div>
-            <div class="color-block bg-primary-500">Primary 500</div>
-            <div class="color-block bg-primary-400">P 400</div>
-            <div class="color-block bg-primary-300">P 300</div>
-            <div class="color-block bg-primary-200">P 200</div>
-            <div class="color-block bg-primary-100">P 100</div>
-        </div>
-        <div class="color-container">
-            <div class="color-block bg-secondary-900">S 900</div>
-            <div class="color-block bg-secondary-800">S 800</div>
-            <div class="color-block bg-secondary-700">S 700</div>
-            <div class="color-block bg-secondary-600">S 600</div>
-            <div class="color-block bg-secondary-500">Secondary 500</div>
-            <div class="color-block bg-secondary-400">S 400</div>
-            <div class="color-block bg-secondary-300">S 300</div>
-            <div class="color-block bg-secondary-200">S 200</div>
-            <div class="color-block bg-secondary-100">S 100</div>
-        </div>
-        <div class="color-container">
-            <div class="color-block bg-success-900">S 900</div>
-            <div class="color-block bg-success-800">S 800</div>
-            <div class="color-block bg-success-700">S 700</div>
-            <div class="color-block bg-success-600">S 600</div>
-            <div class="color-block bg-success-500">Success 500</div>
-            <div class="color-block bg-success-400">S 400</div>
-            <div class="color-block bg-success-300">S 300</div>
-            <div class="color-block bg-success-200">S 200</div>
-            <div class="color-block bg-success-100">S 100</div>
-        </div>
-        <div class="color-container">
-            <div class="color-block bg-warning-900">W 900</div>
-            <div class="color-block bg-warning-800">W 800</div>
-            <div class="color-block bg-warning-700">W 700</div>
-            <div class="color-block bg-warning-600">W 600</div>
-            <div class="color-block bg-warning-500">Warning 500</div>
-            <div class="color-block bg-warning-400">W 400</div>
-            <div class="color-block bg-warning-300">W 300</div>
-            <div class="color-block bg-warning-200">W 200</div>
-            <div class="color-block bg-warning-100">W 100</div>
-        </div>
-        <div class="color-container">
-            <div class="color-block bg-error-900">E 900</div>
-            <div class="color-block bg-error-800">E 800</div>
-            <div class="color-block bg-error-700">E 700</div>
-            <div class="color-block bg-error-600">E 600</div>
-            <div class="color-block bg-error-500">Error 500</div>
-            <div class="color-block bg-error-400">E 400</div>
-            <div class="color-block bg-error-300">E 300</div>
-            <div class="color-block bg-error-200">E 200</div>
-            <div class="color-block bg-error-100">E 100</div>
-        </div>
-    </div>
-
-    <!-- dark colours -->
-    <div class="section bg-gray-900 rounded theme--dark" style="border: 1px dashed #7b3fe4">
         <div class="color-container">
             <div class="color-block bg-gray-900">G 900</div>
             <div class="color-block bg-gray-800">G 800</div>
@@ -309,43 +241,38 @@
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="group theme--dark bg-gray-900">
-                <h2 class="cap-lg">Button classes (dark mode)</h2>
+    </div>
+    <div class="section bg-gray-100 rounded">
+        <div class="container" style="width: 400px">
+            <div class="group">
+                <h2 class="cap-lg">Input classes</h2>
                 <div class="button-container">
-                    <button class="btn btn-sm btn-primary">Button</button>
-                    <button class="btn btn-primary">Button</button>
-                    <button class="btn btn-lg btn-primary">Button</button>
+                    <input type="text" placeholder="Small" class="input input-sm">
                 </div>
                 <div class="button-container">
-                    <button class="btn btn-sm btn-secondary">Button</button>
-                    <button class="btn btn-secondary">Button</button>
-                    <button class="btn btn-lg btn-secondary">Button</button>
+                    <input type="text" placeholder="Default - Medium" class="input">
                 </div>
                 <div class="button-container">
-                    <button class="btn btn-sm btn-success">Button</button>
-                    <button class="btn btn-success">Button</button>
-                    <button class="btn btn-lg btn-success">Button</button>
+                    <input type="text" placeholder="Large" class="input input-lg">
                 </div>
                 <div class="button-container">
-                    <button class="btn btn-sm btn-warning">Button</button>
-                    <button class="btn btn-warning">Button</button>
-                    <button class="btn btn-lg btn-warning">Button</button>
-                </div>
-                <div class="button-container">
-                    <button class="btn btn-sm btn-error">Button</button>
-                    <button class="btn btn-error">Button</button>
-                    <button class="btn btn-lg btn-error">Button</button>
-                </div>
-                <div class="button-container">
-                    <button class="btn btn-sm btn-error" disabled>Button</button>
-                    <button class="btn btn-error" disabled>Button</button>
-                    <button class="btn btn-lg btn-error" disabled>Button</button>
+                    <input type="text" placeholder="Disabled" class="input" disabled>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function changeTheme() {
+            if (document.body.classList.contains('theme--light')) {
+                document.body.classList.remove('theme--light');
+                document.body.classList.add('theme--dark');
+            } else {
+                document.body.classList.add('theme--light');
+                document.body.classList.remove('theme--dark');
+            }
+        }
+    </script>
 </body>
 
 </html>
