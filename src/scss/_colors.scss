@@ -143,7 +143,7 @@ $themes: (
 );
 
 // function to get color
-@function set-color($color, $base, $theme-name:'light') {
+@function set-color($color, $base, $theme-name: "light") {
   @return map-get(map-get(map-get($themes, $theme-name), $color), $base);
 }
 

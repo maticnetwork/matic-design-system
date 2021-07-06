@@ -3,70 +3,90 @@
 // styling for preview page
 body {
   font-family: $font-family-base;
-  background-color: black;
 }
 
-.section{
-  width:90%; 
-  margin:50px auto;
-  padding:30px 40px;
+.section {
+  width: 90%;
+  margin: 50px auto;
+  padding: 30px 40px;
 }
 
-.container{
-    display:inline-flex;
-    flex-direction: column;
-    margin:10px;
-    max-width: 570px;
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  max-width: 570px;
 
-    &.hr{
-      max-width: none;
-    }
+  &.hr {
+    max-width: none;
+  }
 }
 .group {
   display: inline-flex;
   flex-direction: column;
   padding: 30px;
-  border: 1px dashed set-color('primary', '500');
+  border: 1px dashed set-color("primary", "500");
   box-sizing: border-box;
   border-radius: 5px;
 
-  &.hr{
+  &.hr {
     flex-direction: row;
   }
 }
 
-[class*='code-']{
-    color: set-color('warning', '500')
+[class*="code-"] {
+  color: set-color("warning", "500");
 }
 
 // for color display
-.color-container{
-  display:flex;
+.color-container {
+  display: flex;
 }
-.color-block{
+.color-block {
   height: 65px;
   flex-grow: 1;
-  margin:10px;
+  margin: 10px;
   line-height: 65px;
   text-align: center;
   font-weight: map-get($weights, "medium");
   font-size: map-get($font-sizes, "sm");
 
-  &:nth-child(5){
+  &:nth-child(5) {
     width: 100px;
   }
 }
 
-.block{
+.block {
   padding: 20px 30px;
-  display:inline-flex;
-  margin:10px;
+  display: inline-flex;
+  margin: 10px;
 }
 
-.button-container{
-  display: flex;  
+.button-container {
+  display: flex;
   padding: 20px 0;
-  .btn:not(:last-child){
+  .btn:not(:last-child) {
     margin-right: 20px;
   }
+}
+
+// For sample.html
+.sample {
+  @include corner("rg");
+  max-width: 500px;
+  margin: 100px auto 0;
+  padding: 20px;
+
+  &__btnContainer {
+    display: flex;
+    margin: 30px 0 0;
+
+    .btn:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+h1{
+  margin-bottom:20px;
 }
