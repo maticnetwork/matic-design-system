@@ -239,6 +239,13 @@
                     <button class="btn btn-error" disabled>Button</button>
                     <button class="btn btn-lg btn-error" disabled>Button</button>
                 </div>
+                <div class="button-container">
+                    <button class="btn btn-sm">Button</button>
+                    <button class="btn">Button</button>
+                    <button class="btn btn-lg">Button</button>
+                    <!-- <button class="btn btn-error" disabled>Button</button>
+                    <button class="btn btn-lg btn-error" disabled>Button</button> -->
+                </div>
             </div>
         </div>
     </div>
@@ -250,12 +257,12 @@
                     <input type="text" placeholder="Small" class="input input-sm">
                 </div>
                 <div class="button-container">
-                    <input type="text" placeholder="Default - Medium" class="input">
+                    <input type="text" placeholder="Medium (default)" class="input" id="email" onchange="validateEmail()">
                 </div>
                 <div class="button-container">
                     <input type="text" placeholder="Large" class="input input-lg">
                 </div>
-                <div class="button-container">
+                <div class=" button-container">
                     <input type="text" placeholder="Disabled" class="input" disabled>
                 </div>
             </div>
@@ -270,6 +277,16 @@
             } else {
                 document.body.classList.add('theme--light');
                 document.body.classList.remove('theme--dark');
+            }
+        }
+
+        function validateEmail() {
+            var email = document.getElementById('email').value;
+            const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
+            if (emailRegex.test(email)) {
+                document.getElementById('email').classList.remove('error');
+            } else {
+                document.getElementById('email').classList.add('error');
             }
         }
     </script>
