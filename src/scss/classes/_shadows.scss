@@ -1,5 +1,4 @@
 // The following code will generate the shadow classes.
-@import "../variables";
 
 @each $prop, $value in $shadows {
   @if ($prop=="rg") {

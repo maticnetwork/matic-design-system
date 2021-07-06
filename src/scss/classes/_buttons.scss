@@ -1,10 +1,9 @@
-@import "../variables";
-
 @mixin btn {
   display: flex;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  margin: auto 0;
 }
 
 .btn {
@@ -39,18 +38,6 @@
         @include set-bg($variant, "700");
       }
     }
-
-    .theme--dark & {
-      &-#{$variant} {
-        @include set-bg($variant, "500", "dark");
-        &:hover {
-          @include set-bg($variant, "600", "dark");
-        }
-        &:active {
-          @include set-bg($variant, "700", "dark");
-        }
-      }
-    }
   }
 
   &-secondary {
@@ -62,17 +49,6 @@
       @include set-bg("gray", "300");
     }
     border-color: set-color("gray", "300");
-
-    .theme--dark & {
-      @include set-bg("gray", "100", "dark");
-      &:hover {
-        @include set-bg("gray", "200", "dark");
-      }
-      &:active {
-        @include set-bg("gray", "300", "dark");
-      }
-      border-color: set-color("gray", "300", "dark");
-    }
   }
 
   // state
@@ -80,11 +56,5 @@
     @include set-bg("gray", "200");
     border-color: set-color("gray", "200");
     color: set-color("gray", "400");
-
-    .theme--dark & {
-      @include set-bg("gray", "200", "dark");
-      border-color: set-color("gray", "200", "dark");
-      color: set-color("gray", "400", "dark");
-    }
   }
 }

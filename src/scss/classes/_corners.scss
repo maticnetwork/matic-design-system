@@ -1,5 +1,4 @@
 // The following code will generate the rounded classes
-@import "../variables";
 
 @each $prop, $value in $corners {
   @if ($prop=="rg") {
