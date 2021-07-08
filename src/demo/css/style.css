@@ -59,7 +59,7 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, body {
   margin: 0;
 }
 
@@ -1410,6 +1410,7 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: var(--gray-100);
   border-color: var(--gray-300);
   color: var(--gray-900);
+  box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
 .btn-secondary:hover {
   background-color: var(--gray-200);
@@ -1457,6 +1458,96 @@ h1, h2, h3, h4, h5, h6, p {
 .input.error {
   background-color: var(--error-100);
   border-color: var(--error-500) !important;
+}
+
+:root {
+  --container-width: 1140px;
+  --gutter-space: 30px;
+  --half-gutter-space: calc(var(--gutter-space) / 2);
+}
+
+.container {
+  padding-left: var(--half-gutter-space);
+  padding-right: var(--half-gutter-space);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  max-width: var(--container-width);
+}
+.container-fluid {
+  padding-left: var(--half-gutter-space);
+  padding-right: var(--half-gutter-space);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  width: 100%;
+}
+
+.row {
+  margin-right: calc(var(--half-gutter-space) * -1);
+  margin-left: calc(var(--half-gutter-space) * -1);
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.offset {
+  justify-content: center;
+}
+.row [class*=col] {
+  padding-left: var(--half-gutter-space);
+  padding-right: var(--half-gutter-space);
+}
+.row .col {
+  max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.row .col-1 {
+  max-width: 8.33%;
+  flex: 0 0 8.33%;
+}
+.row .col-2 {
+  max-width: 16.66%;
+  flex: 0 0 16.66%;
+}
+.row .col-3 {
+  max-width: 25%;
+  flex: 0 0 25%;
+}
+.row .col-4 {
+  max-width: 33.33%;
+  flex: 0 0 33.33%;
+}
+.row .col-5 {
+  max-width: 41.66%;
+  flex: 0 0 41.66%;
+}
+.row .col-6 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+.row .col-7 {
+  max-width: 58.33%;
+  flex: 0 0 58.33%;
+}
+.row .col-8 {
+  max-width: 66.66%;
+  flex: 0 0 66.66%;
+}
+.row .col-9 {
+  max-width: 75%;
+  flex: 0 0 75%;
+}
+.row .col-10 {
+  max-width: 83.33%;
+  flex: 0 0 83.33%;
+}
+.row .col-11 {
+  max-width: 91.66%;
+  flex: 0 0 91.66%;
+}
+.row .col-12 {
+  max-width: 100%;
+  flex: 0 0 100%;
 }
 
 .theme--dark {
@@ -1532,13 +1623,13 @@ h1, h2, h3, h4, h5, h6, p {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03), 0px 12px 8px rgba(0, 0, 0, 0.02);
 }
 
-.container {
+.section-container {
   display: inline-flex;
   flex-direction: column;
   margin: 10px;
   max-width: 570px;
 }
-.container.hr {
+.section-container.hr {
   max-width: none;
 }
 

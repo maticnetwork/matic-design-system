@@ -79,7 +79,7 @@ h1,h2,h3,h4,h5,h6,p {
   @include shadow("lg")
 }
 
-.container {
+.section-container {
   display: inline-flex;
   flex-direction: column;
   margin: 10px;
