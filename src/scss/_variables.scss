@@ -136,3 +136,26 @@ $shadows: (
 @mixin shadow($base) {
   box-shadow: map-get($map: $shadows, $key: $base);
 }
+
+// media queries
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);
+
+// use media-breakpoint-up if taking mobile first approach
+@mixin media-breakpoint-up($name) {
+  @media (min-width: map-get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// user media-breakpoint-down if taking desktop first approach
+@mixin media-breakpoint-down($name) {
+  $max: map-get($breakpoints, $name) - 0.02px;
+  @media (max-width: $max) {
+    @content;
+  }
+}
