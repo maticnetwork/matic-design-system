@@ -68,15 +68,26 @@ body {
   @include set-bg("gray", "300");
 }
 
-h1,h2,h3,h4,h5,h6,p {
-  color: set-color("gray", '900');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: set-color("gray", "900");
 }
 
 .section {
   width: 90%;
   margin: 50px auto;
   padding: 30px 40px;
-  @include shadow("lg")
+  @include shadow("lg");
+
+  &.center {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .section-container {
@@ -119,6 +130,7 @@ h1,h2,h3,h4,h5,h6,p {
   @include font-settings("sm", "medium");
   @include corner("sm");
   padding: 10px 0;
+  color: transparent;
 
   &:nth-child(5) {
     width: 100px;
@@ -129,6 +141,7 @@ h1,h2,h3,h4,h5,h6,p {
   padding: 20px 30px;
   display: inline-flex;
   margin: 10px;
+  color: transparent;
 }
 
 .button-container {
