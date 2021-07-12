@@ -17,10 +17,12 @@
   //  SIZE VARIANTS
   &-sm {
     @include font-settings("sm", "medium", "leading-5");
+    @include corner("sm");
     padding: 7px 12px;
   }
 
   &-lg {
+    @include corner("md");
     padding: 15px 20px;
   }
 
@@ -38,5 +40,14 @@
   &.error {
     @include set-bg("error", "100");
     border-color: set-color("error", "500") !important;
+  }
+}
+
+textarea.input{
+  min-height: 110px;
+
+   //  SIZE VARIANTS
+   &-sm {
+    @include font-settings("sm", "medium", "leading-5");
   }
 }
