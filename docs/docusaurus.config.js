@@ -41,7 +41,7 @@ module.exports = {
           items: [
             {
               label: 'CSS Library Tutorial',
-              to: '/css-library/intro',
+              to: '/docs/css-library/intro',
             },
           ],
         },
