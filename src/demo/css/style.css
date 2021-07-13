@@ -1443,9 +1443,11 @@ h1, h2, h3, h4, h5, h6, p, body {
   font-weight: 500;
   line-height: 20px;
   letter-spacing: normal;
+  border-radius: 4px;
   padding: 7px 12px;
 }
 .input-lg {
+  border-radius: 12px;
   padding: 15px 20px;
 }
 .input:hover, .input:disabled {
@@ -1458,6 +1460,16 @@ h1, h2, h3, h4, h5, h6, p, body {
 .input.error {
   background-color: var(--error-100);
   border-color: var(--error-500) !important;
+}
+
+textarea.input {
+  min-height: 110px;
+}
+textarea.input-sm {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: normal;
 }
 
 :root {
@@ -1703,7 +1715,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   }
 }
 
-.theme--dark {
+.dark-theme {
   --gray-900: #ffffff;
   --gray-800: #f7f7f8;
   --gray-700: #e7e9eb;
@@ -1758,6 +1770,27 @@ h1, h2, h3, h4, h5, h6, p, body {
   --error-300: #9e2f2f;
   --error-200: #782424;
   --error-100: #591a1a;
+}
+
+.red-theme {
+  --gray-900: #ffffff;
+  --gray-800: #f7f7f8;
+  --gray-700: #e7e9eb;
+  --gray-600: #c0c3c9;
+  --gray-500: #b0b4bb;
+  --gray-400: #52555d;
+  --gray-300: #292c34;
+  --gray-200: #1b1d22;
+  --gray-100: #0a0b0d;
+  --primary-900: #fcbebe;
+  --primary-800: #fba6a6;
+  --primary-700: #f98b8b;
+  --primary-600: #f86c6c;
+  --primary-500: #f64a4a;
+  --primary-400: #c73c3c;
+  --primary-300: #9e2f2f;
+  --primary-200: #782424;
+  --primary-100: #591a1a;
 }
 
 body {
@@ -1868,6 +1901,35 @@ p {
 
 h1 {
   margin-bottom: 20px;
+}
+
+.theme-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin-right: -44px;
+}
+.theme-indicator:first-child {
+  margin-left: 60px;
+}
+.theme-indicator.dark {
+  background-color: black;
+}
+.theme-indicator.red {
+  background-color: red;
+}
+.theme-indicator--container {
+  overflow: hidden;
+}
+.theme-indicator--container:hover .theme-indicator {
+  margin-left: 10px;
+  margin-right: 0;
+  transition: all 0.3s ease;
+}
+.theme-indicator--container:hover .theme-indicator:first-child {
+  margin-left: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

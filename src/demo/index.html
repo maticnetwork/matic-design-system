@@ -14,9 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 </head>
 
-<body class="theme--light">
-    <button class="btn btn-primary" style="position:fixed; bottom: 30px; right: 30px;" onclick="changeTheme()">Change
-        theme</button>
+<body>
+    <button class="btn btn-primary theme-indicator--container" style="position:fixed; bottom: 30px; right: 30px;">Change
+        theme <div class="theme-indicator" onclick="changeTheme('light')"></div>
+        <div class="theme-indicator dark" onclick="changeTheme('dark')"></div>
+        <div class="theme-indicator red" onclick="changeTheme('red')"></div>
+    </button>
     <!-- section, container and group classes are not related to the design system -->
     <div class="section bg-gray-100 rounded">
         <div class="section-container">
@@ -257,7 +260,8 @@
                     <input type="text" placeholder="Small" class="input input-sm">
                 </div>
                 <div class="button-container">
-                    <input type="text" placeholder="Medium (default)" class="input" id="email" onchange="validateEmail()">
+                    <input type="text" placeholder="Medium (default)" class="input" id="email"
+                        onchange="validateEmail()">
                 </div>
                 <div class="button-container">
                     <input type="text" placeholder="Large" class="input input-lg">
@@ -267,16 +271,37 @@
                 </div>
             </div>
         </div>
+        <div class="section-container" style="width: 400px">
+            <div class="group">
+                <h2 class="cap-lg">Input (Textarea) classes</h2>
+                <div class=" button-container">
+                    <textarea placeholder="Enter your text here (small)" class="input input-sm"></textarea>
+                </div>
+                <div class=" button-container">
+                    <textarea placeholder="Enter your text here (default)" class="input"></textarea>
+                </div>
+                <div class=" button-container">
+                    <textarea placeholder="Enter your text here (large)" class="input input-lg"></textarea>
+                </div>
+                <div class=" button-container">
+                    <textarea placeholder="Enter your text here (disabled)" class="input" disabled></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        function changeTheme() {
-            if (document.body.classList.contains('theme--light')) {
-                document.body.classList.remove('theme--light');
-                document.body.classList.add('theme--dark');
+        function changeTheme(theme) {
+
+            if (theme == "dark") {
+                document.body.classList.add("dark-theme");
+                document.body.classList.remove("red-theme");
+            } else if (theme == "red") {
+                document.body.classList.add("red-theme");
+                document.body.classList.remove("dark-theme");
             } else {
-                document.body.classList.add('theme--light');
-                document.body.classList.remove('theme--dark');
+                document.body.classList.remove("dark-theme");
+                document.body.classList.remove("red-theme");
             }
         }
 
