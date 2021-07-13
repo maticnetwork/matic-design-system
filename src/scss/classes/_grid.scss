@@ -73,24 +73,20 @@
       }
     }
 
-    // for sm, md, and lg
-    // xl is excluded because it's the largest breakpoint
+    // for sm, md, lg and xl
     // breakpoints map is defined in _variables
     @each $name, $breakpoint in $breakpoints {
-      @if $name != "xl" {
-        @include media-breakpoint-up($name) {
-          @each $key, $value in $values {
-            &-#{$name}-#{$key} {
-              max-width: $value;
-              flex: 0 0 $value;
-            }
+      @include media-breakpoint-up($name) {
+        @each $key, $value in $values {
+          &-#{$name}-#{$key} {
+            max-width: $value;
+            flex: 0 0 $value;
           }
         }
       }
     }
   }
 }
-
 
 // Examples of the classes generated
 // ------------------------
@@ -100,5 +96,6 @@
 // .col-sm-1, .col-sm-2, .col-sm-3, ..., .col-sm-11, .col-sm-12
 // .col-md-1, .col-md-2, .col-md-3, ..., .col-md-11, .col-md-12
 // .col-lg-1, .col-lg-2, .col-lg-3, ..., .col-lg-11, .col-lg-12
+// .col-xl-1, .col-xl-2, .col-xl-3, ..., .col-xl-11, .col-xl-12
 
-// --container-width and --gutter-space can be overwritten by the developer as per the need. 
+// --container-width and --gutter-space can be overwritten by the developer as per the need.
