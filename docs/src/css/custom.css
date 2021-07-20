@@ -1904,7 +1904,11 @@ p.pm, h1.pm, h2.pm, h3.pm, h4.pm, h5.pm, h6.pm, blockquote.pm {
   margin-bottom: 16px !important;
 }
 
-.demo-element-container.flex{
+.demo-element-container.flex, .demo-element-container.plain-flex{
   display:flex;
   flex-wrap: wrap;
+}
+
+.demo-element-container.flex > *:not(:last-child){
+  margin-right: 16px;
 }

@@ -34,6 +34,12 @@ and **$base** is one of the following: <span class="var">900</span>, <span class
     <div class="bg-primary-100 rounded-sm p-4">.bg-primary-100</div>
 </div>
 
+<br />
+
+:::note
+You may have noticed some extra classes like `.rounded-sm` and `.p-4` in the above code. We will learn about those classes in the following sections.
+:::
+
 ## Color variants
 ```html
 <div class="bg-primary-500 rounded-sm p-4">.bg-primary-500</div>
@@ -72,5 +78,5 @@ The above code will output the following css:
 ```
 
 :::note
-The `set-bg` mixin will return background-color property with a CSS3 var as its value. These varialbes can be overriden or changed by the users. More about this in the [customize](../customize/colors.md) section.
+The `set-bg` mixin will return background-color property with a CSS3 var as its value. These varialbes can be overriden or changed by the users. More about this in the [customize](../customize/theme.md) section.
 :::
