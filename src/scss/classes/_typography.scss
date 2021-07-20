@@ -1,27 +1,27 @@
 // TYPEFACE STYLES
 
 // Headlines
-.headline-1 {
+h1, .headline-1 {
   @include font-settings("7xl", "bold", "leading-11");
 }
 
-.headline-2 {
+h2, .headline-2 {
   @include font-settings("5xl", "bold", "leading-10");
 }
 
-.headline-3 {
+h3, .headline-3 {
   @include font-settings("3xl", "bold", "leading-9");
 }
 
-.headline-4 {
+h4, .headline-4 {
   @include font-settings("lg", "bold", "leading-7");
 }
 
-.headline-5 {
+h5, .headline-5 {
   @include font-settings("bs", "bold", "leading-6");
 }
 
-.headline-6 {
+h6, .headline-6 {
   @include font-settings("sm", "bold", "leading-5");
 }
 

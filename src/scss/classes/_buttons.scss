@@ -2,7 +2,7 @@
 // Default button variant is text button
 
 @mixin btn {
-  display: flex;
+  display: inline-flex;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;

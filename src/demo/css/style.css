@@ -63,42 +63,42 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin: 0;
 }
 
-.headline-1 {
+h1, .headline-1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
   letter-spacing: normal;
 }
 
-.headline-2 {
+h2, .headline-2 {
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: normal;
 }
 
-.headline-3 {
+h3, .headline-3 {
   font-size: 25px;
   font-weight: 700;
   line-height: 36px;
   letter-spacing: normal;
 }
 
-.headline-4 {
+h4, .headline-4 {
   font-size: 18px;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: normal;
 }
 
-.headline-5 {
+h5, .headline-5 {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: normal;
 }
 
-.headline-6 {
+h6, .headline-6 {
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.mt-0-5 {
+.mt-0 {
   margin-top: 2px;
 }
 
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-top: 192px;
 }
 
-.ml-0-5 {
+.ml-0 {
   margin-left: 2px;
 }
 
@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-left: 192px;
 }
 
-.mb-0-5 {
+.mb-0 {
   margin-bottom: 2px;
 }
 
@@ -437,7 +437,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-bottom: 192px;
 }
 
-.mr-0-5 {
+.mr-0 {
   margin-right: 2px;
 }
 
@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-right: 192px;
 }
 
-.mx-0-5 {
+.mx-0 {
   margin-left: 2px;
   margin-right: 2px;
 }
@@ -563,7 +563,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-right: 192px;
 }
 
-.my-0-5 {
+.my-0 {
   margin-top: 2px;
   margin-bottom: 2px;
 }
@@ -633,7 +633,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin-bottom: 192px;
 }
 
-.m-0-5 {
+.m-0 {
   margin: 2px;
 }
 
@@ -689,7 +689,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   margin: 192px;
 }
 
-.pt-0-5 {
+.pt-0 {
   padding-top: 2px;
 }
 
@@ -745,7 +745,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-top: 192px;
 }
 
-.pl-0-5 {
+.pl-0 {
   padding-left: 2px;
 }
 
@@ -801,7 +801,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-left: 192px;
 }
 
-.pb-0-5 {
+.pb-0 {
   padding-bottom: 2px;
 }
 
@@ -857,7 +857,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-bottom: 192px;
 }
 
-.pr-0-5 {
+.pr-0 {
   padding-right: 2px;
 }
 
@@ -913,7 +913,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-right: 192px;
 }
 
-.px-0-5 {
+.px-0 {
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -983,7 +983,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-right: 192px;
 }
 
-.py-0-5 {
+.py-0 {
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -1053,7 +1053,7 @@ h1, h2, h3, h4, h5, h6, p, body {
   padding-bottom: 192px;
 }
 
-.p-0-5 {
+.p-0 {
   padding: 2px;
 }
 
@@ -1326,7 +1326,7 @@ h1, h2, h3, h4, h5, h6, p, body {
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
