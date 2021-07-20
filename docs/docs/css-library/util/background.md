@@ -78,7 +78,7 @@ The above code will output the following css:
 ```
 
 :::note
-The `set-bg` mixin will return background-color property with a CSS3 var as its value. These varialbes can be overriden or changed by the users. More about this in the [customize](../customize/theme.md) section.
+The `set-bg` mixin will return background-color property with a CSS3 var as its value. These varialbes can be overriden or changed by the users. More about this in the [customize](../customize/theme) section.
 :::
 ## All colors
 
