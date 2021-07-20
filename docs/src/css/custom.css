@@ -1877,10 +1877,18 @@ textarea.input-sm {
   margin: 16px 0;
 }
 
+.pm-row.plain{
+  border:0;
+}
+
+.pm-row.plain [class*="pm-col"]{
+  border: 0;
+}
+
 .pm-row [class*=pm-col] {
   border: 1px solid var(--col-border);
   background-color: var(--col-color);
-  height: 50px; 
+  min-height: 50px; 
   line-height: 48px;
   text-align: center;
 }
