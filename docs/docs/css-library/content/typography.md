@@ -15,12 +15,14 @@ Typography includes a set of typographic elements that can be used to build a mo
 <h6>Headline 6</h6>
 ```
 
-<h1 class="pm">Headline 1</h1>
-<h2 class="pm">Headline 2</h2>
-<h3 class="pm">Headline 3</h3>
-<h4 class="pm">Headline 4</h4>
-<h5 class="pm">Headline 5</h5>
-<h6 class="pm">Headline 6</h6>
+<div class="demo-element-container">
+  <h1 class="pm">Headline 1</h1>
+  <h2 class="pm">Headline 2</h2>
+  <h3 class="pm">Headline 3</h3>
+  <h4 class="pm">Headline 4</h4>
+  <h5 class="pm">Headline 5</h5>
+  <h6 class="pm">Headline 6</h6>
+</div>
 
 <br />
 
@@ -35,12 +37,14 @@ Additionally, you can use the `.headline-` classes to when you want the headline
 <p class="headline-6">Headline 6</p>
 ```
 
-<p class="pm headline-1">Headline 1</p>
-<p class="pm headline-2">Headline 2</p>
-<p class="pm headline-3">Headline 3</p>
-<p class="pm headline-4">Headline 4</p>
-<p class="pm headline-5">Headline 5</p>
-<p class="pm headline-6">Headline 6</p>
+<div class="demo-element-container">
+  <p class="pm headline-1">Headline 1</p>
+  <p class="pm headline-2">Headline 2</p>
+  <p class="pm headline-3">Headline 3</p>
+  <p class="pm headline-4">Headline 4</p>
+  <p class="pm headline-5">Headline 5</p>
+  <p class="pm headline-6">Headline 6</p>
+</div>
 
 
 ## Capital
@@ -54,10 +58,12 @@ There are 4 variants: <span class="var">.cap-xs</span>, <span class="var">.cap-s
 <p class="cap-lg">Capital large</p>
 ```
 
-<p class="cap-xs">Capital extra small</p>
-<p class="cap-sm">Capital small</p>
-<p class="cap-bs">Capital base</p>
-<p class="cap-lg">Capital large</p>
+<div class="demo-element-container">
+  <p class="cap-xs">Capital extra small</p>
+  <p class="cap-sm">Capital small</p>
+  <p class="cap-bs">Capital base</p>
+  <p class="cap-lg">Capital large</p>
+</div>
 
 
 ## Labels
@@ -70,10 +76,12 @@ There are 4 variants: <span class="var">.label-xs</span>, <span class="var">.lab
 <p class="label-lg">Label large</p>
 ```
 
-<p class="label-xs">Label extra small</p>
-<p class="label-sm">Label small</p>
-<p class="label-bs">Label base</p>
-<p class="label-lg">Label large</p>
+<div class="demo-element-container">
+  <p class="label-xs">Label extra small</p>
+  <p class="label-sm">Label small</p>
+  <p class="label-bs">Label base</p>
+  <p class="label-lg">Label large</p>
+</div>
 
 
 ## Display

@@ -1890,11 +1890,16 @@ textarea.input-sm {
 }
 
 p.pm, h1.pm, h2.pm, h3.pm, h4.pm, h5.pm, h6.pm, blockquote.pm {
-  margin-bottom: 16px !important;
+  /* margin-bottom: 16px !important; */
   padding: 0 !important;
+  margin: 0 !important;
 }
 
 .btn{
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.demo-element-container > *:not(:last-child){
+  margin-bottom: 16px !important;
 }
