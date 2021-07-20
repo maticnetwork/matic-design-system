@@ -37,15 +37,67 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* html[data-theme='dark']{
-  --ifm-color-primary: #8247E5;
-  --ifm-color-primary-dark: #996AEA;
-  --ifm-color-primary-darker: #AF89EE;
-  --ifm-color-primary-darkest: #C1A5F2;
-  --ifm-color-primary-light: #693AB9;
-  --ifm-color-primary-lighter: #532E92;
-  --ifm-color-primary-lightest: #402370;
-} */
+html[data-theme='dark']{
+  --gray-900: #ffffff;
+  --gray-800: #f7f7f8;
+  --gray-700: #e7e9eb;
+  --gray-600: #c0c3c9;
+  --gray-500: #b0b4bb;
+  --gray-400: #52555d;
+  --gray-300: #292c34;
+  --gray-200: #1b1d22;
+  --gray-100: #0a0b0d;
+
+  --primary-900: #d2bdf5;
+  --primary-800: #c1a5f2;
+  --primary-700: #af89ee;
+  --primary-600: #996aea;
+  --primary-500: #8247e5;
+  --primary-400: #693ab9;
+  --primary-300: #532e92;
+  --primary-200: #402370;
+  --primary-100: #2f1a52;
+
+  --secondary-900: #bfe2ea;
+  --secondary-800: #a9d8e2;
+  --secondary-700: #8eccd9;
+  --secondary-600: #71becf;
+  --secondary-500: #4fafc4;
+  --secondary-400: #408d9e;
+  --secondary-300: #32707e;
+  --secondary-200: #265560;
+  --secondary-100: #1c3f47;
+
+  --success-900: #beebe5;
+  --success-800: #a6e3dc;
+  --success-700: #8bdad1;
+  --success-600: #6cd1c4;
+  --success-500: #4ac6b7;
+  --success-400: #3ca095;
+  --success-300: #2f7e75;
+  --success-200: #24615a;
+  --success-100: #1a4742;
+
+  --warning-900: #fdddc1;
+  --warning-800: #fcd1aa;
+  --warning-700: #fbc390;
+  --warning-600: #fbb272;
+  --warning-500: #f9a151;
+  --warning-400: #ca8342;
+  --warning-300: #9f6734;
+  --warning-200: #7a4f28;
+  --warning-100: #593a1d;
+
+  --error-900: #fcbebe;
+  --error-800: #fba6a6;
+  --error-700: #f98b8b;
+  --error-600: #f86c6c;
+  --error-500: #f64a4a;
+  --error-400: #c73c3c;
+  --error-300: #9e2f2f;
+  --error-200: #782424;
+  --error-100: #591a1a;
+}
 
 .var{
   color: #8247E5;
@@ -1380,7 +1432,7 @@ h1, h2, h3, h4, h5, h6, p, body {
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
@@ -1840,4 +1892,9 @@ textarea.input-sm {
 p.pm, h1.pm, h2.pm, h3.pm, h4.pm, h5.pm, h6.pm, blockquote.pm {
   margin-bottom: 16px !important;
   padding: 0 !important;
+}
+
+.btn{
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
