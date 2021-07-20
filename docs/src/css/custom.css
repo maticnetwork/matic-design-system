@@ -1903,3 +1903,8 @@ p.pm, h1.pm, h2.pm, h3.pm, h4.pm, h5.pm, h6.pm, blockquote.pm {
 .demo-element-container > *:not(:last-child){
   margin-bottom: 16px !important;
 }
+
+.demo-element-container.flex{
+  display:flex;
+  flex-wrap: wrap;
+}
