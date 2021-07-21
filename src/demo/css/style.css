@@ -1483,7 +1483,6 @@ textarea.input-sm {
   padding-right: var(--half-gutter-space);
   margin-left: auto;
   margin-right: auto;
-  box-sizing: content-box;
   max-width: var(--container-width);
 }
 .container-fluid {
@@ -1491,7 +1490,6 @@ textarea.input-sm {
   padding-right: var(--half-gutter-space);
   margin-left: auto;
   margin-right: auto;
-  box-sizing: content-box;
   width: 100%;
 }
 
