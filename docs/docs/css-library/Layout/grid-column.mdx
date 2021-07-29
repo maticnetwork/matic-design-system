@@ -210,6 +210,40 @@ In the above example, the columns will be applied the properties of `col-sm-4` f
 
 But, for the screen size below 567px (exclusive) the columns will take full width. 
 
+## Nested Grid 
+PolygonMesh allows you to nest grids inside grids. 
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-4">col-4</div>
+
+        <div class="col-8">
+          <!-- nesting row inside column -->
+          <div class="row">
+            <div class="col">col-8 > row > col</div>
+            <div class="col">col-8 > row > col</div>
+          </div>
+        </div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol className="pm-col-4">col-4</DemoCol>
+  <DemoCol className="pm-col-8">
+    <DemoRow>
+      <DemoCol className="pm-col">col-8 > row > col</DemoCol>
+      <DemoCol className="pm-col">col-8 > row > col</DemoCol>
+    </DemoRow>
+  </DemoCol>
+</DemoRow>
+
 <!-- MDX -->
 <!-- Demo Components are based on PolygonMesh classes -->
 <!-- Demo Col Component -->
