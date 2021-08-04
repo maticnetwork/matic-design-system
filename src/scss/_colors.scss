@@ -1,4 +1,4 @@
-@import "./luminance";
+// @import "./luminance";
 // This file imports the luminance function which checks for the luminance (brightness) of
 // the colour and helps in providing an accurate color if the background-color is too bright or too dark.
 
@@ -140,13 +140,13 @@ $theme: (
 }
 
 // mixin to select text color
-@mixin text-color($color) {
-  @if (luminance($color) >0.5) {
-    color: #000;
-  } @else {
-    color: #fff;
-  }
-}
+// @mixin text-color($color) {
+//   @if (luminance($color) >0.5) {
+//     color: #000;
+//   } @else {
+//     color: #fff;
+//   }
+// }
 
 // mixin to set background-color;
 @mixin set-bg($color, $base) {
