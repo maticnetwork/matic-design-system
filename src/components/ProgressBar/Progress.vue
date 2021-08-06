@@ -10,7 +10,7 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="12" cy="12" r="12" fill="#003CB2" />
+          <circle cx="12" cy="12" r="12" fill="#854CE6" />
           <path d="M7 12L10 15L17 8" stroke="white" stroke-width="2" />
         </svg>
       </div>
@@ -27,7 +27,7 @@
             cy="12"
             r="11"
             fill="white"
-            stroke="#003CB2"
+            stroke="#854CE6"
             stroke-width="2"
           />
         </svg>
