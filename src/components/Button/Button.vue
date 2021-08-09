@@ -24,9 +24,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    classNames: {
-      type: String,
-    },
+    icon: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   methods: {
@@ -40,10 +41,10 @@ export default {
       return {
         btn: true,
         block: this.block,
-        [this.classNames]: this.classNames,
         [`${this.variant}`]: this.variant,
         sm: this.size === "sm",
         lg: this.size === "lg",
+        icon: this.icon,
       };
     },
   },

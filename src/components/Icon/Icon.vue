@@ -1,6 +1,6 @@
 <template>
   <!-- Adding html-loader with v-html to load svg inline -->
-  <i :class="classes" v-html="svg" v-if="name && svg" @click="onClick"> </i>
+  <i :class="classes" v-html="svg" v-if="name && svg"> </i>
 </template>
 
 <script>
@@ -12,16 +12,22 @@ export default {
   props: {
     name: {
       type: String,
-      // required: true,
+      required: true,
     },
+    left: {
+      type: Boolean,
+    },
+    right: {
+      type: Boolean,
+    }
   },
 
   computed: {
     classes() {
       return {
-        "m-icon": true,
-        "m-profile-icon": this.name.split("/")[0] == "profile",
-        "m-appmenu-icon": this.name.split("/")[0] == "appmenu",
+        "p-icon": true,
+        left: this.left,
+        right: this.right,
       };
     },
     svg() {
@@ -30,12 +36,6 @@ export default {
       } catch {
         return null;
       }
-    },
-  },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
     },
   },
 };
