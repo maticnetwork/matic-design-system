@@ -1,5 +1,5 @@
 import PButton from "../components/Button/Button.vue";
-import Icon from "../components/Icon/Icon.vue";
+import PIcon from "../components/Icon/Icon.vue";
 
 export default {
   title: "Button",
@@ -12,13 +12,14 @@ export default {
       },
     },
     size: { control: { type: "select", options: ["sm", "md", "lg"] } },
+    iconFillColor: { control: { type: "color" } },
   },
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { PButton, Icon },
-  template: `<p-button @onClick="onClick" v-bind="$props"><Icon name="login/metamask" left v-if="leftIcon" /> {{label}} <Icon name="login/metamask" right v-if="rightIcon"/></p-button>`,
+  components: { PButton, PIcon },
+  template: `<p-button @onClick="onClick" v-bind="$props"><p-icon name="new/android" left v-if="leftIcon" :fillColor="iconFillColor"/> {{label}} <p-icon name="new/apple" right v-if="rightIcon" :fillColor="iconFillColor"/></p-button>`,
 });
 
 // note: there is no label prop. We are using slot to pass the button text.
@@ -85,6 +86,7 @@ Block.args = {
   label: "Block",
 };
 
+// by default, the icon takes the color set to the css variable.
 export const LeftIcon = Template.bind({});
 LeftIcon.args = {
   variant: "secondary",
@@ -93,10 +95,12 @@ LeftIcon.args = {
   leftIcon: true,
 };
 
+// by default, the icon takes the color passed to it as prop.
 export const RightIcon = Template.bind({});
 RightIcon.args = {
   variant: "secondary",
   label: "Sign in",
   icon: true,
   rightIcon: true,
+  iconFillColor: "red",
 };

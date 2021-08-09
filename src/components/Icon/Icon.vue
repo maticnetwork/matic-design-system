@@ -1,13 +1,19 @@
 <template>
   <!-- Adding html-loader with v-html to load svg inline -->
-  <i :class="classes" v-html="svg" v-if="name && svg"> </i>
+  <i
+    :class="classes"
+    v-html="svg"
+    v-if="name && svg"
+    :style="{ fill: fillColor }"
+  >
+  </i>
 </template>
 
 <script>
 import "./icon.scss";
 
 export default {
-  name: "Icon",
+  name: "PIcon",
 
   props: {
     name: {
@@ -19,7 +25,11 @@ export default {
     },
     right: {
       type: Boolean,
-    }
+    },
+    fillColor: {
+      type: String,
+      default: "#000",
+    },
   },
 
   computed: {
