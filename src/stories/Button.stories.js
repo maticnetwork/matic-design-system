@@ -1,4 +1,5 @@
 import PButton from "../components/Button/Button.vue";
+import Icon from "../components/Icon/Icon.vue";
 
 export default {
   title: "Button",
@@ -16,8 +17,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { PButton },
-  template: `<p-button @onClick="onClick" v-bind="$props">${args.label} Button</p-button>`,
+  components: { PButton, Icon },
+  template: `<p-button @onClick="onClick" v-bind="$props"><Icon name="login/metamask" left v-if="leftIcon" /> {{label}} <Icon name="login/metamask" right v-if="rightIcon"/></p-button>`,
 });
 
 // note: there is no label prop. We are using slot to pass the button text.
@@ -82,4 +83,20 @@ Block.args = {
   variant: "primary",
   block: true,
   label: "Block",
+};
+
+export const LeftIcon = Template.bind({});
+LeftIcon.args = {
+  variant: "secondary",
+  label: "Sign in",
+  icon: true,
+  leftIcon: true,
+};
+
+export const RightIcon = Template.bind({});
+RightIcon.args = {
+  variant: "secondary",
+  label: "Sign in",
+  icon: true,
+  rightIcon: true,
 };
