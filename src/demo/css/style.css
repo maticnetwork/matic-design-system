@@ -64,42 +64,42 @@ h1, h2, h3, h4, h5, h6, p, body {
 }
 
 h1, .headline-1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 48px;
   letter-spacing: normal;
 }
 
 h2, .headline-2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: normal;
 }
 
 h3, .headline-3 {
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: 700;
   line-height: 36px;
   letter-spacing: normal;
 }
 
 h4, .headline-4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: normal;
 }
 
 h5, .headline-5 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: normal;
 }
 
 h6, .headline-6 {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: normal;
@@ -110,108 +110,108 @@ h6, .headline-6 {
 }
 
 .cap-xs {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
 .cap-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 800;
   letter-spacing: 3px;
 }
 
 .cap-bs {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 4px;
 }
 
 .cap-lg {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 800;
   letter-spacing: 5px;
 }
 
 .label-xs {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .label-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
 .label-bs {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .label-lg {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 
 .display-1 {
-  font-size: 45px;
+  font-size: 2.8125rem;
   font-weight: 800;
   line-height: 137.5%;
 }
 
 .display-2 {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 800;
   line-height: 137.5%;
 }
 
 .body-lg {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 28px;
 }
 
 .body-bs {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
 }
 
 .body-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 20px;
 }
 
 .body-xs {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 16px;
 }
 
 .code-xs {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   display: inline-flex;
   font-family: "Courier Prime", monospace;
 }
 
 .code-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   display: inline-flex;
   font-family: "Courier Prime", monospace;
 }
 
 .code-bs {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   display: block;
   font-family: "Courier Prime", monospace;
 }
 
 .code-lg {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   display: inline-flex;
   font-family: "Courier Prime", monospace;
@@ -1332,7 +1332,7 @@ h6, .headline-6 {
   cursor: pointer;
   margin: auto 0;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: normal;
@@ -1348,7 +1348,7 @@ h6, .headline-6 {
 }
 .btn-sm {
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: normal;
@@ -1356,7 +1356,7 @@ h6, .headline-6 {
 }
 .btn-lg {
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: normal;
@@ -1431,7 +1431,7 @@ h6, .headline-6 {
   width: 100%;
   color: var(--gray-900);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: normal;
@@ -1439,7 +1439,7 @@ h6, .headline-6 {
   padding: 10px 16px;
 }
 .input-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: normal;
@@ -1466,7 +1466,7 @@ textarea.input {
   min-height: 110px;
 }
 textarea.input-sm {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: normal;
@@ -1903,7 +1903,7 @@ p {
   margin: 10px;
   line-height: 65px;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: normal;
   letter-spacing: normal;
