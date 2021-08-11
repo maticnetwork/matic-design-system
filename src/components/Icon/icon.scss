@@ -4,15 +4,20 @@
   height: 24px;
   width: 24px;
   margin: auto;
-  fill: var(--icon-color);
+
+  &.p-fillColor{
+    svg{
+      fill: inherit;
+
+      path{
+        fill: inherit;
+      }
+    }
+  }
 
   svg {
     height: 24px;
     width: 24px;
-
-    path {
-      fill: inherit;
-    }
   }
 
   &.left {

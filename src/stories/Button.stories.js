@@ -19,7 +19,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { PButton, PIcon },
-  template: `<p-button @onClick="onClick" v-bind="$props"><p-icon name="new/android" left v-if="leftIcon" :fillColor="iconFillColor"/> {{label}} <p-icon name="new/apple" right v-if="rightIcon" :fillColor="iconFillColor"/></p-button>`,
+  template: `<p-button @onClick="onClick" v-bind="$props"><p-icon name="new/android" left v-if="leftIcon" :fillColor="iconFillColor"/> {{label}} <p-icon name="login/metamask" right v-if="rightIcon" /></p-button>`,
 });
 
 // note: there is no label prop. We are using slot to pass the button text.

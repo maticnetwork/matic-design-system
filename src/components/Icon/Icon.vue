@@ -28,7 +28,7 @@ export default {
     },
     fillColor: {
       type: String,
-      default: "#000",
+      required: false,
     },
   },
 
@@ -38,6 +38,7 @@ export default {
         "p-icon": true,
         left: this.left,
         right: this.right,
+        "p-fillColor": !!this.fillColor,
       };
     },
     svg() {
