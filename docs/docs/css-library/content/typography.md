@@ -1,10 +1,12 @@
 # Typography
-Typography includes a set of typographic elements that can be used to build a more consistent and readable page. Documentation for headlines, body, labels, display, code and scss mixins. 
+
+Typography includes a set of typographic elements that can be used to build a more consistent and readable page. Documentation for headlines, body, labels, display, code and scss mixins.
 
 <!-- .pm classes are used with p and h1-h6 to override the margin property set by docusaurus' stylesheet and bootstrap -->
 
 ## Headlines
-`<h1>` - `<h6>` are given a given a default font-settings, including the font-size, font-weight, line-height and letter-spacing. 
+
+`<h1>` - `<h6>` are given a given a default font-settings, including the font-size, font-weight, line-height and letter-spacing.
 
 ```html
 <h1>Headline 1</h1>
@@ -46,8 +48,8 @@ Additionally, you can use the `.headline-` classes to when you want the headline
   <p class="pm headline-6">Headline 6</p>
 </div>
 
-
 ## Capital
+
 Capital classes can be used when there is a need to dipslay all caps text.
 There are 4 variants: <span class="var">.cap-xs</span>, <span class="var">.cap-sm</span>, <span class="var">.cap-bs</span> and <span class="var">.cap-lg</span>.
 
@@ -65,8 +67,8 @@ There are 4 variants: <span class="var">.cap-xs</span>, <span class="var">.cap-s
   <p class="cap-lg">Capital large</p>
 </div>
 
-
 ## Labels
+
 There are 4 variants: <span class="var">.label-xs</span>, <span class="var">.label-sm</span>, <span class="var">.label-bs</span> and <span class="var">.label-lg</span>.
 
 ```html
@@ -83,28 +85,42 @@ There are 4 variants: <span class="var">.label-xs</span>, <span class="var">.lab
   <p class="label-lg">Label large</p>
 </div>
 
-
 ## Display
-Display classes can be used to make the heading stand out form the rest of the headlines. These are slightly larger than the default headlines. 
+
+Display classes can be used to make the heading stand out form the rest of the headlines. These are slightly larger than the default headlines.
 
 ```html
 <h1 class="display-1">Display 1</h1>
 <h2 class="display-2">Display 2</h2>
 ```
+
 <p class="pm display-1">Display 1</p>
 <p class="pm display-2">Display 2</p>
 
 ## Body
+
 There are 4 different font-sizes for the body text. Using body text classes ensures that font-sizes are consistent across the site.
 
 ```html
-<p class="body-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<p class="body-xs">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+  a ante.
+</p>
 
-<p class="body-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<p class="body-sm">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+  a ante.
+</p>
 
-<p class="body-bs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<p class="body-bs">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+  a ante.
+</p>
 
-<p class="body-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<p class="body-lg">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+  a ante.
+</p>
 ```
 
 <p class="pm body-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -114,7 +130,6 @@ There are 4 different font-sizes for the body text. Using body text classes ensu
 <p class="pm body-bs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 
 <p class="pm body-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
 
 <!-- ## Code
 Code classes can be used to apply a consistent styling to code blocks.
@@ -134,9 +149,11 @@ Code classes can be used to apply a consistent styling to code blocks.
 <!-- font-family variable -->
 
 ## SCSS settings
-Font settings can be customsed if you are using the source sass/scss files. All the settings can be found in the `_variables.scss` file. The typography of the PolygonMesh, is based on the same default settings. 
+
+Font settings can be customsed if you are using the source sass/scss files. All the settings can be found in the `_variables.scss` file. The typography of the PolygonMesh, is based on the same default settings.
 
 ### Font-family
+
 The font-family can be changed by changing the `$font-family-base` and `$font-family-code` variable. The latter will be used by the code blocks.
 
 ```scss
@@ -145,6 +162,7 @@ $font-family-code: "Courier Prime", monospace;
 ```
 
 ### Font Weights
+
 The font weights too are customizable. You will find them in a sass map in the `_variables.scss` file. The default font weights are:
 
 ```scss
@@ -160,27 +178,29 @@ $weights: (
 ```
 
 ### Font Sizes
+
 Additional font-sizes can be added to the following map. The default font sizes are:
 
 ```scss
 $font-sizes: (
-  "xs": 12px,
-  "sm": 14px,
-  "bs": 16px,
-  "lg": 18px,
-  "xl": 20px,
-  "2xl": 22px,
-  "3xl": 25px,
-  "4xl": 28px,
-  "5xl": 32px,
-  "6xl": 36px,
-  "7xl": 40px,
-  "8xl": 45px,
-  "9xl": 60px,
+    "xs": 0.75rem,    // 12px
+    "sm": 0.875rem,   // 14px
+    "bs": 1rem,       // 16px
+    "lg": 1.125rem,   // 18px
+    "xl": 1.25rem,    // 20px
+    "2xl": 1.375rem,  // 22px
+    "3xl": 1.5625rem, // 25px
+    "4xl": 1.75rem,   // 28px
+    "5xl": 2rem,      // 32px
+    "6xl": 2.25rem,   // 36px
+    "7xl": 2.5rem,    // 40px
+    "8xl": 2.8125rem, // 45px
+    "9xl": 3.75rem    // 60px
 );
 ```
 
 ### Line Heights
+
 We have a bunch of pre-defined line-heights according to our design guidelines. You can edit them in the `_variables.scss` file. The default line-heights are:
 
 ```scss
@@ -204,7 +224,9 @@ $line-heights: (
 ```
 
 ### Letter Spacing
+
 Letter spacing can be changed by changing the `$letter-spacings` variable. The default letter spacing is:
+
 ```scss
 $letter-spacings: (
   "2": 2px,
@@ -215,6 +237,7 @@ $letter-spacings: (
 ```
 
 ### Font Settings
+
 `font-settings` mixin allows you to pass the settings (font-family, font-weight, font-size, line-height, letter-spacing) and get the css output.
 
 ```scss
@@ -225,6 +248,7 @@ $letter-spacings: (
   $letter-spacing,
 ) {...}
 ```
+
 <br />
 
 **Example**
@@ -235,13 +259,14 @@ $letter-spacings: (
   @include font-settings("5xl", "bold", "leading-10");
 }
 ```
+
 ```css
 /* The font-settings mixin will return the following css */
 .headline-2 {
-    font-size: 32px; /* 5xl */
-    font-weight: 700; /* bold */
-    line-height: 40px; /* leading-10 */
-    letter-spacing: normal; /* takes the default value since no value is passed. */
+  font-size: 32px; /* 5xl */
+  font-weight: 700; /* bold */
+  line-height: 40px; /* leading-10 */
+  letter-spacing: normal; /* takes the default value since no value is passed. */
 }
 ```
 
