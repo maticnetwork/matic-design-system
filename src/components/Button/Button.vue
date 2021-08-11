@@ -1,97 +1,51 @@
 <template>
-  <button :class="classes" @click="onClick" :disabled="disabled" :style="style">
-    <Icon :class="iconLeftClasses" :name="iconName" v-if="iconName" />
-    <slot></slot>
-    {{ label }}
-    <Icon class="icon-right" :name="iconNameRight" v-if="iconNameRight" />
+  <button :class="classes" :disabled="disabled" @click="onClick">
+    <slot />
   </button>
 </template>
 
 <script>
 import "./button.scss";
-import Icon from "../Icon/Icon";
-
 export default {
-  name: "Button",
-
-  components: { Icon },
+  name: "PButton",
 
   props: {
-    backgroundColor: {
+    variant: {
+      type: String,
+    },
+    size: {
       type: String,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
-    iconName: {
-      type: String,
-    },
-    iconNameRight: {
-      type: String,
-    },
-    inline: {
+    block: {
       type: Boolean,
       default: false,
     },
-    label: {
-      type: String,
-    },
-    nature: {
-      type: String,
-      validator: function (value) {
-        return ["primary", "secondary", "link"].indexOf(value) !== -1;
-      },
-    },
-    size: {
-      type: String,
-      default: "medium",
-      validator: function (value) {
-        return ["small", "medium", "large"].indexOf(value) !== -1;
-      },
-    },
-    variant: {
-      type: String,
-      validator: function (value) {
-        return ["pill"].indexOf(value) !== -1;
-      },
+    icon: {
+      type: Boolean,
+      default: false,
+    }
+  },
+
+  methods: {
+    onClick() {
+      this.$emit("onClick");
     },
   },
 
   computed: {
     classes() {
       return {
-        "m-button": true,
-        "nature--primary": this.nature == "primary",
-        "nature--secondary": this.nature == "secondary",
-        "nature--link": this.nature == "link",
-        [`size--${this.size}`]: true,
-        "variant--pill": this.variant == "pill",
-        "button--inline": this.inline == true,
-        "icon--only": !this.label && this.iconName,
+        btn: true,
+        block: this.block,
+        [`${this.variant}`]: this.variant,
+        sm: this.size === "sm",
+        lg: this.size === "lg",
+        icon: this.icon,
       };
-    },
-    iconLeftClasses() {
-      return {
-        "icon--only": !this.label && this.iconName,
-        "icon-with-text": this.label && this.iconName,
-      };
-    },
-    iconRightClasses() {
-      return {
-        "icon-right": this.iconNameRight,
-      };
-    },
-    style() {
-      return {
-        backgroundColor: this.backgroundColor,
-      };
-    },
-  },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
     },
   },
 };

@@ -1,27 +1,44 @@
 <template>
   <!-- Adding html-loader with v-html to load svg inline -->
-  <i :class="classes" v-html="svg" v-if="name && svg" @click="onClick"> </i>
+  <i
+    :class="classes"
+    v-html="svg"
+    v-if="name && svg"
+    :style="{ fill: fillColor }"
+  >
+  </i>
 </template>
 
 <script>
 import "./icon.scss";
 
 export default {
-  name: "Icon",
+  name: "PIcon",
 
   props: {
     name: {
       type: String,
-      // required: true,
+      required: true,
+    },
+    left: {
+      type: Boolean,
+    },
+    right: {
+      type: Boolean,
+    },
+    fillColor: {
+      type: String,
+      required: false,
     },
   },
 
   computed: {
     classes() {
       return {
-        "m-icon": true,
-        "m-profile-icon": this.name.split("/")[0] == "profile",
-        "m-appmenu-icon": this.name.split("/")[0] == "appmenu",
+        "p-icon": true,
+        left: this.left,
+        right: this.right,
+        "p-fillColor": !!this.fillColor,
       };
     },
     svg() {
@@ -30,12 +47,6 @@ export default {
       } catch {
         return null;
       }
-    },
-  },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
     },
   },
 };

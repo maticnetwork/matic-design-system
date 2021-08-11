@@ -1,48 +1,26 @@
-import Icon from '../components/Icon/Icon.vue';
+import PIcon from '../components/Icon/Icon.vue';
 
 export default {
   title: 'Icon',
-  component: Icon,
-  argTypes: {},
+  component: PIcon,
+  argTypes: {
+    iconFillColor: { control: { type: "color" } },
+  },
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Icon },
-  template: '<Icon v-bind="$props" />',
+  components: { PIcon },
+  template: `<p-icon v-bind="$props" :fillColor="iconFillColor"/>`,
 });
 
-export const Login = Template.bind({});
-Login.args = {
+export const Default = Template.bind({});
+Default.args = {
   name: 'login/metamask'
 };
 
-export const Custom = Template.bind({});
-Custom.args = {
-  name: 'custom/yes'
-};
-
-export const Navbar = Template.bind({});
-Navbar.args = {
-  name: 'navbar/back-arrow'
-};
-
-export const Monochrome = Template.bind({});
-Monochrome.args = {
-  name: 'monochrome/privacy-normal'
-};
-
-export const MonochromeSelected = Template.bind({});
-MonochromeSelected.args = {
-  name: 'monochrome/privacy-selected'
-};
-
-export const Discloser = Template.bind({});
-Discloser.args = {
-  name: 'discloser/top'
-};
-
-export const ProfileIcons = Template.bind({});
-ProfileIcons.args = {
-  name: 'profile/profile-1'
+export const WithFillColor = Template.bind({});
+WithFillColor.args = {
+  name: 'new/android',
+  iconFillColor: '#3ddc84'
 };

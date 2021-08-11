@@ -1,70 +1,106 @@
-import Button from '../components/Button/Button.vue';
+import PButton from "../components/Button/Button.vue";
+import PIcon from "../components/Icon/Icon.vue";
 
 export default {
-  title: 'Button (includes Icons)',
-  component: Button,
+  title: "Button",
+  component: PButton,
   argTypes: {
-    nature: { control: { type: 'select', options: [null, 'primary', 'secondary', 'link'] } },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
-    variant: { control: { type: 'select', options: [null, 'pill'] } },
+    variant: {
+      control: {
+        type: "select",
+        options: [null, "primary", "secondary", "success", "warning", "error"],
+      },
+    },
+    size: { control: { type: "select", options: ["sm", "md", "lg"] } },
+    iconFillColor: { control: { type: "color" } },
   },
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Button },
-  template: '<Button @onClick="onClick" v-bind="$props" />',
+  components: { PButton, PIcon },
+  template: `<p-button @onClick="onClick" v-bind="$props"><p-icon name="new/android" left v-if="leftIcon" :fillColor="iconFillColor"/> {{label}} <p-icon name="login/metamask" right v-if="rightIcon" /></p-button>`,
 });
+
+// note: there is no label prop. We are using slot to pass the button text.
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Button',
+  label: "Default",
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  nature: "primary",
-  label: 'Primary Button',
+  variant: "primary",
+  label: "Primary",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  nature: "secondary",
-  label: 'Secondary Button',
+  variant: "secondary",
+  label: "Secondary",
 };
 
-export const Link = Template.bind({});
-Link.args = {
-  nature: "link",
-  label: 'Button Link',
+export const Success = Template.bind({});
+Success.args = {
+  variant: "success",
+  label: "Success",
 };
 
-export const PrimaryWithIcon = Template.bind({});
-PrimaryWithIcon.args = {
-  nature: "primary",
-  label: 'Button',
-  iconName: 'login/metamask',
+export const Warning = Template.bind({});
+Warning.args = {
+  variant: "warning",
+  label: "Warning",
 };
 
-export const OnlyIcon = Template.bind({});
-OnlyIcon.args = {
-  iconName: 'login/metamask'
+export const Error = Template.bind({});
+Error.args = {
+  variant: "error",
+  label: "Error",
 };
 
-export const OnlyIconPill = Template.bind({});
-OnlyIconPill.args = {
-  iconName: 'login/metamask',
-  variant: "pill",
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+  label: "Disabled",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 'large',
-  label: 'Button',
+  size: "lg",
+  variant: "primary",
+  label: "Large",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 'small',
-  label: 'Button',
+  size: "sm",
+  variant: "primary",
+  label: "Small",
+};
+
+export const Block = Template.bind({});
+Block.args = {
+  variant: "primary",
+  block: true,
+  label: "Block",
+};
+
+// by default, the icon takes the color set to the css variable.
+export const LeftIcon = Template.bind({});
+LeftIcon.args = {
+  variant: "secondary",
+  label: "Sign in",
+  icon: true,
+  leftIcon: true,
+};
+
+// by default, the icon takes the color passed to it as prop.
+export const RightIcon = Template.bind({});
+RightIcon.args = {
+  variant: "secondary",
+  label: "Sign in",
+  icon: true,
+  rightIcon: true,
+  iconFillColor: "red",
 };
