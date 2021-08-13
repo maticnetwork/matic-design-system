@@ -2,7 +2,6 @@
   <div :class="classes">
     <Textfield
       class="token-text-amount"
-      type="number"
       nature="link"
       :placeholder="placeholder"
       :size="size"
