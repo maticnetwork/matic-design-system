@@ -5,7 +5,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'PolygonMesh Documentation',
   tagline: 'A design system by Polygon',
-  url: 'https://maticnetwork.github.io/matic-design-system/',
+  url: 'https://maticnetwork.github.io/',
   baseUrl: '/matic-design-system/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
