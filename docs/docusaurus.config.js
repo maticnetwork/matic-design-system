@@ -6,7 +6,7 @@ module.exports = {
   title: 'PolygonMesh Documentation',
   tagline: 'A design system by Polygon',
   url: 'https://maticnetwork.github.io/matic-design-system/',
-  baseUrl: '/',
+  baseUrl: '/matic-design-system/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
