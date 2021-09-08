@@ -25,7 +25,7 @@ jobs:
         run: npm install -g sass
 
       - name: Compile scss to css
-        run: sass ./src/scss/classes/_all.scss ./tmp/matic-design-system/style.css
+        run: sass ./src/scss/classes/_all.scss /tmp/matic-design-system/style.css
     
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
