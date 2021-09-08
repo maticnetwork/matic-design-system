@@ -19,7 +19,7 @@ jobs:
             submodules: true
 
       - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/repo-name/assets/css
+        run: mkdir -vp /tmp/matic-design-system
         
       - name: Install scss
         run: npm install -g sass
@@ -36,8 +36,8 @@ jobs:
       - name: Move compiled CSS to path within css-master branch
         run: |
           ls .
-          ls tmp/matic-design-system
-          mv tmp/matic-design-system/style.css .
+          ls ./tmp/matic-design-system
+          mv ./tmp/matic-design-system/style.css .
 
       - name: Add and Commit changes to css-master branch
         run: |
