@@ -1,0 +1,50 @@
+name: CSS Library Deployment
+
+on:
+  push:
+    branches:
+      - polygonmesh
+
+
+jobs:
+  build_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout polygonmesh
+        uses: actions/checkout@v2
+        with:
+            ref: polygonmesh
+            fetch-depth: 10
+            submodules: true
+
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp /tmp/matic-design-system
+        
+      - name: Install scss
+        run: npm install -g sass
+
+      - name: Compile scss to css
+        run: sass ./src/scss/classes/_all.scss /tmp/matic-design-system/style.css
+    
+      - name: Checkout destination Git branch
+        uses: actions/checkout@v2
+        with:
+            ref: css-master
+            fetch-depth: 1
+
+      - name: Move compiled CSS to path within css-master branch
+        run: mv /tmp/matic-design-system/style.css .
+
+      - name: Add and Commit changes to css-master branch
+        run: |
+          git config --local user.email 'ankitboghra@gmail.com'
+          git config --local user.name 'ankitboghra'
+          git add .
+          git commit -m 'Update compiled CSS files'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: css-master
