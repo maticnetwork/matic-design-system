@@ -22,7 +22,7 @@ jobs:
         run: mkdir -vp /tmp/repo-name/assets/css
         
       - name: Install scss
-        run: npm install -g sass
+        run: npm install node-sass
 
       - name: Sass Build
         uses: gha-utilities/sass-build@v0.4.6
