@@ -34,16 +34,13 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within css-master branch
-        run: |
-          ls .
-          ls /tmp/matic-design-system
-          mv /tmp/matic-design-system/style.css .
+        run: mv /tmp/matic-design-system/style.css .
 
       - name: Add and Commit changes to css-master branch
         run: |
           git config --local user.email 'ankitboghra@gmail.com'
           git config --local user.name 'ankitboghra'
-          git add css/*
+          git add .
           git commit -m 'Update compiled CSS files'
 
       - name: Push changes
