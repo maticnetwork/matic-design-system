@@ -1,8 +1,0 @@
-node_modules
-
-storybook-static
-.storybook
-
-.np-config.js
-babel.config.js
-vue.config.js
