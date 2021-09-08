@@ -25,7 +25,7 @@ jobs:
         run: npm install -g sass
 
       - name: Install scss
-        run: sass ./src/scss/classes/_all.scss ./tmp/matic-design-system/assets/css/style.css
+        run: sass ./src/scss/classes/_all.scss ./tmp/matic-design-system/style.css
     
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within css-master branch
-        run: mv /tmp/matic-design-system/assets/css /
+        run: mv ./tmp/matic-design-system/* ./
 
       - name: Add and Commit changes to css-master branch
         run: |
