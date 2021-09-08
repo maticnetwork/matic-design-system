@@ -22,12 +22,12 @@ jobs:
         run: mkdir -vp /tmp/repo-name/assets/css
         
       - name: Install scss
-        run: npm install --save-dev node-sass
+        run: npm install -g sass
 
       - name: Sass Build
         uses: gha-utilities/sass-build@v0.4.6
         with:
-          source: src/scss/classes/_all.scss
+          source: /src/scss/classes/_all.scss
           destination: /tmp/matic-design-system/assets/css/style.css
 
       - name: Checkout destination Git branch
