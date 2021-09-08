@@ -36,8 +36,8 @@ jobs:
       - name: Move compiled CSS to path within css-master branch
         run: |
           ls .
-          ls ./tmp/matic-design-system
-          mv ./tmp/matic-design-system/style.css .
+          ls /tmp/matic-design-system
+          mv /tmp/matic-design-system/style.css .
 
       - name: Add and Commit changes to css-master branch
         run: |
