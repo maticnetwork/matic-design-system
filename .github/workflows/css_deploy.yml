@@ -24,12 +24,9 @@ jobs:
       - name: Install scss
         run: npm install node-sass
 
-      - name: Sass Build
-        uses: gha-utilities/sass-build@v0.4.6
-        with:
-          source: /src/scss/classes/_all.scss
-          destination: /tmp/matic-design-system/assets/css/style.css
-
+      - name: Install scss
+        run: sass ./src/scss/classes/_all.scss ./tmp/matic-design-system/assets/css/style.css
+    
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
         with:
