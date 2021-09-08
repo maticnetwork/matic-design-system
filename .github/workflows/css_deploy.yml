@@ -22,7 +22,7 @@ jobs:
         run: mkdir -vp /tmp/repo-name/assets/css
         
       - name: Install scss
-        run: npm install sass
+        run: npm install -g sass
 
       - name: Install scss
         run: sass ./src/scss/classes/_all.scss ./tmp/matic-design-system/assets/css/style.css
