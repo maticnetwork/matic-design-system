@@ -1,0 +1,53 @@
+@mixin input {
+  display: flex;
+  border: 1px solid set-color("gray", "300");
+  outline: none;
+  width: 100%;
+  color: set-color("gray", "900");
+}
+
+.input {
+  @include input;
+  // default size: medium
+  @include corner("rg");
+  @include font-settings("bs", "medium", "leading-6");
+  @include set-bg("gray", "100");
+  padding: 10px 16px;
+
+  //  SIZE VARIANTS
+  &-sm {
+    @include font-settings("sm", "medium", "leading-5");
+    @include corner("sm");
+    padding: 7px 12px;
+  }
+
+  &-lg {
+    @include corner("md");
+    padding: 15px 20px;
+  }
+
+  // STATES
+  &:hover,
+  &:disabled {
+    @include set-bg("gray", "200");
+  }
+
+  &:focus {
+    @include set-bg("gray", "100");
+    border-color: set-color("primary", "500");
+  }
+
+  &.error {
+    @include set-bg("error", "100");
+    border-color: set-color("error", "500") !important;
+  }
+}
+
+textarea.input{
+  min-height: 110px;
+
+   //  SIZE VARIANTS
+   &-sm {
+    @include font-settings("sm", "medium", "leading-5");
+  }
+}

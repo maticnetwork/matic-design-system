@@ -1,0 +1,83 @@
+// Default size is medium
+// Default button variant is text button
+
+@mixin btn {
+  display: inline-flex;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin: auto 0;
+}
+
+.btn {
+  @include btn;
+  @include corner("rg");
+  @include font-settings("bs", "normal", "leading-6");
+  padding: 10px 20px;
+  color: set-color("gray","900");
+  background-color: transparent;
+
+  &:hover {
+    @include set-bg("gray","200")
+  }
+
+  &:active {
+    @include set-bg("gray","300");
+  }
+
+  // SIZE VARIANTS
+  &-sm {
+    @include corner("sm");
+    @include font-settings("sm", "normal", "leading-5");
+    padding: 7px 20px;
+  }
+
+  &-lg {
+    @include corner("md");
+    @include font-settings("bs", "normal", "leading-6");
+    padding: 15px 20px;
+  }
+
+  // COLOR VARIANTS
+  $btn-color-variants: "primary", "success", "warning", "error";
+
+  @each $variant in $btn-color-variants {
+    &-#{$variant} {
+      @include set-bg($variant, "500");
+      &:hover {
+        @include set-bg($variant, "600");
+      }
+      &:active {
+        @include set-bg($variant, "700");
+      }
+      color: #fff;
+      box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
+    }
+  }
+
+  &-secondary {
+    @include set-bg("gray", "100");
+    &:hover {
+      @include set-bg("gray", "200");
+    }
+    &:active {
+      @include set-bg("gray", "300");
+    }
+    border-color: set-color("gray", "300");
+    color: set-color("gray", "900");
+    box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
+  }
+
+  // DISABLED STATE
+  &:disabled {
+    @include set-bg("gray", "200");
+    border-color: set-color("gray", "200");
+    color: set-color("gray", "400");
+  }
+}
+
+// SOME EXAMPLES OF CLASSES GENERATED
+// .btn
+// .btn .btn-sm .btn-primary
+// .btn .btn-error
+// .btn .btn-lg .btn-success
