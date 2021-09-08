@@ -1,0 +1,68 @@
+// The following code will generate all the spacing classes.
+
+// spacing properties
+$sp-props: (
+  "m": "margin",
+  "p": "padding",
+);
+
+// spacing property variants
+$sp-variants: (
+  "t": "top",
+  "l": "left",
+  "b": "bottom",
+  "r": "right",
+  "x": "left-right",
+  "y": "top-bottom",
+  null: "all sides",
+);
+
+// spacing values
+$sp-values: (
+  "0": 2px,
+  "1": 4px,
+  "2": 8px,
+  "3": 12px,
+  "4": 16px,
+  "5": 20px,
+  "6": 24px,
+  "8": 32px,
+  "10": 40px,
+  "12": 48px,
+  "20": 80px,
+  "28": 112px,
+  "36": 144px,
+  "48": 192px,
+);
+
+// looping through each spacing property (padding, margin, etc)
+@each $prop-key, $prop-value in $sp-props {
+  // looping through each varaint (top, left, bottom, right, etc)
+  @each $variant-key, $variant-value in $sp-variants {
+    // looping through each spacing key:value pair
+    @each $sp-key, $sp-value in $sp-values {
+      // x = left and right
+      // y = top and bottom
+      // null = all sides
+      @if $variant-key == "x" {
+        .#{$prop-key}#{$variant-key}-#{$sp-key} {
+          #{$prop-value}-left: $sp-value;
+          #{$prop-value}-right: $sp-value;
+        }
+      } @else if $variant-key == "y" {
+        .#{$prop-key}#{$variant-key}-#{$sp-key} {
+          #{$prop-value}-top: $sp-value;
+          #{$prop-value}-bottom: $sp-value;
+        }
+      } @else if $variant-key == null {
+        .#{$prop-key}#{$variant-key}-#{$sp-key} {
+          #{$prop-value}: $sp-value;
+        }
+      } @else {
+        .#{$prop-key}#{$variant-key}-#{$sp-key} {
+          #{$prop-value}-#{$variant-value}: $sp-value;
+        }
+      }
+    }
+  }
+}

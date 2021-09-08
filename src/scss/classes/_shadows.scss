@@ -1,0 +1,13 @@
+// The following code will generate the shadow classes.
+
+@each $prop, $value in $shadows {
+  @if ($prop=="rg") {
+    .shadow {
+      @include shadow($prop);
+    }
+  } @else {
+    .shadow-#{$prop} {
+      @include shadow($prop);
+    }
+  }
+}

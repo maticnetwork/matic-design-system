@@ -1,0 +1,13 @@
+// generating bg-color classes
+
+// variables
+$colors: "gray" "primary" "secondary" "success" "warning" "error";
+$bases: "900", "800", "700", "600", "500", "400", "300", "200", "100";
+
+@each $color in $colors {
+  @each $base in $bases {
+    .bg-#{$color}-#{$base} {
+      @include set-bg($color, $base);
+    }
+  }
+}

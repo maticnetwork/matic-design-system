@@ -1,0 +1,104 @@
+// TYPEFACE STYLES
+
+// Headlines
+h1, .headline-1 {
+  @include font-settings("7xl", "bold", "leading-11");
+}
+
+h2, .headline-2 {
+  @include font-settings("5xl", "bold", "leading-10");
+}
+
+h3, .headline-3 {
+  @include font-settings("3xl", "bold", "leading-9");
+}
+
+h4, .headline-4 {
+  @include font-settings("lg", "bold", "leading-7");
+}
+
+h5, .headline-5 {
+  @include font-settings("bs", "bold", "leading-6");
+}
+
+h6, .headline-6 {
+  @include font-settings("sm", "bold", "leading-5");
+}
+
+// Capitals
+[class*="cap-"] {
+  text-transform: uppercase;
+}
+.cap-xs {
+  @include font-settings("xs", "extra-bold", -height, "2");
+}
+
+.cap-sm {
+  @include font-settings("sm", "extra-bold", -height, "3");
+}
+
+.cap-bs {
+  @include font-settings("bs", "extra-bold", -height, "4");
+}
+
+.cap-lg {
+  @include font-settings("lg", "extra-bold", -height, "5");
+}
+
+// Labels
+.label-xs {
+  @include font-settings("xs", "medium", -height, -spacing);
+}
+.label-sm {
+  @include font-settings("sm", "medium", -height, -spacing);
+}
+.label-bs {
+  @include font-settings("bs", "medium", -height, -spacing);
+}
+.label-lg {
+  @include font-settings("lg", "medium", -height, -spacing);
+}
+
+// Display
+.display-1 {
+  @include font-settings("8xl", "extra-bold", "leading-snug", -spacing);
+}
+
+.display-2 {
+  @include font-settings("9xl", "extra-bold", "leading-snug", -spacing);
+}
+
+// Body
+.body-lg {
+  @include font-settings("lg", "normal", "leading-7", -spacing);
+}
+
+.body-bs {
+  @include font-settings("bs", "normal", "leading-6", -spacing);
+}
+
+.body-sm {
+  @include font-settings("sm", "normal", "leading-5", -spacing);
+}
+
+.body-xs {
+  @include font-settings("xs", "normal", "leading-4", -spacing);
+}
+
+// Code
+
+.code-xs {
+  @include code("xs", "normal", inline-flex);
+}
+
+.code-sm {
+  @include code("sm", "normal", inline-flex);
+}
+
+.code-bs {
+  @include code("bs", "normal", block);
+}
+
+.code-lg {
+  @include code("lg", "normal", inline-flex);
+}

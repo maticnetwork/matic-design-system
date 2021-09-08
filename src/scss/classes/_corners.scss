@@ -1,0 +1,13 @@
+// The following code will generate the rounded classes
+
+@each $prop, $value in $corners {
+  @if ($prop=="rg") {
+    .rounded {
+      @include corner($prop);
+    }
+  } @else {
+    .rounded-#{$prop} {
+      @include corner($prop);
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-primary-200 theme--light">
+    <button onclick="changeTheme()">Change mode</button>
+    <div class="sample bg-gray-100">
+        <h1>Sample</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique harum officia perferendis laborum, illo
+            natus voluptatem iure dignissimos odio dolorum tenetur repellendus molestiae. Eligendi cumque vero sapiente,
+            dolores nesciunt impedit.</p>
+        <div class="sample__btnContainer">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn" disabled>Disabled</button>
+        </div>
+    </div>
+
+    <div class="sample bg-gray-100">
+        <form>
+            <input type="text" class="input" placeholder="Email">
+            <input type="password" class="input" placeholder="Password">
+            <button class="btn btn-primary btn-sm">Submit</button>
+        </form>
+    </div>
+
+    <!-- <div class="sample bg-primary-900">
+        <h1>Sample</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique harum officia perferendis laborum, illo
+            natus voluptatem iure dignissimos odio dolorum tenetur repellendus molestiae. Eligendi cumque vero sapiente,
+            dolores nesciunt impedit.</p>
+        <div class="sample__btnContainer">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-error">Error</button>
+            <button type="button" class="btn" disabled>Disabled</button>
+        </div>
+    </div> -->
+
+    <script>
+        function changeTheme() {
+            if (document.body.classList.contains('theme--light')) {
+                document.body.classList.remove('theme--light');
+                document.body.classList.add('theme--dark');
+            } else {
+                document.body.classList.add('theme--light');
+                document.body.classList.remove('theme--dark');
+            }
+        }
+    </script>
+</body>
+
+</html>
