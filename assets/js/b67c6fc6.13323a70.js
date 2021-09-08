@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[553],{2142:function(s){s.exports=JSON.parse('{"allTagsPath":"/matic-design-system/blog/tags","slug":"docusaurus","name":"docusaurus","count":3,"permalink":"/matic-design-system/blog/tags/docusaurus"}')}}]);

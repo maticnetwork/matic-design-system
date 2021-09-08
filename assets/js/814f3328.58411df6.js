@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[535],{6353:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/matic-design-system/blog/welcome"},{"title":"Hello","permalink":"/matic-design-system/blog/hello-world"},{"title":"Hola","permalink":"/matic-design-system/blog/hola"}]}')}}]);

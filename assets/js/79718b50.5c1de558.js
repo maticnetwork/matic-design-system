@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[742],{7165:function(s){s.exports=JSON.parse('{"allTagsPath":"/matic-design-system/blog/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/matic-design-system/blog/tags/facebook"}')}}]);
