@@ -8,7 +8,7 @@ PolygonMesh has a bunch of button classes that takes care of states, size varian
 <button class="btn warning">Warning</button>
 <button class="btn error">Error</button> 
 <button class="btn">Text button</button> 
-<button disabled class="btn">Text button</button> 
+<button disabled class="btn">Disabled button</button> 
 
 ## Color variants
 The button classes can be used with `<a>`, `<button>` or `<input>` elements. Different browsers may render these elements differently.

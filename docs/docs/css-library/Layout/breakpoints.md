@@ -9,7 +9,7 @@ Media queries allows the developer to conditionally apply the styles to the elem
 | **sm**     | Small       | ≥ 576px    |
 | **md**     | Medium      | ≥ 768px    |
 | **lg**     | Large       | ≥ 992px    |
-| **xl**     | Extra large | ≥ 1200apx  |
+| **xl**     | Extra large | ≥ 1200px  |
 
 ```scss
 $breakpoints: (
@@ -65,13 +65,13 @@ If you are taking mobile first approach in your project, you can use the
   background-color: white;
 }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(lg) {
   .my-element {
     background-color: black;
   }
 }
 
-// This will change the background color to black on sm and above screen sizes
+// This will change the background color to black on lg and above screen sizes
 ```
 
 The above mixins compiles to the following CSS code:
@@ -90,7 +90,7 @@ The above mixins compiles to the following CSS code:
 
 ### Max-width
 
-If you are taking desktop first approach in your project or want to use `max-width` conditions, you can use the
+If you are taking desktop first approach in your project or want to use `max-width` conditions, you can use the following mixins:
 
 ```scss
 @include media-breakpoint-down(sm) {...}
@@ -112,7 +112,7 @@ If you are taking desktop first approach in your project or want to use `max-wid
   background-color: white;
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(md) {
   .my-element {
     background-color: black;
   }
@@ -128,7 +128,7 @@ The above code compiles to
   background-color: white;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .my-element {
     background-color: black;
   }

@@ -25,11 +25,11 @@ The form control classes take care of the states and sizes of the input elements
 ### Error state
 ```html
 <label for="demo-input" class="label-bg">Email address:</label>
-<input class="input error" type="text" placeholder="Error state" id="demo-input" value="john@matic"/>
+<input class="input error" type="text" id="demo-input" value="john@matic"/>
 ```
 
 <label for="demo-input" class="label-bg">Email address:</label>
-<input class="input error" type="text" placeholder="Error state" id="demo-input" value="john@matic"/>
+<input class="input error" type="text" id="demo-input" value="john@matic"/>
 
 <br />
 

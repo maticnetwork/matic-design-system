@@ -1,6 +1,6 @@
 # Container
 
-Containers are the basic layout elements that usually contain the grid columns. Their basic funtionality is to contain the content within them.
+Containers are the basic layout elements that usually contain the grid rows. Their basic funtionality is to contain the content within them.
 
 The element with class `.container` will always be centered horizontally.
 

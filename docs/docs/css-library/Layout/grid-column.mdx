@@ -29,7 +29,7 @@ Grid and columns are the most important part of the layout. The PolygonMesh Grid
 
 Breaking down the above exmaple. We have a `.container` class that contains the row. The row has 4 elements with `.col` class which creates 4 column elements with equal width (1/4 of the total width). 
 
-- **Container** - container contains the row elements withing itself and acts as a wrapper. `.container` and `.container-fluid` classes can be used based on the requirement.
+- **Container** - container contains the row elements within itself and acts as a wrapper. `.container` and `.container-fluid` classes can be used based on the requirement.
 - **Rows** - rows are the wrappers for the columns. They are used to create rows of columns. Rows also have a negative gutter spaces on either sides of the element to create equal spacing between and around the rows. 
 - **Columns** - columns are the elements that are created within the row. There are 12 different column widths available which can be used to create various combinations and the numbers should ideally add up to 12. 
 - **Gutter space** - gutter space is the space between the columns. It is used to create equal spacing between and around the columns. It can be changed by overwriting the `--gutter-space` css variable. **The default gutter spaces is 30px**;
@@ -150,7 +150,7 @@ and size is one of the following range: <span class="var">1-12</span>
 
 The numbered classes will take the width as specified by the class, but will not be affected by the breakpoint. Which means that the same layout will be maintained even if the screen size changes.
 
-### Classes without breakpoint. 
+### Classes with breakpoint. 
 
 <Row>
   <Col><b>Example</b></Col>
@@ -160,10 +160,10 @@ The numbered classes will take the width as specified by the class, but will not
 ```html
 <div class="container">
     <div class="row">
-        <div class="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</div>
-        <div class="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</div>
-        <div class="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</div>
-        <div class="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
     </div>
 </div>
 ```
@@ -191,10 +191,10 @@ And for smaller screens, that is, 767.98px and below, the columns will take up t
 ```html
 <div class="container">
     <div class="row">
-        <div class="pm-col-sm-4">col-sm-4</div>
-        <div class="pm-col-sm-4">col-sm-4</div>
-        <div class="pm-col-sm-4">col-sm-4</div>
-        <div class="pm-col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
     </div>
 </div>
 ```
