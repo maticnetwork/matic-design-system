@@ -2,13 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Introduction
+👋 **PolygonMesh** will help you build beautiful websites in no time. It is an open-source design system crafted meticulously by the designers and developer at [Polygon Technology](https://polygon.technology/). 
 
-## What is PolygonMesh?
-
-PolygonMesh is an open-source design system by Polygon Technology. It is a collection of pre-built components and patterns that can be used to build websites.
-
-## The Polygon Ecosystem
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-## The PolygonMesh Team
+It is a collection of CSS classes and pre-built components and patterns that can be used to build webapps and websites. The CSS Library can be used as a standalone styling library and can also be used as a foundation for your own custom components.

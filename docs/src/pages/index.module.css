@@ -10,6 +10,17 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: var(--primary-500);
+}
+
+.title {
+  color: white;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
 }
 
 @media screen and (max-width: 966px) {
@@ -22,4 +33,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
 }

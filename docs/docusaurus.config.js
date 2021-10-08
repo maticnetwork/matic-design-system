@@ -3,8 +3,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'PolygonMesh Documentation',
-  tagline: 'A design system by Polygon',
+  title: 'PolygonMesh',
+  tagline: 'A design system by Polygon Technology',
   url: 'https://maticnetwork.github.io/',
   baseUrl: '/matic-design-system/',
   onBrokenLinks: 'throw',
@@ -17,7 +17,7 @@ module.exports = {
       title: 'PolygonMesh',
       logo: {
         alt: 'Polygon Mesh Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
