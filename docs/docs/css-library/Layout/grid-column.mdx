@@ -1,0 +1,280 @@
+# Grid and Columns
+
+Grid and columns are the most important part of the layout. The PolygonMesh Grid System is a 12-column, mobile first responsive system built with flexbox.
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col">column</div>
+        <div class="col">column</div>
+        <div class="col">column</div>
+        <div class="col">column</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol>column</DemoCol>
+  <DemoCol>column</DemoCol>
+  <DemoCol>column</DemoCol>
+  <DemoCol>column</DemoCol>
+</DemoRow>
+
+<br />
+
+Breaking down the above exmaple. We have a `.container` class that contains the row. The row has 4 elements with `.col` class which creates 4 column elements with equal width (1/4 of the total width). 
+
+- **Container** - container contains the row elements within itself and acts as a wrapper. `.container` and `.container-fluid` classes can be used based on the requirement.
+- **Rows** - rows are the wrappers for the columns. They are used to create rows of columns. Rows also have a negative gutter spaces on either sides of the element to create equal spacing between and around the rows. 
+- **Columns** - columns are the elements that are created within the row. There are 12 different column widths available which can be used to create various combinations and the numbers should ideally add up to 12. 
+- **Gutter space** - gutter space is the space between the columns. It is used to create equal spacing between and around the columns. It can be changed by overwriting the `--gutter-space` css variable. **The default gutter spaces is 30px**;
+
+```css
+:root{
+  --gutter-space: 20px;
+}
+```
+
+## Auto Width Columns
+
+### Eaual Width
+
+`.col` class set the auto-width by default. If multiple columns are created inside a row, each column takes euqal width.
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col">1/3</div>
+        <div class="col">2/3</div>
+        <div class="col">3/3</div>
+    </div>
+
+    <div class="row">
+        <div class="col">1/2</div>
+        <div class="col">2/2</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol>1/3</DemoCol>
+  <DemoCol>2/3</DemoCol>
+  <DemoCol>3/3</DemoCol>
+</DemoRow>
+
+<DemoRow>
+  <DemoCol>1/2</DemoCol>
+  <DemoCol>2/2</DemoCol>
+</DemoRow>
+
+
+### Fixed and auto widths
+If one of the elements is given a numbered class like `.col-6` then, that element will take up the width specified by the class. The other columns in the row will equally divide the remaining space among themselves.
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col">col</div>
+        <div class="col">col</div>
+        <div class="col-6">col-6</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol>col</DemoCol>
+  <DemoCol>col</DemoCol>
+  <DemoCol className="pm-col-6">col-6</DemoCol>
+</DemoRow>
+
+In the above example, the `.col-6` element takes 50% of the width and the other columns with `.col` class takes an euqal share of the remaining 50% of the space.
+
+## Responsive Columns
+The size of the columns can be customized based on the screen size. There are predefined classes for different breakpoints. 
+
+The nomenclature of the classes is as follows:
+```
+col-{breakpoint}-{size}
+```
+
+where breakpoint is one of the following:
+
+```scss
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+```
+
+and size is one of the following range: <span class="var">1-12</span>
+
+### Numbered classes without breakpoint. 
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-3">col-3</div>
+        <div class="col-5">col-5</div>
+        <div class="col-4">col-4</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol className="pm-col-3">col-3</DemoCol>
+  <DemoCol className="pm-col-5">col-5</DemoCol>
+  <DemoCol className="pm-col-4">col-4</DemoCol>
+</DemoRow>
+
+The numbered classes will take the width as specified by the class, but will not be affected by the breakpoint. Which means that the same layout will be maintained even if the screen size changes.
+
+### Classes with breakpoint. 
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+        <div class="col-lg-4 col-md-6">col-lg-4 col-md-6</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol className="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</DemoCol>
+  <DemoCol className="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</DemoCol>
+  <DemoCol className="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</DemoCol>
+  <DemoCol className="pm-col-lg-4 pm-col-md-6">col-lg-4 col-md-6</DemoCol>
+</DemoRow>
+
+Try to resize the screen and see how the layout changes as per the screen size. For larger screens, that is, 992px and above, each column will take 1/4th of the total space. 
+
+For medium screens, that is, 768px and above, each column will take 1/2 of the total space.
+
+And for smaller screens, that is, 767.98px and below, the columns will take up the full width.
+
+**Note**: PolygonMesh is built mobile first, which means we use `min-width` for the breakpoints. The properties of the classes with smaller breakpoint will be applied untill a class with a larger breakpoint is reached. If there are no classes with larger breakpoints, the property specified by the lower breakpoint will be used.
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+        <div class="col-sm-4">col-sm-4</div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol className="pm-col-sm-4">col-sm-4</DemoCol>
+  <DemoCol className="pm-col-sm-4">col-sm-4</DemoCol>
+  <DemoCol className="pm-col-sm-4">col-sm-4</DemoCol>
+  <DemoCol className="pm-col-sm-4">col-sm-4</DemoCol>
+</DemoRow>
+
+In the above example, the columns will be applied the properties of `col-sm-4` for screensize 576px and above. Since md, lg and xl classes aren't given to the elements, the properties specified by the sm class will remain. 
+
+But, for the screen size below 567px (exclusive) the columns will take full width. 
+
+## Nested Grid 
+PolygonMesh allows you to nest grids inside grids. 
+
+<Row>
+  <Col><b>Example</b></Col>
+  <Col textAlign="right">Check it out on <a href="https://codepen.io/salilnaik/full/xxdrqgV">CodePen</a></Col>
+</Row>
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-4">col-4</div>
+
+        <div class="col-8">
+          <!-- nesting row inside column -->
+          <div class="row">
+            <div class="col">col-8 > row > col</div>
+            <div class="col">col-8 > row > col</div>
+          </div>
+        </div>
+    </div>
+</div>
+```
+
+<DemoRow>
+  <DemoCol className="pm-col-4">col-4</DemoCol>
+  <DemoCol className="pm-col-8">
+    <DemoRow>
+      <DemoCol className="pm-col">col-8 > row > col</DemoCol>
+      <DemoCol className="pm-col">col-8 > row > col</DemoCol>
+    </DemoRow>
+  </DemoCol>
+</DemoRow>
+
+<!-- MDX -->
+<!-- Demo Components are based on PolygonMesh classes -->
+<!-- Demo Col Component -->
+export const DemoCol = ({children, ...props}) => (
+  <div className={
+    props.className ? props.className : 'pm-col'
+  }>
+    {children}
+  </div>
+);
+
+<!-- Demo Row Components -->
+export const DemoRow = ({children}) => (
+  <div className="pm-row">
+    {children}
+  </div>
+);
+
+<!-- Layout components are based on Docusaurus' defaul Bootstrap library -->
+<!-- Layout Col component -->
+export const Col = ({children, ...props}) => (
+  <div className="col" style={{
+    textAlign: props.textAlign
+  }}>
+    {children}
+  </div>
+);
+
+<!-- Layout Row Components -->
+export const Row = ({children}) => (
+  <div className="row">
+    {children}
+  </div>
+);
