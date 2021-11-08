@@ -26,13 +26,13 @@
   }
 
   // SIZE VARIANTS
-  &-sm {
+  &.sm {
     @include corner("sm");
     @include font-settings("sm", "normal", "leading-5");
     padding: 7px 20px;
   }
 
-  &-lg {
+  &.lg {
     @include corner("md");
     @include font-settings("bs", "normal", "leading-6");
     padding: 15px 20px;
@@ -42,7 +42,7 @@
   $btn-color-variants: "primary", "success", "warning", "error";
 
   @each $variant in $btn-color-variants {
-    &-#{$variant} {
+    &.#{$variant} {
       @include set-bg($variant, "500");
       &:hover {
         @include set-bg($variant, "600");
@@ -55,7 +55,7 @@
     }
   }
 
-  &-secondary {
+  &.secondary {
     @include set-bg("gray", "100");
     &:hover {
       @include set-bg("gray", "200");
@@ -68,16 +68,24 @@
     box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
   }
 
+  // BLOCK STATE
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
   // DISABLED STATE
   &:disabled {
     @include set-bg("gray", "200");
     border-color: set-color("gray", "200");
     color: set-color("gray", "400");
+    pointer-events: none;
   }
 }
 
 // SOME EXAMPLES OF CLASSES GENERATED
 // .btn
-// .btn .btn-sm .btn-primary
-// .btn .btn-error
-// .btn .btn-lg .btn-success
+// .btn .sm .primary
+// .btn .error
+// .btn .lg .success
+// .btn .block .primary
