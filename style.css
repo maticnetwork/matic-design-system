@@ -1346,7 +1346,7 @@ h6, .headline-6 {
 .btn:active {
   background-color: var(--gray-300);
 }
-.btn-sm {
+.btn.sm {
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1354,7 +1354,7 @@ h6, .headline-6 {
   letter-spacing: normal;
   padding: 7px 20px;
 }
-.btn-lg {
+.btn.lg {
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 400;
@@ -1362,66 +1362,71 @@ h6, .headline-6 {
   letter-spacing: normal;
   padding: 15px 20px;
 }
-.btn-primary {
+.btn.primary {
   background-color: var(--primary-500);
   color: #fff;
   box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
-.btn-primary:hover {
+.btn.primary:hover {
   background-color: var(--primary-600);
 }
-.btn-primary:active {
+.btn.primary:active {
   background-color: var(--primary-700);
 }
-.btn-success {
+.btn.success {
   background-color: var(--success-500);
   color: #fff;
   box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
-.btn-success:hover {
+.btn.success:hover {
   background-color: var(--success-600);
 }
-.btn-success:active {
+.btn.success:active {
   background-color: var(--success-700);
 }
-.btn-warning {
+.btn.warning {
   background-color: var(--warning-500);
   color: #fff;
   box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
-.btn-warning:hover {
+.btn.warning:hover {
   background-color: var(--warning-600);
 }
-.btn-warning:active {
+.btn.warning:active {
   background-color: var(--warning-700);
 }
-.btn-error {
+.btn.error {
   background-color: var(--error-500);
   color: #fff;
   box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
-.btn-error:hover {
+.btn.error:hover {
   background-color: var(--error-600);
 }
-.btn-error:active {
+.btn.error:active {
   background-color: var(--error-700);
 }
-.btn-secondary {
+.btn.secondary {
   background-color: var(--gray-100);
   border-color: var(--gray-300);
   color: var(--gray-900);
   box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.08), inset 0px 1px 0.5px rgba(255, 255, 255, 0.16);
 }
-.btn-secondary:hover {
+.btn.secondary:hover {
   background-color: var(--gray-200);
 }
-.btn-secondary:active {
+.btn.secondary:active {
   background-color: var(--gray-300);
+}
+.btn.block {
+  display: block;
+  width: 100%;
 }
 .btn:disabled {
   background-color: var(--gray-200);
   border-color: var(--gray-200);
   color: var(--gray-400);
+  pointer-events: none;
 }
 
 .input {
